@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.landing_page.main')
 
 @section('content')
 <main class="contacts">

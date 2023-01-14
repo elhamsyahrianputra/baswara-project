@@ -1,105 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('dist/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href=" {{ asset('dist/css/style.css') }}">
-
-    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <title>{{ $title }}</title>
-
-</head>
-
-<body id="page-top">
-
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                            </div>
-                            <form class="user" method="post" action="/signup">
-                                @csrf
-                                <div class="form-group">
-                                    <input type="email"
-                                        class="form-control form-control-user @error('email') is-invalid @enderror"
-                                        id="InputEmail" placeholder="Email Address" name="email"
-                                        value="{{ old('email') }}" autocomplete="off" autofocus>
-                                    @error('email')
-                                    <span class="small text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text"
-                                        class="form-control form-control-user @error('name') is-invalid @enderror"
-                                        id="Fullname" placeholder="Fullname" name="name" value="{{ old('name') }}"
-                                        autocomplete="off">
-                                    @error('name')
-                                    <span class="small text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <input type="password"
-                                        class="form-control form-control-user @error('password') is-invalid @enderror"
-                                        id="InputPassword" placeholder="Password" name="password" autocomplete="off">
-                                    @error('password')
-                                    <span class="small text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <button class="btn btn-primary btn-user btn-block">
-                                    Sign Up
-                                </button>
-                                <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Sign Up with Google
-                                </a>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <span class="small">Have an account? </span>
-                                <a href="/login" class="small">Login!</a>
-                            </div>
-                        </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Home | Edison</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+        <script src="https://www.youtube.com/player_api"></script>
+        <link rel="stylesheet preload" as="style" href="css/preload.css" />
+        <link rel="stylesheet preload" as="style" href="css/libs.css" />
+        <!-- <link rel="stylesheet" href="css/course.css" /> -->
+        <link rel="stylesheet" href="css/landingpage.css"/>
+    </head>
+    <body style="background-color: #e9e7ea;">
+        <div class="container d-flex align-items-center" style="height: 100vh;" >
+            <div class="row justify-content-center">
+            <div class="col-md-8 px-4 py-4" style="background-color: #FFFFFF;">
+                <section class="registration" id="price">
+                    <div class="underlay"></div>
+                    <div class="registration_content container d-flex flex-column align-items-center">
+                        <h2 class="registration_header">Registration</h2>
+                        <p class="registration_text text-center">
+                            The intensive course is now open, which starts on January 8. You will receive detailed information on admission by
+                            mail immediately after registration
+                        </p>
+                        <p class="registration_price h5">Price: $320 all course/ $ 30 per month</p>
+                        <p class="registration_text">our consultant will contact you to clarify further details</p>
+                        <form class="registration_form flex-column align-items-center" action="/signup" method="post" data-type="registration">
+                            @csrf
+                            <input class="field required" type="text" data-type="email" placeholder="Email" name="email"/>
+                            <input class="field required" type="text" placeholder="Name" name="name"/>
+                            <input class="field required" type="password" placeholder="Password" name="password"/>
+                            <button class="btn btn--gradient d-block mx-auto" type="submit">
+                                <span class="text">Registration</span>
+                            </button>
+                        </form>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a href="/login"
+                            class="link-warning">Login</a></p>
                     </div>
-                </div>
+                </section>
+            </div>
             </div>
         </div>
-
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src={{ asset('vendor/jquery/jquery.min.js') }}></script>
-    <script src={{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src={{ asset('vendor/jquery-easing/jquery.easing.min.js') }}></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src={{ asset('dist/js/sb-admin-2.min.js') }}></script>
-
-    <!-- Page level plugins -->
-    <script src={{ asset('vendor/chart.js/Chart.min.js') }}></script>
-
-    <!-- Page level custom scripts -->
-    <script src={{ asset('dist/js/demo/chart-area-demo.js') }}></script>
-    <script src={{ asset('dist/js/demo/chart-pie-demo.js') }}></script>
-
-</body>
-
+    </body>
 </html>

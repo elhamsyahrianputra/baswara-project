@@ -2,111 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('dist/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href=" {{ asset('dist/css/style.css') }}">
-
-    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <title>{{ $title }}</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home | Edison</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js"
+        async=""></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <link rel="stylesheet preload" as="style" href="css/preload.css" />
+    <link rel="stylesheet preload" as="style" href="css/libs.css" />
+    <!-- <link rel="stylesheet" href="css/course.css" /> -->
+    <link rel="stylesheet" href="css/landingpage.css" />
 </head>
 
-<body id="page-top">
-    <div class="container">
-
-        <!-- Outer Row -->
+<body style="background-color: #e9e7ea;">
+    <div class="container d-flex align-items-center" style="height: 100vh;">
         <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
+            <div class="col-md-8 px-4 py-4" style="background-color: #FFFFFF;">
+                <section class="registration" id="price">
+                    <div class="underlay"></div>
+                    <div class="registration_content container d-flex flex-column align-items-center">
+                        <h2 class="registration_header">Login</h2>
+                        <h5 class="registration_header">Baswara Learning Academy</h5>
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <form class="user" method="post" action="/login">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="InputUsername"
-                                                placeholder="Enter Email Address..." name="email"
-                                                value="{{ old('username') }}" autofocus required>
+                            <div class="col-sm-12 col-md-6">
+                                <lottie-player src="lottie/login.json" background="transparent" speed="1"
+                                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
+                            </div>
+                            <div class="col-sm-12 col-md-6 d-flex align-items-center">
+                                <div class="col">
+                                    <form class="registration_form" action="/login" method="post" data-type="login">
+                                        <div class="row">
+
+                                            @csrf
+                                            <input class="field required" type="text" placeholder="Email"
+                                                name="email" />
+                                            <input class="field required" type="password" placeholder="Password"
+                                                name="password" />
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="InputPassword" placeholder="Enter Password..." name="password"
-                                                required>
+                                        <div class="row mt-3 hero_content-action flex-wrap justify-content-center">
+                                            <button class="btn btn--gradient" type="submit">
+                                                <span class="text">Masuk</span>
+                                            </button>
+                                            <!-- <a class="btn btn--highlight" href="#" data-bs-toggle="modal" data-bs-target="#registration" data-bs-dismiss="modal">
+                                            <span class="text">Daftar</span>
+                                        </a> -->
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="remember_me">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary btn-user btn-block my-2">
-                                            Login
-                                        </button>
-                                        <div class="text-center">
-                                            <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                        </div>
-                                        <hr>
-                                        <a href="/" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <span class="small">Don't have an account?</span> <a class="small"
-                                            href="/signup">Create an
-                                            Account!</a>
-                                        <span class="d-block text-danger mt-3 font-weight-bold">
-                                            @error('error')
-                                            {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
+                                    <p class="small fw-bold mt-2 pt-1 mb-0">Dont't have an account? <a href="/signup"
+                                            class="link-warning">Register</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </section>
             </div>
-
         </div>
-
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src={{ asset('vendor/jquery/jquery.min.js') }}></script>
-    <script src={{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src={{ asset('vendor/jquery-easing/jquery.easing.min.js') }}></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src={{ asset('dist/js/sb-admin-2.min.js') }}></script>
-
-    <!-- Page level plugins -->
-    <script src={{ asset('vendor/chart.js/Chart.min.js') }}></script>
-
-    <!-- Page level custom scripts -->
-    <script src={{ asset('dist/js/demo/chart-area-demo.js') }}></script>
-    <script src={{ asset('dist/js/demo/chart-pie-demo.js') }}></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/reviews.min.js"></script>
+    <script src="js/courses.min.js"></script>
 </body>
 
 </html>

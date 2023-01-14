@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LandingPageController;
+
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LandingPageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +18,25 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', [LandingPageController::class, 'home']);
-Route::get('/courses', [LandingPageController::class, 'courses']);
-Route::get('/contacts', [LandingPageController::class, 'contacts']);
+Route::controller(LandingPageController::class)->group(function () {
+    Route::get('/', 'home');
+    Route::get('/courses', 'courses');
+    Route::get('/contacts', 'contacts');
+    Route::get('/team', 'team');
+});
 
-Route::get('/signup', [AuthController::class, 'registration']);
-Route::post('/signup', [AuthController::class, 'store']);
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/signup','registration');
+    Route::post('/signup','store');
+    Route::get('/login','login');
+    Route::post('/login','authenticate');
+    Route::post('/logout','logout');
+});
 
-Route::get('/login', [AuthController::class, 'login']);
-Route::post('/login', [AuthController::class, 'authenticate']);
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/admin', 'index');
+});
 
-Route::get('/logout', [AuthController::class, 'logout']);
+
+
+
