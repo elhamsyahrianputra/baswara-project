@@ -11,4 +11,4 @@
     @yield('content')
 
 <!-- Footer -->
-@include('layouts.admin.partials.sidebar')
+@include('layouts.admin.partials.footer')

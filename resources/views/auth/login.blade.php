@@ -37,9 +37,9 @@
                                         <div class="row">
 
                                             @csrf
-                                            <input class="field required" type="text" placeholder="Email"
+                                            <input class="field required my-2" type="text" placeholder="Email"
                                                 name="email" />
-                                            <input class="field required" type="password" placeholder="Password"
+                                            <input class="field required my-2" type="password" placeholder="Password"
                                                 name="password" />
                                         </div>
                                         <div class="row mt-3 hero_content-action flex-wrap justify-content-center">
@@ -51,8 +51,8 @@
                                         </a> -->
                                         </div>
                                     </form>
-                                    <p class="small fw-bold mt-2 pt-1 mb-0">Dont't have an account? <a href="/signup"
-                                            class="link-warning">Register</a></p>
+                                    <span class="small fw-bold mt-2 pt-1 mb-0 d-flex justify-content-center">Don't have an account? <a href="/signup"
+                                            class="link-warning ms-1"> Register</a></span>
                                 </div>
                             </div>
                         </div>

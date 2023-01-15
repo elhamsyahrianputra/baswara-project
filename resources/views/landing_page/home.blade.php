@@ -17,11 +17,8 @@
                     diakses dimanapun dan kapanpun.
                 </p>
                 <div class="hero_content-action d-flex flex-wrap">
-                    <a class="btn btn--gradient" href="#" data-aos="fade-left">
+                    <a class="btn btn--gradient" href="/registration" data-aos="fade-left">
                         <span class="text">Daftar Sekarang!</span>
-                    </a>
-                    <a class="btn btn--highlight" href="pricing.php" data-aos="fade-left" data-aos-delay="50">
-                        <span class="text">Lihat Daftar Paket</span>
                     </a>
                 </div>
             </div>
@@ -98,9 +95,6 @@
                     Jangan cepat puas dengan kemampuanmu! Terus upgrade keahlianmu. Bergabung bersama kami untuk
                     meningkatkan pemahamanmu. Bergabung bersama kami sekarang juga!
                 </p>
-                <a class="promo_content-btn btn btn--gradient" href="#" data-aos="fade-up" data-aos-delay="100">
-                    <span class="text">Daftar Sekarang</span>
-                </a>
             </div>
         </div>
     </section>
@@ -225,7 +219,7 @@
                             </div>
                         </div>
                         <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="course.php">
+                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
                                 Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
                             </a>
                         </div>
@@ -234,7 +228,7 @@
                     @endfor
 
             </ul>
-            <a class="popular_btn btn btn--gradient" href="courses.php">
+            <a class="popular_btn btn btn--gradient" href="/courses">
                 <span class="text">Learn more</span>
             </a>
         </div>

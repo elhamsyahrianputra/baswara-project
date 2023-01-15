@@ -8,8 +8,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
         <script src="https://www.youtube.com/player_api"></script>
-        <link rel="stylesheet preload" as="style" href="css/preload.css" />
-        <link rel="stylesheet preload" as="style" href="css/libs.css" />
+        {{-- <link rel="stylesheet preload" as="style" href="css/preload.css" />
+        <link rel="stylesheet preload" as="style" href="css/libs.css" /> --}}
         <!-- <link rel="stylesheet" href="css/course.css" /> -->
         <link rel="stylesheet" href="css/landingpage.css"/>
     </head>
@@ -22,22 +22,19 @@
                     <div class="registration_content container d-flex flex-column align-items-center">
                         <h2 class="registration_header">Registration</h2>
                         <p class="registration_text text-center">
-                            The intensive course is now open, which starts on January 8. You will receive detailed information on admission by
-                            mail immediately after registration
+                            Daftarkan dirimu untuk ikut menjadi bagian dari <strong>BASWARA Learning Academy</strong>. Untuk informasi ketentuan dan kebijakan pendafataran bisa mengakses <a href="www.baswara.com">www.baswara.com</a>
                         </p>
-                        <p class="registration_price h5">Price: $320 all course/ $ 30 per month</p>
-                        <p class="registration_text">our consultant will contact you to clarify further details</p>
                         <form class="registration_form flex-column align-items-center" action="/signup" method="post" data-type="registration">
                             @csrf
-                            <input class="field required" type="text" data-type="email" placeholder="Email" name="email"/>
-                            <input class="field required" type="text" placeholder="Name" name="name"/>
-                            <input class="field required" type="password" placeholder="Password" name="password"/>
-                            <button class="btn btn--gradient d-block mx-auto" type="submit">
+                            <input class="field required my-1" type="text" data-type="email" placeholder="Email" name="email"/>
+                            <input class="field required my-1" type="text" placeholder="Name" name="name"/>
+                            <input class="field required my-1" type="password" placeholder="Password" name="password"/>
+                            <button class="btn btn--gradient d-block mx-auto mt-3" type="submit">
                                 <span class="text">Registration</span>
                             </button>
                         </form>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a href="/login"
-                            class="link-warning">Login</a></p>
+                        <span class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a href="/login"
+                            class="link-warning">Login</a></span>
                     </div>
                 </section>
             </div>

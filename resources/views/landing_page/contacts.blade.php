@@ -13,7 +13,7 @@
                     akan membantu anda.
                 </p>
             </div>
-            <form class="contacts_form-form" action="#" method="post" data-type="contacts">
+            <form class="contacts_form-form">
                 <div class="contacts_form-form_wrapper d-sm-flex justify-content-between">
                     <input class="field required" type="text" data-type="email" placeholder="Email" />
                     <input class="field required" type="text" placeholder="Name" />
@@ -37,7 +37,7 @@
                         </div>
                         <a class="link" href="#">Terms and Conditions</a>
                     </div>
-                    <button class="btn btn--gradient" type="submit">
+                    <button class="btn btn--gradient">
                         <span class="text">Send a Message</span>
                     </button>
                 </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Team;
+
 class TeamController extends Controller
 {
     /**
@@ -13,7 +15,12 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+
+        $data = [
+            'teams' => Team::OrderBy('id', 'ASC')->get()
+        ];
+
+        return view('admin.team.index', $data);
     }
 
     /**
@@ -23,7 +30,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.team.create');
     }
 
     /**
@@ -77,8 +84,9 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Team $team)
     {
-        //
+        Team::destroy($team->id);
+		return redirect('/admin/teams')->with('success', 'Data Pegawai Berhasil Dihapus!');
     }
 }

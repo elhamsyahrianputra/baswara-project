@@ -13,6 +13,13 @@ class LandingPageController extends Controller
         ]);
     }
 
+    public function course()
+    {
+        return view('landing_page.course', [
+            'title' => "Course | Baswara",
+        ]);
+    }
+
     public function courses()
     {
         return view('landing_page.courses', [

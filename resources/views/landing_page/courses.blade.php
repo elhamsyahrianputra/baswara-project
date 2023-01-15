@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="course.php">
+                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
                                 Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
                             </a>
                         </div>
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="course.php">
+                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
                                 Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
                             </a>
                         </div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="course.php">
+                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
                                 Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
                             </a>
                         </div>
@@ -169,7 +169,7 @@
                             </div>
                         </div>
                         <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="course.php">
+                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
                                 Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
                             </a>
                         </div>
@@ -207,7 +207,7 @@
                             </div>
                         </div>
                         <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="course.php">
+                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
                                 Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
                             </a>
                         </div>
