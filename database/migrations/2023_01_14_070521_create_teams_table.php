@@ -14,15 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('division');
-            $table->text('description');
-            $table->string('instagram');
-            $table->string('facebook');
-            $table->string('linkedin');
+            $table->text('about_me');
+            $table->string('instagram_url');
+            $table->string('facebook_url');
+            $table->string('linkedin_url');
             $table->string('image_url');
-            
         });
     }
 

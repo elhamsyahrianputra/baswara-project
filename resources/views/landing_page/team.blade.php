@@ -23,23 +23,23 @@
             <ul class="team_list d-flex flex-wrap justify-content-center">
                 @foreach ($teams as $team)
                 <li class="team_list-item col-sm-6 col-lg-4 col-xl-3" data-aos="fade-up"
-                    data-order="{{ $team->image_url }}" data-media="{{ $team->image_url }}">
+                    data-order="{{ asset('storage/' . $team->image_url) }}" data-media="{{ asset('storage/' . $team->image_url) }}">
                     <div class="media">
                         <picture>
-                            <source data-srcset="{{ $team->image_url }}" srcset="{{ $team->image_url }}" />
-                            <img class="lazy" data-src="{{ $team->image_url }}" src="{{ $team->image_url }}"
+                            <source data-srcset="{{ asset('storage/' . $team->image_url) }}" srcset="{{ asset('storage/' . $team->image_url) }}" />
+                            <img class="lazy" data-src="{{ asset('storage/' . $team->image_url) }}" src="{{ asset('storage/' . $team->image_url) }}"
                                 alt="media" />
                         </picture>
                     </div>
                     <div class="main">
                         <h5 class="name">{{ $team->name }}</h5>
                         <span class="division">{{ $team->division }}</span>
-                        <p class="description d-none">{{ $team->description }}</p>
+                        <p class="description d-none">{{ $team->biography }}</p>
 
                         {{-- Social Media --}}
-                        <span class="instagram d-none">{{ $team->instagram }}</span>
-                        <span class="facebook d-none">{{ $team->facebook }}</span>
-                        <span class="linkedin d-none">{{ $team->linkedin }}</span>
+                        <span class="instagram d-none">{{ $team->instagram_url }}</span>
+                        <span class="facebook d-none">{{ $team->facebook_url }}</span>
+                        <span class="linkedin d-none">{{ $team->linkedin_url }}</span>
                     </div>
                 </li>
                 @endforeach

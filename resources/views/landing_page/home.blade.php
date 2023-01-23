@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="hero_media col-lg-6">
-                <lottie-player src="lottie/index.json" background="transparent" speed="1"
+                <lottie-player src="dist/lottie/index.json" background="transparent" speed="1"
                     style="width: 80%; height: 100%" loop autoplay></lottie-player>
             </div>
         </div>
@@ -86,7 +86,7 @@
     <section class="promo">
         <div class="container d-flex flex-column-reverse flex-lg-row justify-content-lg-end">
             <div class="promo_media">
-                <lottie-player src="lottie/hero.json" background="transparent" speed="1"
+                <lottie-player src="dist/lottie/hero.json" background="transparent" speed="1"
                     style="width: 120%; height: 100%" loop autoplay></lottie-player>
             </div>
             <div class="promo_content">
@@ -103,7 +103,7 @@
     <section class="about">
         <div class="container">
             <div class="about_deco">
-                <lottie-player src="lottie/wave.json" background="transparent" speed="1"
+                <lottie-player src="dist/lottie/wave.json" background="transparent" speed="1"
                     style="width: 100%; height: 100%" loop autoplay></lottie-player>
             </div>
             <div class="about_main">
@@ -142,8 +142,8 @@
                 <div class="about_review-wrapper">
                     <div class="media">
                         <picture>
-                            <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                            <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                            <source data-srcset="dist/img/placeholder.jpg" srcset="dist/img/placeholder.jpg" />
+                            <img class="lazy" data-src="dist/img/placeholder.jpg" src="dist/img/placeholder.jpg" alt="media" />
                         </picture>
                     </div>
                     <div class="main">
@@ -187,8 +187,8 @@
             </div>
 
             <ul class="list_courses d-md-flex flex-wrap">
-                @for ($i = 0; $i < 3; $i++) <li data-groups='["gamedev", "programming"]'
-                    class="list_courses-card course-card col-12 col-md-6 col-xl-4">
+                @for ($i = 0; $i < 3; $i++) 
+                <li data-groups='["gamedev", "programming"]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
                     <div class="course-card_wrapper">
                         <div class="image"
                             style="background-image: url(https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8cHl0aG9ufHx8fHx8MTY3MjY1MzY2Mw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">

@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,8 @@ use App\Http\Controllers\TeamController;
 */
 
 Route::controller(AuthController::class)->group(function () {
-    Route::get('/signup','registration');
-    Route::post('/signup','store');
+    Route::get('/registration','registration');
+    Route::post('/registration','store');
     Route::get('/login','login');
     Route::post('/login','authenticate');
     Route::post('/logout','logout');
@@ -42,6 +43,12 @@ Route::controller(DashboardController::class)->group(function () {
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin', 'index');
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/payment', 'payment');
+    Route::get('/pay_confirm', 'pay_confirm');
+    Route::post('/kelola', 'kelola');
 });
 
 Route::group(['prefix' => 'admin'], function () {

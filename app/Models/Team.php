@@ -9,5 +9,15 @@ class Team extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+        'division',
+        'about_me',
+        'instagram_url',
+        'facebook_url',
+        'linkedin_url',
+        'image_url',
+    ];
 }

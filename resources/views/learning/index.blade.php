@@ -24,7 +24,7 @@
                         </div>
                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
                             <section class="main-video">
-                                <video src="https://drive.google.com/uc?export=preview&id=1yrVLz1j4sPFqN37CbSKlL6WaV38vEGC2" class="img-fluid" id="video3" controls></video>
+                                <video src="https://drive.google.com/uc?export=preview&id=1yrVLz1j4sPFqN37CbSKlL6WaV38vEGC" class="img-fluid" id="video3" controls></video>
                             </section>
                         </div>
                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="col-md-3 border position-fixed top-0 end-0 overflow-scroll" style="height:100%;">
-            <h4 class="title mt-5 pt-5">Belajar Huruf Alfabet</h4>
+            <h4 class="title mt-5 pt-5">{{ $course->name }}</h4>
             <p>4 modul &nbsp; . &nbsp; 5m 24s</p>
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
@@ -87,193 +87,22 @@
                         </div>
                     </div>
                 </button>
-                <button class="nav-link active ps-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 1</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-                <button class="nav-link ps-4" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 2</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
 
-                <button class="nav-link ps-4" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 3</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-                <button class="nav-link ps-4" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 4</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-
-                <button class="nav-link bg-light" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false" onclick="Pause()" disabled>
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-bars-progress fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>MODUL 2</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span></span>
-                        </div>
-                    </div>
-                </button>
+                @foreach ($course->chapters as $chapter)
                 <button class="nav-link ps-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="Pause()">
                     <div class="row">
                         <div class="col-sm-1">
                             <i class="fa-solid fa-circle-play fa-1x"></i>
                         </div>
                         <div class="col-sm-7">
-                            <span>Pelajaran 1</span>
+                            <span>{{ $chapter->name }}</span>
                         </div>
                         <div class="col-sm-2 offset-sm-1">
                             <span>1:21</span>
                         </div>
                     </div>
-                </button>
-                <button class="nav-link ps-4" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 2</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-
-                <button class="nav-link ps-4" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 3</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-                <button class="nav-link ps-4" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 4</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-
-                <button class="nav-link bg-light" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false" onclick="Pause()" disabled>
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-bars-progress fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>MODUL 3</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span></span>
-                        </div>
-                    </div>
-                </button>
-                <button class="nav-link ps-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 1</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-                <button class="nav-link ps-4" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 2</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-
-                <button class="nav-link ps-4" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 3</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
-                <button class="nav-link ps-4" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>Pelajaran 4</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
-                        </div>
-                    </div>
-                </button>
+                </button>             
+                @endforeach
             </div>
         </div>
     </div>

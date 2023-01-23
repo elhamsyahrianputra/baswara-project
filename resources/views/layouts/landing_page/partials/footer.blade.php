@@ -6,7 +6,7 @@
 				<div class="logo logo--footer">
 					<a class="d-inline-flex align-items-center" href="/">
 						<span class="logo_picture">
-							<img src="img/logo.png" alt="Baswara" />
+							<img src="dist/img/logo.png" alt="Baswara" />
 						</span>
 						<span class="text">
 							<span class="brand">Baswara</span>
@@ -81,7 +81,7 @@
 						<a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
 							<picture>
 								<source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-								<img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+								<img class="lazy" data-src="dist/img/placeholder.jpg" src="img/placeholder.jpg"
 									alt="media" />
 							</picture>
 						</a>
@@ -101,9 +101,10 @@
 	</div>
 </footer>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="js/common.min.js"></script>
-<script src="js/reviews.min.js"></script>
-<script src="js/courses.min.js"></script>
+<script src="dist/js/common.min.js"></script>
+<script src="dist/js/reviews.min.js"></script>
+<script src="dist/js/courses.min.js"></script>
+<script src="dist/js/team.min.js"></script>
 
 </body>
 

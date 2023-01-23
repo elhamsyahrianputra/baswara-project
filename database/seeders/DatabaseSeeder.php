@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,14 +17,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        \App\Models\User::factory()->create([
-            'name' => 'Elham Syahrian Putra',
-            'email' => 'elham@gmail.com',
-            'password' => hash::make('qwertyui'),
+        // User
+        $this->call([
+            UserSeeder::class
         ]);
 
-        $this->call([TeamSeeder::class]);
+        // Learning
+        $this->call([
+            CategorySeeder::class,
+            CourseSeeder::class,
+            CourseCategorySeeder::class,
+            CourseStudentSeeder::class,
+            ChapterSeeder::class,
+            TheorySeeder::class,
+        ]);
+
+        // // Team
+        // $this->call([
+        //     TeamSeeder::class,
+        // ]);
+        
+        
+        
     }
 }

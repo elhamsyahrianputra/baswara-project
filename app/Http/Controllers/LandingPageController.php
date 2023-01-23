@@ -22,8 +22,13 @@ class LandingPageController extends Controller
 
     public function courses()
     {
+        $courses = \App\Models\Course::all();
+        $categories = \App\Models\Category::all();
+
         return view('landing_page.courses', [
             'title' => "Courses | Baswara",
+            'courses' => $courses,
+            'categories' => $categories,
         ]);
     }
 

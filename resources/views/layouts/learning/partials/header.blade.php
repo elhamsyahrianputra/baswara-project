@@ -17,18 +17,6 @@
     <link rel="stylesheet" href="css/landingpage.css" />
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .card::after {
-            content: none;
-        }
-
-        .card:hover {
-            content: none;
-            color: black;
-        }
-
-        .card {
-            text-align: start;
-        }
     </style>
 </head>
 

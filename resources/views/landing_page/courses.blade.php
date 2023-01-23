@@ -9,34 +9,24 @@
                 <li class="list-item" data-aos="fade-left">
                     <a data-target="all" class="list_tags-tag tag current" href="#">all</a>
                 </li>
+                @foreach ($categories as $category)
                 <li class="list-item" data-aos="fade-left" data-aos-delay="50">
-                    <a data-target="programming" class="list_tags-tag tag" href="#">programming</a>
+                    <a data-target="{{ $category->name }}" class="list_tags-tag tag" href="#">{{ $category->name }}</a>
                 </li>
-                <li class="list-item" data-aos="fade-left" data-aos-delay="100">
-                    <a data-target="management" class="list_tags-tag tag" href="#">management</a>
-                </li>
-                <li class="list-item" data-aos="fade-left" data-aos-delay="150">
-                    <a data-target="art" class="list_tags-tag tag" href="#">art</a>
-                </li>
-                <li class="list-item" data-aos="fade-left" data-aos-delay="200">
-                    <a data-target="marketing" class="list_tags-tag tag" href="#">digital marketing</a>
-                </li>
-                <li class="list-item" data-aos="fade-left" data-aos-delay="250">
-                    <a data-target="gamedev" class="list_tags-tag tag" href="#">game development</a>
-                </li>
+                @endforeach
             </ul>
             <ul class="list_courses d-md-flex flex-wrap">
-                <li data-groups='["gamedev", "programming"]'
-                    class="list_courses-card course-card col-12 col-md-6 col-xl-4">
+                @foreach ($courses as $course)
+                <li data-groups='["gamedev", "programming"]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
                     <div class="course-card_wrapper">
                         <div class="image"
                             style="background-image: url(https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8cHl0aG9ufHx8fHx8MTY3MjY1MzY2Mw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">
                         </div>
                         <div class="top d-flex align-items-start">
                             <div class="wrapper d-flex flex-column">
-                                <h6 class="top_title">Belajar Fundamental React</h6>
+                                <h6 class="top_title">{{ $course->name }}</h6>
                                 <ul class="rating d-flex align-items-center">
-                                    <span class="rating_value">4.7</span>
+                                    <span class="rating_value me-2">4.7</span>
                                     <li class="rating_star">
                                         <i class="icon-star icon"></i>
                                     </li>
@@ -53,8 +43,9 @@
                                         <i class="icon-star icon"></i>
                                     </li>
                                 </ul>
-                                <span class="top_author">by Adrian Dawson school <span
-                                        class="top_details">Rp200.000</span></span>
+                                <span class="top_author">by {{ $course->author->name }}
+                                    <span class="top_details">Rp{{ number_format($course->price, 0, ",", ".") }}</span>
+                                </span>
                             </div>
                         </div>
                         <div class="bottom">
@@ -64,162 +55,14 @@
                         </div>
                     </div>
                 </li>
-                <li data-groups='["programming"]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                    <div class="course-card_wrapper">
-                        <div class="image"
-                            style="background-image: url(https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFuYWdlbWVudHx8fHx8fDE2NzI2NTM3OTc&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">
-                        </div>
-                        <div class="top d-flex align-items-start">
-                            <div class="wrapper d-flex flex-column">
-                                <h6 class="top_title">Membangun website menggunakan Laravel 9</h6>
-                                <ul class="rating d-flex align-items-center">
-                                    <span class="rating_value">4.9</span>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                </ul>
-                                <span class="top_author">by Angelina Christy <span
-                                        class="top_details">Rp250.000</span></span>
-                            </div>
-                        </div>
-                        <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
-                                Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li data-groups='["management"]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                    <div class="course-card_wrapper">
-                        <div class="image"
-                            style="background-image: url(https://images.unsplash.com/photo-1511345624864-d6cf46344e8c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFuYWdlbWVudHx8fHx8fDE2NzI2NTUwNDU&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">
-                        </div>
-                        <div class="top d-flex align-items-start">
-                            <div class="wrapper d-flex flex-column">
-                                <h6 class="top_title">Tips memanagement agenda kerja</h6>
-                                <ul class="rating d-flex align-items-center">
-                                    <span class="rating_value">4.7</span>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                </ul>
-                                <span class="top_author">by Adrian Dawson school <span
-                                        class="top_details">Rp300.000</span></span>
-                            </div>
-                        </div>
-                        <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
-                                Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li data-groups='["art", "marketing"]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                    <div class="course-card_wrapper">
-                        <div class="image"
-                            style="background-image: url(https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFya2V0aW5nfHx8fHx8MTY3MjY1NTMwNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">
-                        </div>
-                        <div class="top d-flex align-items-start">
-                            <div class="wrapper d-flex flex-column">
-                                <h6 class="top_title">Tutorial membuat Feed menarik di Instagram</h6>
-                                <ul class="rating d-flex align-items-center">
-                                    <span class="rating_value">4.7</span>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                </ul>
-                                <span class="top_author">by Adrian Dawson school <span
-                                        class="top_details">Rp200.000</span></span>
-                            </div>
-                        </div>
-                        <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
-                                Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li data-groups='["gamedev", "programming"]'
-                    class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                    <div class="course-card_wrapper">
-                        <div class="image"
-                            style="background-image: url(https://images.unsplash.com/photo-1556438064-2d7646166914?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8Z2FtZWRldnx8fHx8fDE2NzI2NTUzNzA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">
-                        </div>
-                        <div class="top d-flex align-items-start">
-                            <div class="wrapper d-flex flex-column">
-                                <h6 class="top_title">Membuat game menggunakan Unity</h6>
-                                <ul class="rating d-flex align-items-center">
-                                    <span class="rating_value">4.7</span>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                </ul>
-                                <span class="top_author">by Adrian Dawson school <span
-                                        class="top_details">Rp200.000</span></span>
-                            </div>
-                        </div>
-                        <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
-                                Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
+                @endforeach
             </ul>
         </div>
     </section>
     <!-- courses list section end -->
 
     <!-- reviews section start -->
-    <section class="reviews" id="reviews">
+    <section class="reviews mt-5" id="reviews">
         <div class="container">
             <h2 class="reviews_header">What our students say</h2>
 

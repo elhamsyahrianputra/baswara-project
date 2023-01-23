@@ -6,7 +6,7 @@
 				<div class="logo logo--footer">
 					<a class="d-inline-flex align-items-center" href="/">
 						<span class="logo_picture">
-							<img src="img/logo.png" alt="Baswara" />
+							<img src="dist/img/logo.png" alt="Baswara" />
 						</span>
 						<span class="text">
 							<span class="brand">Baswara</span>
@@ -80,8 +80,8 @@
 					<li class="footer_block-instagram_item">
 						<a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
 							<picture>
-								<source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-								<img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+								<source data-srcset="dist/img/placeholder.jpg" srcset="dist/img/placeholder.jpg" />
+								<img class="lazy" data-src="dist/img/placeholder.jpg" src="dist/img/placeholder.jpg"
 									alt="media" />
 							</picture>
 						</a>
