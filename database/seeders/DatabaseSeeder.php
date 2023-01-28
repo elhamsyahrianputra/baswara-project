@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             CourseStudentSeeder::class,
             ChapterSeeder::class,
             TheorySeeder::class,
+            TeamSeeder::class
         ]);
 
         // // Team

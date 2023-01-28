@@ -1,4 +1,4 @@
-@extends('layouts.landing_page.main')
+@extends('layouts.main')
 
 @section('content')
 
@@ -34,7 +34,7 @@
                     <div class="main">
                         <h5 class="name">{{ $team->name }}</h5>
                         <span class="division">{{ $team->division }}</span>
-                        <p class="description d-none">{{ $team->biography }}</p>
+                        <p class="description d-none">{{ $team->about_me }}</p>
 
                         {{-- Social Media --}}
                         <span class="instagram d-none">{{ $team->instagram_url }}</span>
@@ -70,4 +70,8 @@
     </div>
 </main>
 <!-- team content end -->
+@endsection
+
+@section('script')
+    <script src="dist/js/team.min.js"></script>
 @endsection

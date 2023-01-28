@@ -1,4 +1,3 @@
-<!-- homepage content end -->
 <footer class="footer">
 	<div class="container">
 		<div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
@@ -80,8 +79,8 @@
 					<li class="footer_block-instagram_item">
 						<a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
 							<picture>
-								<source data-srcset="dist/img/placeholder.jpg" srcset="dist/img/placeholder.jpg" />
-								<img class="lazy" data-src="dist/img/placeholder.jpg" src="dist/img/placeholder.jpg"
+								<source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
+								<img class="lazy" data-src="dist/img/placeholder.jpg" src="img/placeholder.jpg"
 									alt="media" />
 							</picture>
 						</a>
@@ -100,11 +99,3 @@
 		</div>
 	</div>
 </footer>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="js/common.min.js"></script>
-<script src="js/reviews.min.js"></script>
-<script src="js/courses.min.js"></script>
-
-</body>
-
-</html>

@@ -1,4 +1,4 @@
-@extends('layouts.landing_page.main')
+@extends('layouts.main')
 
 @section('content')
 <main>
@@ -272,4 +272,9 @@
     </section>
     <!-- reviews section end -->
 </main>
+@endsection
+
+@section('script')
+    <script src="dist/js/courses.min.js"></script>
+    <script src="dist/js/reviews.min.js"></script>
 @endsection

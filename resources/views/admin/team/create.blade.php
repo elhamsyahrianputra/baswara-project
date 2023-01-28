@@ -1,4 +1,4 @@
-@extends('layouts.admin.main')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -135,6 +135,7 @@
             <!-- /.row -->
         </div>
     </section>
+</div>
     <!-- /.content-wrapper -->
     @endsection
 

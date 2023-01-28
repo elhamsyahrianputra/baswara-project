@@ -1,4 +1,4 @@
-@extends('layouts.admin.main')
+@extends('layouts.admin')
 
 @section('style')
 <link rel="stylesheet" href="{{ asset('/mazer/extensions/simple-datatables/style.css') }}">
@@ -74,7 +74,7 @@
     
         </section>
     </div>
-
+</div>
     @endsection
 
     @section('script')
@@ -89,24 +89,24 @@
     <!-- Init SweetAlert Confirm Dialogue -->
     <script>
         $('.delete').click(function() {
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#28a745',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-        reverseButtons: true
-        }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire(
-            'Deleted!',
-            'Data has been deleted.',
-            'success'
-            )
-        }
-        })
-    });
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#28a745',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+                reverseButtons: true
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                    'Deleted!',
+                    'Data has been deleted.',
+                    'success'
+                    )
+                }
+            })
+        });
     </script>
     @endsection

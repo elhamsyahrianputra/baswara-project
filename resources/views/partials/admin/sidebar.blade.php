@@ -3,9 +3,9 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="/admin"><img src="mazer/images/logo/logo.svg" alt="Logo" srcset=""></a>
+                    <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo" srcset="" /></a>
                 </div>
-                <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
+                <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20"
                         preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
@@ -22,7 +22,7 @@
                         </g>
                     </svg>
                     <div class="form-check form-switch fs-6">
-                        <input class="form-check-input  me-0" type="checkbox" id="toggle-dark">
+                        <input class="form-check-input me-0" type="checkbox" id="toggle-dark" />
                         <label class="form-check-label"></label>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -33,7 +33,7 @@
                         </path>
                     </svg>
                 </div>
-                <div class="sidebar-toggler  x">
+                <div class="sidebar-toggler x">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                 </div>
             </div>
@@ -70,6 +70,27 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item has-sub {{ Request::is('admin/courses*')?'active':'' }}">
+                    <a href="#" class='sidebar-link'>
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Courses</span>
+                    </a>
+                    <ul class="submenu {{ Request::is('admin/courses*')?'active':'' }}">
+                        <li class="submenu-item {{ Request::is('admin/courses/create')?'active':'' }}">
+                            <a href="/admin/courses/create">
+                                <i class="fas fa-plus"></i>
+                                <span>Add Course</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item {{ Request::is('admin/courses')?'active':'' }}">
+                            <a href="/admin/courses">
+                                <i class="fas fa-list-ul"></i>
+                                <span>Course List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
             </ul>
         </div>
     </div>
