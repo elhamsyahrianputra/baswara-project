@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('video_url');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

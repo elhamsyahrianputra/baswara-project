@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course_students', function (Blueprint $table) {
+            $table->uuid('id')->primary();
             $table->foreignUuid('course_id')->constrained('courses')->cascadeOnUpdate();
             $table->foreignUuid('student_id')->constrained('users')->cascadeOnUpdate();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

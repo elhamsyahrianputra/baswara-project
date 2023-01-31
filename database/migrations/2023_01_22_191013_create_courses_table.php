@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('cover_url');
             $table->decimal('price', 10, 0, true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

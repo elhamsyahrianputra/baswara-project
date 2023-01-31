@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course_categories', function (Blueprint $table) {
+            $table->foreignUuid('id')->primary();
             $table->foreignUuid('course_id')->constrained('courses')->cascadeOnUpdate();
             $table->foreignUuid('category_id')->constrained('categories')->cascadeOnUpdate();
+            $table->softDeletes();
         });
     }
 

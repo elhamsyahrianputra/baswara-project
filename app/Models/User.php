@@ -7,13 +7,14 @@ namespace App\Models;
 use Faker\Guesser\Name;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasUuids;
+    use HasApiTokens, HasFactory, Notifiable, HasUuids, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -48,6 +49,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function authorCourses() {
+        return $this->hasMany(Course::class);
+    }
 
     public function courses() {
         return $this->belongsToMany(Course::class, 'course_students', 'student_id', 'course_id');

@@ -4,10 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Course;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Support\Str;
+use App\Models\Chapter;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ChapterSeeder extends Seeder
 {
@@ -19,29 +18,22 @@ class ChapterSeeder extends Seeder
     public function run()
     {
         $courses = Course::all(['id']);
-        $courses = [
-            [
-                'id' => Str::orderedUuid(),
-                'course_id' => $courses[0]->id,
-                'name' => 'Perkenalan Bahasa Pemrograman',
-            ],
-            [
-                'id' => Str::orderedUuid(),
-                'course_id' => $courses[0]->id,
-                'name' => 'Bahasa Pemrograman Python',
-            ],
-            [
-                'id' => Str::orderedUuid(),
-                'course_id' => $courses[0]->id,
-                'name' => 'Dasar Pemrograma Python',
-            ],
-            [
-                'id' => Str::orderedUuid(),
-                'course_id' => $courses[1]->id,
-                'name' => 'Mengeja',
-            ],
-        ];
 
-        DB::table('chapters')->insert($courses);
+        Chapter::create([
+            'course_id' => $courses[0]->id,
+            'name' => 'Perkenalan Bahasa Pemrograman',
+        ]);
+        Chapter::create([
+            'course_id' => $courses[0]->id,
+            'name' => 'Bahasa Pemrograman Python',
+        ]);
+        Chapter::create([
+            'course_id' => $courses[0]->id,
+            'name' => 'Dasar Pemrograma Python',
+        ]);
+        Chapter::create([
+            'course_id' => $courses[1]->id,
+            'name' => 'Mengeja',
+        ]);
     }
 }

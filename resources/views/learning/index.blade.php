@@ -1,11 +1,11 @@
-@extends('layouts.main')
+@extends('layouts.learning')
 
 @section('style')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 @endsection
 
 @section('content')
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-9">
@@ -93,25 +93,45 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
                     </div>
                 </button>
 
-                @foreach ($course->chapters as $chapter)
-                <button class="nav-link ps-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="Pause()">
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <i class="fa-solid fa-circle-play fa-1x"></i>
-                        </div>
-                        <div class="col-sm-7">
-                            <span>{{ $chapter->name }}</span>
-                        </div>
-                        <div class="col-sm-2 offset-sm-1">
-                            <span>1:21</span>
+                @foreach ($course->chapters as $chapter)            
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-heading{{ $loop->iteration }}">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{ $loop->iteration }}" aria-expanded="true" aria-controls="panelsStayOpen-collapse{{ $loop->iteration }}">
+                                {{ $chapter->name }}
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapse{{ $loop->iteration }}" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading{{ $loop->iteration }}">
+                            <div class="accordion-body">
+                                @foreach ($chapter->theories as $theory)
+                                <button class="nav-link ps-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="Pause()">
+                                    <div class="row">
+                                        <div class="col-sm-1">
+                                            <i class="fa-solid fa-circle-play fa-1x"></i>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>{{ $theory->name }}</span>
+                                        </div>
+                                        <div class="col-sm-2 offset-sm-1">
+                                            <span>1:21</span>
+                                        </div>
+                                    </div>
+                                </button>
+                                @endforeach
+                                
+                            </div>
                         </div>
                     </div>
-                </button>             
+                </div>
                 @endforeach
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 <script>
     var v = document.getElementById("video");
@@ -130,6 +150,4 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
     }
 </script>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="js/common.js"></script>
 @endsection

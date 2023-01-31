@@ -5,9 +5,10 @@ namespace Database\Seeders;
 use App\Models\Course;
 use App\Models\Category;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CourseCategorySeeder extends Seeder
 {
@@ -23,10 +24,12 @@ class CourseCategorySeeder extends Seeder
 
         $courseCategory = [
             [
+                'id' => Str::orderedUuid(),
                 'course_id' => $courses[0]->id,
                 'category_id' => $categories[0]->id,
             ],
             [
+                'id' => Str::orderedUuid(),
                 'course_id' => $courses[1]->id,
                 'category_id' => $categories[1]->id,
             ],

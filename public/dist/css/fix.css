@@ -1281,6 +1281,11 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
     bottom: 5px
 }
 
+ul.header_nav-list, ol.header_nav-list {
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
 .header_nav-list {
     font-size: 16px;
     line-height: 1;
