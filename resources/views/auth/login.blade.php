@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Baswara | Login</title>
-    <link rel="stylesheet" href="Mazer/css/main/app.css">
-    <link rel="stylesheet" href="Mazer/css/pages/auth.css">
-    <link rel="stylesheet" href="Mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="shortcut icon" href="Mazer/images/logo/favicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="Mazer/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="mazer/css/main/app.css">
+    <link rel="stylesheet" href="mazer/css/pages/auth.css">
+    <link rel="stylesheet" href="mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="shortcut icon" href="mazer/images/logo/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="mazer/images/logo/favicon.png" type="image/png">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="/"><img src="Mazer/images/logo/logo.svg" alt="Logo"></a>
+                        <a href="/"><img src="mazer/images/logo/logo.svg" alt="Logo"></a>
                     </div>
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
