@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo" srcset="" /></a>
+                    <a href="/"><img src="assets/images/logo/logo.svg" alt="Logo" srcset="" /></a>
                 </div>
                 <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -49,46 +49,22 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item has-sub {{ Request::is('admin/teams*')?'active':'' }}">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-title">Landing Page</li>
+
+                <li class="sidebar-item {{ Request::is('admin/teams*')?'active':'' }}">
+                    <a href="/admin/teams" class='sidebar-link'>
                         <i class="fas fa-users"></i>
                         <span>Team</span>
                     </a>
-                    <ul class="submenu {{ Request::is('admin/teams*')?'active':'' }}">
-                        <li class="submenu-item {{ Request::is('admin/teams/create')?'active':'' }}">
-                            <a href="/admin/teams/create">
-                                <i class="fas fa-plus"></i>
-                                <span>Add Team</span>
-                            </a>
-                        </li>
-                        <li class="submenu-item {{ Request::is('admin/teams')?'active':'' }}">
-                            <a href="/admin/teams">
-                                <i class="fas fa-list-ul"></i>
-                                <span>Team List</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
-                <li class="sidebar-item has-sub {{ Request::is('admin/courses*')?'active':'' }}">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-title">Learning</li>
+                
+                <li class="sidebar-item {{ Request::is('admin/courses*')?'active':'' }}">
+                    <a href="/admin/courses" class='sidebar-link'>
                         <i class="fas fa-chalkboard-teacher"></i>
                         <span>Courses</span>
                     </a>
-                    <ul class="submenu {{ Request::is('admin/courses*')?'active':'' }}">
-                        <li class="submenu-item {{ Request::is('admin/courses/create')?'active':'' }}">
-                            <a href="/admin/courses/create">
-                                <i class="fas fa-plus"></i>
-                                <span>Add Course</span>
-                            </a>
-                        </li>
-                        <li class="submenu-item {{ Request::is('admin/courses')?'active':'' }}">
-                            <a href="/admin/courses">
-                                <i class="fas fa-list-ul"></i>
-                                <span>Course List</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 
             </ul>

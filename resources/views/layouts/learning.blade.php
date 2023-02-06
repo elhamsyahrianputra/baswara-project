@@ -4,12 +4,12 @@
 <head>
     <!-- Header -->
     @yield('style')
-    @include('partials.header')
+    @include('partials.landingpage.header')
 </head>
 
 <body id="top-position">
     <!-- Navbar -->
-    @include('partials.navbar')
+    @include('partials.landingpage.navbar')
 
     <!-- Content-->
     @yield('content')

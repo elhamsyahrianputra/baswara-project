@@ -104,7 +104,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputImageURL">File input</label>
+                                    <label for="inputImageURL">File Image</label>
                                     <img class="img-preview mb-4">
                                     <div class="input-group">
                                         <input type="file" onchange="imagePreview()"

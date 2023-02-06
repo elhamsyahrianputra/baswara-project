@@ -17,23 +17,24 @@ class ChapterSeeder extends Seeder
      */
     public function run()
     {
-        $courses = Course::all(['id']);
+        $course1 = Course::where('name', 'Dasar Pemrograman Python')->first();
+        $course2 = Course::where('name', 'Belajar Dasar Bahasa Indonesia')->first();
 
         Chapter::create([
-            'course_id' => $courses[0]->id,
+            'course_id' => $course1->id,
             'name' => 'Perkenalan Bahasa Pemrograman',
         ]);
         Chapter::create([
-            'course_id' => $courses[0]->id,
+            'course_id' => $course1->id,
             'name' => 'Bahasa Pemrograman Python',
         ]);
         Chapter::create([
-            'course_id' => $courses[0]->id,
+            'course_id' => $course1->id,
             'name' => 'Dasar Pemrograma Python',
         ]);
         Chapter::create([
-            'course_id' => $courses[1]->id,
-            'name' => 'Mengeja',
+            'course_id' => $course2->id,
+            'name' => 'Perkenalan Bahasa Indonesia',
         ]);
     }
 }

@@ -6,7 +6,7 @@
     <link rel="stylesheet preload" as="style" href="dist/css/preload.min.css" />
     <link rel="stylesheet preload" as="style" href="dist/css/libs.min.css" />
     
-    <link rel="stylesheet" href="dist/css/fix.css">
+    <link rel="stylesheet" href="dist/css/landingpage.css">
     <link rel="stylesheet" href="dist/css/style.css">
     
     <script src="https://kit.fontawesome.com/fe578257ce.js" crossorigin="anonymous"></script>

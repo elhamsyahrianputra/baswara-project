@@ -17,11 +17,12 @@ class TeamController extends Controller
     public function index()
     {
 
-        $data = [
-            'teams' => Team::OrderBy('id', 'ASC')->get()
-        ];
+            $teams = Team::all();
 
-        return view('admin.team.index', $data);
+        return view('admin.team.index', [
+            'title' => 'Team | Dashboard',
+            'teams' => $teams,
+        ]);
     }
 
     /**
@@ -84,6 +85,7 @@ class TeamController extends Controller
         $team = Team::where('id', $id)->first();
 
         return view('admin.team.edit', [
+            'title' => 'Team | Dashboard',
             'team' => $team,
         ]);
     }

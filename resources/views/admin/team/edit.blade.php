@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputImageURL">File input</label>
+                                    <label for="inputImageURL">File Image</label>
                                     <img class="img-preview mb-4 img-bordered d-block" src="{{ asset('storage/' . $team->image_url) }}" style="max-height: 300px">
                                     <div class="input-group">
                                         <input type="file" onchange="imagePreview()"

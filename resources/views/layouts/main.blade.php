@@ -4,19 +4,19 @@
 <head>
     <!-- Header -->
     @yield('style')
-    @include('partials.header')
+    @include('partials.landingpage.header')
 </head>
 
 <body id="top-position">
     <!-- Navbar -->
-    @include('partials.navbar')
+    @include('partials.landingpage.navbar')
 
     <!-- Content-->
     @yield('content')
 
     <!-- Footer -->
     @yield('script')
-    @include('partials.footer')
+    @include('partials.landingpage.footer')
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="dist/js/common.min.js"></script>

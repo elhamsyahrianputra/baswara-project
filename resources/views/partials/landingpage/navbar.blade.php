@@ -66,27 +66,27 @@
                     <li class="header_nav-list_item">
                         <a class="nav-item" href="/dashboard" data-page="contacts">Dashboard</a>
                     </li>
-                    <li class="header_nav-list_item dropdown">
-                        <a class="nav-item dropdown-toggle d-inline-flex align-items-center"
-                            data-bs-toggle="collapse" data-bs-target="#coursesMenu" data-trigger="dropdown"
+                    <li class="header_nav-list_item dropdown_navbar">
+                        <a class="nav-item dropdown_navbar-toggle d-inline-flex align-items-center"
+                            data-bs-toggle="collapse" data-bs-target="#coursesMenu" data-trigger="dropdown_navbar"
                             aria-expanded="false" aria-controls="coursesMenu" data-page="courses">
                             <span class="avatar avatar-sm rounded-circle">
                                 <img alt="Image placeholder" src="{{ asset('dist/img/avatar_default.jpg') }}">
                             </span>
                             <i class="icon-angle-down icon"></i>
                         </a>
-                        <div class="dropdown-menu collapse" id="coursesMenu">
-                            <ul class="dropdown-list">
+                        <div class="dropdown_navbar-menu collapse" id="coursesMenu">
+                            <ul class="dropdown_navbar-list">
                                 <li class="list-item">
-                                    <a class="dropdown-item nav-item" data-page="course" href="#">
+                                    <a class="dropdown_navbar-item nav-item" data-page="course" href="#">
                                         <i class="fa-solid fa-user"></i>
-                                        <span class="profile-dropdown-item">Profil Saya</span>
+                                        <span class="profile-dropdown_navbar-item">Profil Saya</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a class="dropdown-item nav-item" data-page="course" href="#">
+                                    <a class="dropdown_navbar-item nav-item" data-page="course" href="#">
                                         <i class="fa-solid fa-gear"></i><span
-                                            class="profile-dropdown-item">Pengaturan</span>
+                                            class="profile-dropdown_navbar-item">Pengaturan</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
@@ -94,7 +94,7 @@
                                         @csrf
                                         <button type="submit">
                                             <i class="fa-solid fa-right-from-bracket text-red"></i>
-                                            <span class="profile-dropdown-item text-red">Log Out</span>
+                                            <span class="profile-dropdown_navbar-item text-red">Log Out</span>
                                         </button>
                                     </form>
                                 </li>

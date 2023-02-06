@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $course = \App\Models\Course::all();
         return view('learning.index', [
             'title' => 'Learning',
-            'course' => $course[1]
+            'course' => $course[0]
         ]);
     }
 }
