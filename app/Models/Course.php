@@ -12,7 +12,7 @@ class Course extends Model
     use HasFactory, HasUuids, SoftDeletes;
 
     protected $fillable = [
-        'user_id',
+        'author_id',
         'name',
         'description',
         'cover_url',
@@ -20,11 +20,11 @@ class Course extends Model
     ];
 
     public function categories() {
-        return $this->belongstoMany(Category::class, 'course_categories', 'course_id', 'category_id');
+        return $this->belongstoMany(Category::class, 'course_category', 'course_id', 'category_id');
     }
 
     public function students() {
-        return $this->belongsToMany(User::class, 'course_students');
+        return $this->belongsToMany(User::class, 'course_student');
     }
 
     public function author() {

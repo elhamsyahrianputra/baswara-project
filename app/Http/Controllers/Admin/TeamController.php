@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Team;
+use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -16,8 +17,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-
-            $teams = Team::all();
+        $teams = Team::all();
 
         return view('admin.team.index', [
             'title' => 'Team | Dashboard',
@@ -32,7 +32,9 @@ class TeamController extends Controller
      */
     public function create()
     {
-        return view('admin.team.create');
+        return view('admin.team.create', [
+            'title' => 'Teams | Dashboard'
+        ]);
     }
 
     /**
@@ -59,7 +61,7 @@ class TeamController extends Controller
 
         Team::create($validatedData);
 
-        return redirect('/admin/teams')->with('success', 'Data team has been added');
+        return redirect('/admin/teams')->with('success', 'Data team has been update');
     }
 
     /**
@@ -81,7 +83,6 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-
         $team = Team::where('id', $id)->first();
 
         return view('admin.team.edit', [
@@ -117,7 +118,7 @@ class TeamController extends Controller
 
         Team::where('id', $id)->update($validatedData);
 
-        return redirect('/admin/teams')->with('success', 'Data team has been added');
+        return redirect('/admin/teams')->with('success', 'Data team has been update');
     }
 
     /**
@@ -129,6 +130,6 @@ class TeamController extends Controller
     public function destroy(Team $team)
     {
         Team::destroy($team->id);
-		return redirect('/admin/teams')->with('success', 'Data Pegawai Berhasil Dihapus!');
+		return redirect('/admin/teams')->with('success', 'Data team has been deleted');
     }
 }

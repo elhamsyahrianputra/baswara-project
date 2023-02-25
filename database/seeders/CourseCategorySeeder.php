@@ -24,17 +24,19 @@ class CourseCategorySeeder extends Seeder
 
         $courseCategory = [
             [
-                'id' => Str::orderedUuid(),
                 'course_id' => $courses[0]->id,
                 'category_id' => $categories[0]->id,
             ],
             [
-                'id' => Str::orderedUuid(),
+                'course_id' => $courses[0]->id,
+                'category_id' => $categories[1]->id,
+            ],
+            [
                 'course_id' => $courses[1]->id,
                 'category_id' => $categories[1]->id,
             ],
         ];
 
-        DB::table('course_categories')->insert($courseCategory);
+        DB::table('course_category')->insert($courseCategory);
     }
 }

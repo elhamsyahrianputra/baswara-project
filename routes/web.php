@@ -2,13 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\AuthController;
+
+use App\Http\Controllers\Admin\{AdminController, CategoryController, CourseController, TeamController};
+
+use App\Http\Controllers\Dashboard\DashboardController;
+
+use App\Http\Controllers\LandingPage\LandingPageController;
+
+use App\Http\Controllers\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,22 +23,27 @@ use App\Http\Controllers\UserController;
 |
 */
 
+// * Auth
 Route::controller(AuthController::class)->group(function () {
     Route::get('/registration','registration');
     Route::post('/registration','store');
-    Route::get('/login','login');
+    Route::get('/login','login')->name('login');
     Route::post('/login','authenticate');
     Route::post('/logout','logout');
 });
 
-Route::controller(AdminController::class)->group(function () {
+// * Admin
+Route::controller(AdminController::class)->middleware('auth')->group(function () {
     Route::get('/admin', 'index');
 });
+
 Route::group(['prefix' => 'admin'], function () {
-    Route::resource('courses', CourseController::class);
-    Route::resource('teams', TeamController::class);
+    Route::resource('courses', CourseController::class)->middleware('auth');
+    Route::resource('teams', TeamController::class)->middleware('auth');
+    Route::resource('categories', CategoryController::class)->middleware('auth');
 });
 
+// * LandingPage
 Route::controller(LandingPageController::class)->group(function () {
     Route::get('/', 'home');
     Route::get('/course', 'course');
@@ -45,12 +52,13 @@ Route::controller(LandingPageController::class)->group(function () {
     Route::get('/team', 'team');
 });
 
+// * Dashboard
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/dashboard', 'index');
     Route::get('/learning', 'learning');
 });
 
-
+// * User
 Route::controller(UserController::class)->group(function () {
     Route::get('/payment', 'payment');
     Route::get('/pay_confirm', 'pay_confirm');

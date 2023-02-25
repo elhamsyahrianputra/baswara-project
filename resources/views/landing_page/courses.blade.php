@@ -17,10 +17,18 @@
             </ul>
             <ul class="list_courses d-md-flex flex-wrap">
                 @foreach ($courses as $course)
-                <li data-groups='["gamedev", "programming"]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
+                <li data-groups='[
+                    @foreach ($course->categories as $category)
+                        @if ($loop->last)
+                            "{{ $category->name }}"
+                        @else
+                            "{{ $category->name }}",
+                        @endif
+                    @endforeach  
+                    ]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
                     <div class="course-card_wrapper">
                         <div class="image"
-                            style="background-image: url(https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8cHl0aG9ufHx8fHx8MTY3MjY1MzY2Mw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">
+                            style="background-image: url({{ asset('storage/'.$course->cover_url) }});">
                         </div>
                         <div class="top d-flex align-items-start">
                             <div class="wrapper d-flex flex-column">

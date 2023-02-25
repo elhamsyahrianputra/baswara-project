@@ -12,7 +12,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>DataTable</h3>
+                    <h3>Course</h3>
                     <p class="text-subtitle text-muted">A sortable, searchable, paginated table without dependencies thanks to simple-datatables</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
@@ -27,8 +27,9 @@
         </div>
         <section class="section">
             <div class="card">
-                <div class="card-header">
-                    Simple Datatable
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Course</span>
+                    <a href="/admin/courses/create" class="btn btn-success"><i class="fas fa-plus me-1"></i>Add Course</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped"  id="table1">
@@ -36,6 +37,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Author</th>
                                 <th>Description</th>
                                 <th>Price</th>
                                 <th>Action</th>
@@ -46,10 +48,11 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $course->name}}</td>
+                                <td>{{ $course->author->name}}</td>
                                 <td>{{ $course->description }}</td>
                                 <td>Rp{{ number_format($course->price, 0, ",", ".") }}</td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm" href="/admin/courses/{{ $course->id }}/edit">
+                                    <a class="btn btn-info btn-sm mt-1" href="/admin/courses/{{ $course->id }}/edit">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
@@ -57,13 +60,12 @@
                                     <form action="/admin/courses/{{ $course->id }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger btn-sm delete">
+                                        <button class="btn btn-danger mt-1 btn-sm delete">
                                             <i class="fas fa-trash">
                                             </i>
                                             Delete
                                         </button>
                                     </form>
-        
                                 </td>
                             </tr>
                             @endforeach

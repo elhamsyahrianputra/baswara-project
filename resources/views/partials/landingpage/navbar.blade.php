@@ -71,7 +71,7 @@
                             data-bs-toggle="collapse" data-bs-target="#coursesMenu" data-trigger="dropdown_navbar"
                             aria-expanded="false" aria-controls="coursesMenu" data-page="courses">
                             <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="{{ asset('dist/img/avatar_default.jpg') }}">
+                                <img alt="Image placeholder" src="{{ asset('storage/'.auth()->user()->avatar_url) }}">
                             </span>
                             <i class="icon-angle-down icon"></i>
                         </a>

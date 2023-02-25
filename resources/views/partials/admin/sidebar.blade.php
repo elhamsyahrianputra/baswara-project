@@ -44,7 +44,7 @@
 
                 <li class="sidebar-item {{ Request::is('admin')?'active':'' }}">
                     <a href="/admin" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="fas fa-chart-bar"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
@@ -63,7 +63,19 @@
                 <li class="sidebar-item {{ Request::is('admin/courses*')?'active':'' }}">
                     <a href="/admin/courses" class='sidebar-link'>
                         <i class="fas fa-chalkboard-teacher"></i>
-                        <span>Courses</span>
+                        <span>Course</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ Request::is('admin/categories*')?'active':'' }}">
+                    <a href="/admin/categories" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Category</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ Request::is('admin/students*')?'active':'' }}">
+                    <a href="/admin/students" class='sidebar-link'>
+                        <i class="far fa-file-alt"></i>
+                        <span>Student Enrollment</span>
                     </a>
                 </li>
                 

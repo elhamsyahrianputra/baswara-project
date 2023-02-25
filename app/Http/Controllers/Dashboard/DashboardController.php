@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Models\CourseStudents;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {

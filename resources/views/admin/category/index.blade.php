@@ -12,7 +12,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>DataTable</h3>
+                    <h3>Category</h3>
                     <p class="text-subtitle text-muted">A sortable, searchable, paginated table without dependencies thanks to simple-datatables</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
@@ -27,8 +27,9 @@
         </div>
         <section class="section">
             <div class="card">
-                <div class="card-header">
-                    Simple Datatable
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Category</span>
+                    <a href="/admin/categories/create" class="btn btn-success"><i class="fas fa-plus me-1"></i>Add Category</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped"  id="table1">
@@ -36,23 +37,23 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Division</th>
+                                <th>Description</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($teams as $team)
+                            @foreach ($categories as $category)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $team->name }}</td>
-                                <td>{{ $team->division }}</td>
+                                <td>{{ $category->name }}</td>
+                                <td>{{ $category->description }}</td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm" href="/admin/teams/{{ $team->id }}/edit">
+                                    <a class="btn btn-info btn-sm" href="/admin/categories/{{ $category->id }}/edit">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
                                     </a>
-                                    <form action="/admin/teams/{{ $team->id }}" method="post" class="d-inline">
+                                    <form action="/admin/categories/{{ $category->id }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger btn-sm delete">

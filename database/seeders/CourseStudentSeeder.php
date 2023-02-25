@@ -24,22 +24,19 @@ class CourseStudentSeeder extends Seeder
 
         $courseStudents = [
             [
-                'id' => Str::orderedUuid(),
                 'course_id' => $courses[0]->id,
                 'student_id' => $students[0]->id,
             ],
             [
-                'id' => Str::orderedUuid(),
                 'course_id' => $courses[0]->id,
                 'student_id' => $students[1]->id,
             ],
             [
-                'id' => Str::orderedUuid(),
                 'course_id' => $courses[1]->id,
                 'student_id' => $students[1]->id,
             ],
         ];
 
-        DB::table('course_students')->insert($courseStudents);
+        DB::table('course_student')->insert($courseStudents);
     }
 }

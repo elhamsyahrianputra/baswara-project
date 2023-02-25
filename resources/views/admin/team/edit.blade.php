@@ -97,13 +97,6 @@
                                         </label>
                                     </div>
                                 </div>
-
-                                @error('image_url')
-                                    <div class="">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-
                                 <input type="hidden" value="{{ $team->image_url }}" name="old_image">
 
                                 {{-- <div class="form-check">

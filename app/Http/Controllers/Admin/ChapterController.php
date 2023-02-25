@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Course;
 
-class CourseController extends Controller
+class ChapterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $data = Course::all();
-
-        return view('admin.course.index', [
-            'title' => 'Course | Dashboard',
-            'courses' => $data,
-        ]);
+        //
     }
 
     /**
@@ -29,9 +24,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('admin.course.create', [
-            'title' => 'Course | Dashboard',
-        ]);
+        //
     }
 
     /**

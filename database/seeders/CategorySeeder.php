@@ -18,19 +18,19 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Programming',
+            'name' => 'programming',
             'description' => 'Merupakan pembelajaran yang berfokus mengulas beberapa bahasa Pemrograman'
         ]);
         Category::create([
-            'name' => 'Language',
+            'name' => 'language',
             'description' => 'Mempelajari dasar-dasar bahasa asing'
         ]);
         Category::create([
-            'name' => 'Art',
+            'name' => 'art',
             'description' => 'Pembelajaran yang mengajarkan difinisi-definisi seni'
         ]);
         Category::create([
-            'name' => 'Bisnis',
+            'name' => 'bisnis',
             'description' => 'Mempelajari bagaimana melihat peluang serta celah dalam berbisnis'
         ]);
     }

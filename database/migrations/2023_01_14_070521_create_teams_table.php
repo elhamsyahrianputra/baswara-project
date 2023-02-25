@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('division');
-            $table->text('about_me');
+            $table->text('biography');
             $table->string('instagram_url');
             $table->string('facebook_url');
             $table->string('linkedin_url');
