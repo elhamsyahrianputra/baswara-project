@@ -28,3 +28,49 @@
 .rounded-circle {
     border-radius: 50% !important;
 }
+
+.btn--gradient {
+    background: -o-linear-gradient(338.59deg, #e2be20 24.85%, #ff8b67 95.39%);
+    background: linear-gradient(111.41deg, #e2be20 24.85%, #ff8b67 95.39%);
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-box-shadow: 0 2px 4px rgba(43,53,67,0);
+    box-shadow: 0 2px 4px rgba(43,53,67,0)
+}
+
+.btn--gradient .text {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    line-height: 1;
+}
+
+.btn--gradient:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: -o-linear-gradient(338.59deg, #ff8b67 24.85%, #e2be20 95.39%);
+    background: linear-gradient(111.41deg, #ff8b67 24.85%, #e2be20 95.39%);
+    -webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    z-index: 1
+}
+
+.btn--gradient:focus:after,.btn--gradient:hover:after {
+    opacity: 1
+}
+
+.bg--gradient {
+    background: -o-linear-gradient(338.59deg, #e2be20 24.85%, #ff8b67 95.39%);
+    background: linear-gradient(111.41deg, #e2be20 24.85%, #ff8b67 95.39%);
+}
