@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthController;
 
-use App\Http\Controllers\Admin\{AdminController, CategoryController, CourseController, TeamController};
+use App\Http\Controllers\Admin\{AdminController, CategoryController, CourseController, ChapterController, TeamController};
 
 use App\Http\Controllers\Dashboard\DashboardController;
 
@@ -38,8 +38,9 @@ Route::controller(AdminController::class)->middleware('auth')->group(function ()
 });
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::resource('courses', CourseController::class)->middleware('auth');
     Route::resource('teams', TeamController::class)->middleware('auth');
+    Route::resource('courses', CourseController::class)->middleware('auth');
+    Route::resource('chapters', ChapterController::class)->middleware('auth');
     Route::resource('categories', CategoryController::class)->middleware('auth');
 });
 
