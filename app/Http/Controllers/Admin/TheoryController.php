@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Chapter;
+use App\Models\Theory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ChapterController extends Controller
+class TheoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,7 @@ class ChapterController extends Controller
      */
     public function index()
     {
-        $chapters = Chapter::all();
-
-        return view('admin.chapter.index', [
-            'title' => 'Chapter | Dashboard',
-            'chapters' => $chapters,
-        ]);
+        //
     }
 
     /**
@@ -30,11 +25,9 @@ class ChapterController extends Controller
      */
     public function create(Request $request)
     {
-        $course_id = $request['course_id'];
-
-        return view('admin.chapter.create', [
-            'title' => 'Chapter | Dashboard',
-            'course_id' => $course_id
+        return view('admin.theory.create', [
+            'title' => 'Theory | Dashboard',
+            'chapter_id' => $request['chapter_id']
         ]);
     }
 
@@ -46,7 +39,7 @@ class ChapterController extends Controller
      */
     public function store(Request $request)
     {
-        return dd($request['course_id']);
+        dd($request['chapter_id']);
     }
 
     /**
@@ -68,10 +61,10 @@ class ChapterController extends Controller
      */
     public function edit($id)
     {
-        $chapter = Chapter::find($id);
-        return view('admin.chapter.edit', [
-            'title' => 'Chapter | Dashboard',
-            'chapter' => $chapter,
+        $theory = Theory::find($id);
+        return view('admin.theory.edit', [
+            'title' => 'Theory | Dashboard',
+            'theory' => $theory,
         ]);
     }
 
