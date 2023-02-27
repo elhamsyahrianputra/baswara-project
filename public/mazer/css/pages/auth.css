@@ -7,23 +7,23 @@ body {
 }
 #auth #auth-right {
     background: url(../../../mazer/images/4853433.png?45649b87e0b3f50bfa1372c6cdb4595f),
-        linear-gradient(90deg, #2d499d, #3f5491);
+        linear-gradient(111.41deg, #ff8b67 24.85%, #e2be20 95.39%);
     height: 100%;
 }
 #auth #auth-left {
-    padding: 5rem 8rem;
+    padding: 2.5rem 4rem;
 }
 #auth #auth-left .auth-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 #auth #auth-left .auth-subtitle {
     color: #a8aebb;
-    font-size: 1.7rem;
-    line-height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
 }
 #auth #auth-left .auth-logo {
-    margin-bottom: 7rem;
+    margin-bottom: 2.5rem;
 }
 #auth #auth-left .auth-logo img {
     height: 2rem;
@@ -40,5 +40,5 @@ body {
 }
 body.theme-dark #auth-right {
     background: url(../../../mazer/images/4853433.png?45649b87e0b3f50bfa1372c6cdb4595f),
-        linear-gradient(90deg, #2d499d, #3f5491);
+        linear-gradient(111.41deg, #ff8b67 24.85%, #e2be20 95.39%);
 }

@@ -8,6 +8,8 @@
     <title>Baswara | Login</title>
     <link rel="stylesheet" href="mazer/css/main/app.css">
     <link rel="stylesheet" href="mazer/css/pages/auth.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+
     <link rel="stylesheet" href="mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="shortcut icon" href="mazer/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="mazer/images/logo/favicon.png" type="image/png">
@@ -19,10 +21,10 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="/"><img src="mazer/images/logo/logo.svg" alt="Logo"></a>
+                        <a href="/"><img src="{{ asset('dist/img/logo/full_logo.png') }}" alt="Baswara Logo" style="height: 100px"></a>
                     </div>
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                    <p class="auth-subtitle mb-3">Log in with your data that you entered during registration.</p>
 
                     <form action="/login" method="post">
                         @csrf
@@ -44,9 +46,11 @@
                                 Keep me logged in
                             </label>
                         </div>
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
+                        <button class="btn btn--gradient btn-block btn-lg shadow-lg mt-5">
+                            <span class="text">Log in</span>
+                        </button>
                     </form>
-                    <div class="text-center mt-5 text-lg fs-4">
+                    <div class="text-center mt-3 text-lg fs-6">
                         <p class="text-gray-600">Don't have an account? <a href="/registration"
                                 class="font-bold">Sign
                                 up</a>.</p>
