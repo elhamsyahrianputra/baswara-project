@@ -27,4 +27,8 @@ class UserController extends Controller
             'data' => $data
         ]);
     }
+
+    public function myProfile(Request $request){
+        
+    }
 }

@@ -9,12 +9,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
         <script src="https://www.youtube.com/player_api"></script>
-        <link rel="stylesheet preload" as="style" href="css/preload.css" />
-        <link rel="stylesheet preload" as="style" href="css/libs.css" />
+        <link rel="stylesheet preload" as="style" href="/dist/css/preload.css" />
+        <link rel="stylesheet preload" as="style" href="/dist/css/libs.css" />
         <!-- <link rel="stylesheet" href="css/course.css" /> -->
-        <link rel="stylesheet" href="css/contacts.css"/>
-        <link rel="stylesheet" href="css/courses.css"/>
-        <link rel="stylesheet" href="css/landingpage.css" />
+        {{-- <link rel="stylesheet" href="/dist/css/contacts.css"/> --}}
+        {{-- <link rel="stylesheet" href="/dist/css/courses.css"/> --}}
+        <link rel="stylesheet" href="/dist/css/landingpage.css" />
     </head>
     <body>
         <div class="promobar d-flex align-items-center">
@@ -49,7 +49,7 @@
                 <div class="logo header_logo">
                     <a class="d-inline-flex align-items-center" href="index.php">
                         <span class="logo_picture">
-                            <img src="img/logo.png" alt="Baswara" />
+                            <img src="dist/img/logo.png" alt="Baswara" />
                         </span>
                         <span class="text">
                             <span class="brand">Baswara</span>

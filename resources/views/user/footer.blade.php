@@ -113,7 +113,7 @@
                         <div class="logo logo--footer">
                             <a class="d-inline-flex align-items-center" href="index.html">
                                 <span class="logo_picture">
-                                    <img src="img/logo.png" alt="Baswara" />
+                                    <img src="/dist/img/logo.png" alt="Baswara" />
                                 </span>
                                 <span class="text">
                                     <span class="brand">Baswara</span>
@@ -198,48 +198,48 @@
                             <li class="footer_block-instagram_item">
                                 <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                     <picture>
-                                        <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                        <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                        <source data-srcset="/dist/img/placeholder.jpg" srcset="/dist/img/placeholder.jpg" />
+                                        <img class="lazy" data-src="/dist/img/placeholder.jpg" src="/dist/img/placeholder.jpg" alt="media" />
                                     </picture>
                                 </a>
                             </li>
                             <li class="footer_block-instagram_item">
                                 <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                     <picture>
-                                        <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                        <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                        <source data-srcset="/dist/img/placeholder.jpg" srcset="/dist/img/placeholder.jpg" />
+                                        <img class="lazy" data-src="/dist/img/placeholder.jpg" src="/dist/img/placeholder.jpg" alt="media" />
                                     </picture>
                                 </a>
                             </li>
                             <li class="footer_block-instagram_item">
                                 <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                     <picture>
-                                        <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                        <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                        <source data-srcset="/dist/img/placeholder.jpg" srcset="/dist/img/placeholder.jpg" />
+                                        <img class="lazy" data-src="/dist/img/placeholder.jpg" src="/dist/img/placeholder.jpg" alt="media" />
                                     </picture>
                                 </a>
                             </li>
                             <li class="footer_block-instagram_item">
                                 <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                     <picture>
-                                        <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                        <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                        <source data-srcset="/dist/img/placeholder.jpg" srcset="/dist/img/placeholder.jpg" />
+                                        <img class="lazy" data-src="/dist/img/placeholder.jpg" src="/dist/img/placeholder.jpg" alt="media" />
                                     </picture>
                                 </a>
                             </li>
                             <li class="footer_block-instagram_item">
                                 <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                     <picture>
-                                        <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                        <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                        <source data-srcset="/dist/img/placeholder.jpg" srcset="/dist/img/placeholder.jpg" />
+                                        <img class="lazy" data-src="/dist/img/placeholder.jpg" src="/dist/img/placeholder.jpg" alt="media" />
                                     </picture>
                                 </a>
                             </li>
                             <li class="footer_block-instagram_item">
                                 <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                     <picture>
-                                        <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                        <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                        <source data-srcset="/dist/img/placeholder.jpg" srcset="/dist/img/placeholder.jpg" />
+                                        <img class="lazy" data-src="/dist/img/placeholder.jpg" src="/dist/img/placeholder.jpg" alt="media" />
                                     </picture>
                                 </a>
                             </li>
@@ -258,9 +258,9 @@
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <script src="js/common.js"></script>
-        <script src="js/reviews.min.js"></script>
-        <script src="js/courses.min.js"></script>
+        <script src="/dist/js/common.js"></script>
+        <script src="/dist/js/reviews.min.js"></script>
+        <script src="/dist/js/courses.min.js"></script>
     </body>
 </html>
 
