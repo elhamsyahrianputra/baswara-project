@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('course_id')->constrained('courses')->cascadeOnUpdate();
             $table->string('name');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });

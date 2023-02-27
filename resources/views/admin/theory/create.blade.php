@@ -12,14 +12,16 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Add Course</h3>
+                    <h3>Add Theory</h3>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
                             <li class="breadcrumb-item"><a href="/admin/courses">Course</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Add</li>
+                            <li class="breadcrumb-item">C<a href="/admin/chapters/">Chapter</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Theory</li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit</li>
                         </ol>
                     </nav>
                 </div>
@@ -35,30 +37,26 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Data Course</h3>
+                            <h3 class="card-title">Data Theory</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/admin/courses" method="post" enctype="multipart/form-data">
+                        <form action="/admin/theories?chapter_id={{ $chapter_id }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="inputName">Course Name</label>
+                                    <label for="inputName">Theory Name</label>
                                     <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        id="inputName" placeholder="Course Name" name="name" value="{{ old('name') }}"
+                                        id="inputName" placeholder="Theory Name" name="name" value="{{ old('name') }}"
                                         autocomplete="off" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputAuthorID">Author</label>
-                                    <select class="choices form-select" name="author_id">
-                                        <option value="">Choose a author ....</option>
-                                        @foreach ($authors as $author)
-                                        <option value="{{ $author->id }}" {{ old('author_id') == $author->id ? 'selected' : '' }}>
-                                            {{ $author->name }} | {{ $author->email }}
-                                        </option>
-                                        @endforeach
-                                    </select>
+                                    <label for="inputName">Speaker Name</label>
+                                    <input type="text" class="form-control @error('spekaer') is-invalid @enderror"
+                                        id="inputSpekaer" placeholder="Spekaer" name="spekaer" value="{{ old('speaker') }}"
+                                        autocomplete="off" />
                                 </div>
+
 
                                 <div class="form-group">
                                     <label for="inputDescription">Description</label>
@@ -68,49 +66,19 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputAuthorID">Category</label>
-                                    <select class="choices form-select multiple-remove" multiple="multiple" name="categories[]">
-                                        <option value="">Choose category for course ....</option>
-                                        @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
-                                  </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="inputPrice">Price</label>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">
-                                                    Rp
-                                                </span>
-                                                <input type="number" id="inputPrice"
-                                                    class="form-control @error('price') is-invalid @enderror"
-                                                    placeholder="Enter price of course ...." name="price"
-                                                    value="{{ old('price') }}" autocomplete="off" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputCoverURL">Course Cover</label>
-                                    <img class="img-preview mb-4">
+                                    <label for="inputCoverURL">Video</label>
+                                    {{-- <img class="img-preview mb-4 img-bordered d-block" src="{{ asset('storage/' . $te->cover_url) }}" style="max-height: 300px"> --}}
                                     <div class="input-group">
                                         <input type="file" onchange="imagePreview()"
-                                            class="form-control @error('cover_url') is-invalid @enderror"
-                                            id="inputCoverURL" name="cover_url">
-                                        <label class="input-group-text" for="inputCoverURL">
+                                            class="form-control @error('video_url') is-invalid @enderror"
+                                            id="inputVideoURL" name="video_url">
+                                        <label class="input-group-text" for="inputVideoURL">
                                             Browse
                                         </label>
                                     </div>
                                 </div>
 
-                                {{-- <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div> --}}
+                                {{-- <input type="hidden" value="{{ $course->video_url }}" name="old_image"> --}}
                             </div>
                             <!-- /.card-body -->
 
