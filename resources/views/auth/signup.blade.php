@@ -24,7 +24,7 @@
                         <a href="/"><img src="{{ asset('dist/img/logo/full_logo.png') }}" alt="Baswara Logo" style="height: 100px"></a>
                     </div>
                     <h1 class="auth-title">Sign Up</h1>
-                    <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
+                    <p class="auth-subtitle mb-3">Input your data to register to our website.</p>
 
                     <form action="/registration" method="post">
                         @csrf
@@ -52,11 +52,11 @@
                                 <i class="fas fa-key"></i>
                             </div>
                         </div>
-                        <button class="btn btn--gradient btn-block btn-lg shadow-lg mt-5">
+                        <button class="btn btn--gradient btn-block btn-lg shadow-lg mt-3">
                             <span class="text">Sign Up</span>
                         </button>
                     </form>
-                    <div class="text-center mt-5 text-lg fs-4">
+                    <div class="text-center mt-3 text-lg fs-6">
                         <p class='text-gray-600'>Already have an account? <a href="/login"
                                 class="font-bold">Log
                                 in</a>.</p>

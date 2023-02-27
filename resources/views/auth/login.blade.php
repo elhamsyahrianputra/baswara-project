@@ -24,7 +24,7 @@
                         <a href="/"><img src="{{ asset('dist/img/logo/full_logo.png') }}" alt="Baswara Logo" style="height: 100px"></a>
                     </div>
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                    <p class="auth-subtitle mb-3">Log in with your data that you entered during registration.</p>
 
                     <form action="/login" method="post">
                         @csrf
@@ -50,7 +50,7 @@
                             <span class="text">Log in</span>
                         </button>
                     </form>
-                    <div class="text-center mt-5 text-lg fs-4">
+                    <div class="text-center mt-3 text-lg fs-6">
                         <p class="text-gray-600">Don't have an account? <a href="/registration"
                                 class="font-bold">Sign
                                 up</a>.</p>

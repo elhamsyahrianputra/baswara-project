@@ -11,19 +11,19 @@ body {
     height: 100%;
 }
 #auth #auth-left {
-    padding: 5rem 8rem;
+    padding: 2.5rem 4rem;
 }
 #auth #auth-left .auth-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 #auth #auth-left .auth-subtitle {
     color: #a8aebb;
-    font-size: 1.7rem;
-    line-height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
 }
 #auth #auth-left .auth-logo {
-    margin-bottom: 7rem;
+    margin-bottom: 2.5rem;
 }
 #auth #auth-left .auth-logo img {
     height: 2rem;
