@@ -78,7 +78,7 @@
                         <div class="dropdown_navbar-menu collapse" id="coursesMenu">
                             <ul class="dropdown_navbar-list">
                                 <li class="list-item">
-                                    <a class="dropdown_navbar-item nav-item" data-page="course" href="#">
+                                    <a class="dropdown_navbar-item nav-item" data-page="course" href="/myProfile">
                                         <i class="fa-solid fa-user"></i>
                                         <span class="profile-dropdown_navbar-item">Profil Saya</span>
                                     </a>

@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\{AdminController, CategoryController, CourseContr
 use App\Http\Controllers\Dashboard\DashboardController;
 
 use App\Http\Controllers\LandingPage\LandingPageController;
-
+use App\Http\Controllers\MyProfileController;
 use App\Http\Controllers\User\UserController;
 
 /*
@@ -66,6 +66,8 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/pay_confirm', 'pay_confirm');
     Route::post('/kelola', 'kelola');
 });
+
+Route::resource('/myProfile',MyProfileController::class);
 
 
 
