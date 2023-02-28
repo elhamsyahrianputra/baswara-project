@@ -96,7 +96,7 @@
                                 <div class="row mt-2">
                                     <div class="col d-flex justify-content-end">
                                         <a class="btn btn-outline-warning"
-                                            href="/profile/{{auth()->user()->id}}/edit">
+                                            href="/myProfile/{{auth()->user()->id}}/edit">
                                             <i class="bi bi-pencil-square"></i>
                                             <span>Edit</span>
                                         </a>
