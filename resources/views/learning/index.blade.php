@@ -12,31 +12,17 @@
             <div class="row bg-dark ms-2">
                 <div class="col-md-10 d-block mx-auto">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab" tabindex="0">
-                            <section class="main-video">
-                                <video src="https://drive.google.com/uc?export=preview&id=1yrVLz1j4sPFqN37CbSKlL6WaV38vEGC2" class="img-fluid" id="video" controls></video>
-                            </section>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab" tabindex="0">
-                            <section class="main-video">
-                                <video src="https://drive.google.com/uc?export=preview&id=1yrVLz1j4sPFqN37CbSKlL6WaV38vEGC2" class="img-fluid" id="video1" controls></video>
-                            </section>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab" tabindex="0">
-                            <section class="main-video">
-                                <video src="https://drive.google.com/uc?export=preview&id=1yrVLz1j4sPFqN37CbSKlL6WaV38vEGC2" class="img-fluid" id="video2" controls></video>
-                            </section>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab" tabindex="0">
-                            <section class="main-video">
-                                <video src="https://drive.google.com/uc?export=preview&id=1yrVLz1j4sPFqN37CbSKlL6WaV38vEGC" class="img-fluid" id="video3" controls></video>
-                            </section>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab" tabindex="0">
-                            <section class="main-video">
-                                <video src="https://drive.google.com/uc?export=preview&id=1yrVLz1j4sPFqN37CbSKlL6WaV38vEGC2" class="img-fluid" id="video4" controls></video>
-                            </section>
-                        </div>
+                        @foreach ($course->chapters as $chapter)
+                            @foreach ($chapter->theories as $theory)
+                            <div class="tab-pane fade {{ $loop->parent->iteration == 1 && $loop->iteration == 1 ? "active show" : "" }}" id="theory-{{ $theory->id }}" role="tabpanel" aria-labelledby="theory-tab-{{ $theory->id }}" tabindex="0">
+                                <section class="main-video">
+                                    <video class="img-fluid" id="video-theory" controls>
+                                        <source src="{{ asset('storage/'.$theory->video_url) }}">
+                                    </video>
+                                </section>
+                            </div>
+                            @endforeach
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -80,31 +66,33 @@
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                 @foreach ($course->chapters as $chapter)            
-                <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion" id="accordionPanelsStayOpen">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-heading{{ $loop->iteration }}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{ $loop->iteration }}" aria-expanded="true" aria-controls="panelsStayOpen-collapse{{ $loop->iteration }}">
+                        <h2 class="accordion-header" id="chapter{{ $loop->iteration }}-heading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter{{ $loop->iteration }}" aria-expanded="true" aria-controls="chapter{{ $loop->iteration }}">
                                 <i class="fa-solid fa-bars-progress fa-1x me-3"></i>{{ $chapter->name }}
                             </button>
                         </h2>
-                        <div id="panelsStayOpen-collapse{{ $loop->iteration }}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading{{ $loop->iteration }}">
+                        <div id="chapter{{ $loop->iteration }}" class="accordion-collapse collapse" aria-labelledby="chapter{{ $loop->iteration }}-heading">
                             <div class="accordion-body">
-                                @foreach ($chapter->theories as $theory)
-                                <button class="nav-link ps-4" id="v-pills-{{ $loop->iteration }}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{ $loop->iteration }}" type="button" role="tab" aria-controls="v-pills-{{ $loop->iteration }}" aria-selected="false" onclick="Pause()">
-                                    <div class="row">
-                                        <div class="col-sm-1">
-                                            <i class="fa-solid fa-circle-play fa-1x"></i>
+                                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    
+                                    @foreach ($chapter->theories as $theory)
+                                    <button class="nav-link ps-4 {{ $loop->parent->iteration == 1 && $loop->iteration == 1 ? "active" : "" }}" id="theory-tab-{{ $theory->id }}" data-bs-toggle="pill" data-bs-target="#theory-{{ $theory->id }}" type="button" role="tab" aria-controls="theory-{{ $theory->id }}" aria-selected="false" onclick="Pause()">
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <i class="fa-solid fa-circle-play fa-1x"></i>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>{{ $theory->name }}</span>
+                                            </div>
+                                            <div class="col-sm-2 offset-sm-1">
+                                                <span>1:21</span>
+                                            </div>
                                         </div>
-                                        <div class="col-sm-7">
-                                            <span>{{ $theory->name }}</span>
-                                        </div>
-                                        <div class="col-sm-2 offset-sm-1">
-                                            <span>1:21</span>
-                                        </div>
-                                    </div>
-                                </button>
-                                @endforeach
-                                
+                                    </button>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,18 +108,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 <script>
-    var v = document.getElementById("video");
-    var v1 = document.getElementById("video1");
-    var v2 = document.getElementById("video2");
-    var v3 = document.getElementById("video3");
-    var v4 = document.getElementById("video4");
-
     function Pause() {
-        v.pause();
-        v1.pause();
-        v2.pause();
-        v3.pause();
-        v4.pause();
+        var v = document.querySelectorAll("#video-theory");
+        v.forEach(element => {
+            element.pause();
+        });
 
     }
 </script>

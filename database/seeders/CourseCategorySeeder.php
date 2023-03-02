@@ -37,6 +37,6 @@ class CourseCategorySeeder extends Seeder
             ],
         ];
 
-        DB::table('course_category')->insert($courseCategory);
+        DB::table('course_categories')->insert($courseCategory);
     }
 }

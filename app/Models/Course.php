@@ -20,11 +20,11 @@ class Course extends Model
     ];
 
     public function categories() {
-        return $this->belongstoMany(Category::class, 'course_category', 'course_id', 'category_id');
+        return $this->belongstoMany(Category::class, 'course_categories', 'course_id', 'category_id');
     }
 
     public function students() {
-        return $this->belongsToMany(User::class, 'course_student');
+        return $this->belongsToMany(User::class, 'course_students', 'course_id', 'student_id');
     }
 
     public function author() {

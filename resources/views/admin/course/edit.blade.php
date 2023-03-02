@@ -131,7 +131,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="chapters">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <span>Chapter</span>

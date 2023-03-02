@@ -53,8 +53,13 @@
                                 <div class="form-group">
                                     <label for="inputName">Speaker Name</label>
                                     <input type="text" class="form-control @error('spekaer') is-invalid @enderror"
-                                        id="inputSpekaer" placeholder="Spekaer" name="spekaer" value="{{ old('speaker') }}"
+                                        id="inputSpekaer" placeholder="Spekaer" name="speaker" value="{{ old('speaker') }}"
                                         autocomplete="off" />
+                                        @error('speaker')    
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                 </div>
 
 
@@ -63,10 +68,15 @@
                                     <textarea class="form-control @error('description') is-invalid @enderror"
                                         id="inputDescription" rows="3" placeholder="Enter your description" name="description"
                                         autocomplete="off">{{ old('description') }}</textarea>
+                                        @error('description')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputCoverURL">Video</label>
+                                    <label for="inputCoverURL">Videojbj</label>
                                     {{-- <img class="img-preview mb-4 img-bordered d-block" src="{{ asset('storage/' . $te->cover_url) }}" style="max-height: 300px"> --}}
                                     <div class="input-group">
                                         <input type="file" onchange="imagePreview()"
@@ -76,6 +86,11 @@
                                             Browse
                                         </label>
                                     </div>
+                                    @error('video_url')    
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
 
                                 {{-- <input type="hidden" value="{{ $course->video_url }}" name="old_image"> --}}

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('course_student', function (Blueprint $table) {
+        Schema::create('course_students', function (Blueprint $table) {
             $table->foreignUuid('course_id')->constrained('courses')->cascadeOnUpdate();
             $table->foreignUuid('student_id')->constrained('users')->cascadeOnUpdate();
             $table->timestamps();

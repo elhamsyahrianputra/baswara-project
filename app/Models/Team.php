@@ -15,7 +15,7 @@ class Team extends Model
     protected $fillable = [
         'name',
         'division',
-        'about_me',
+        'biography',
         'instagram_url',
         'facebook_url',
         'linkedin_url',

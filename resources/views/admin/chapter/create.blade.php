@@ -40,7 +40,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="/admin/chapters?course_id={{ $course_id }}" method="post" enctype="multipart/form-data">
+                        <form action="/admin/chapters?course_id={{ $course_id }}" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
