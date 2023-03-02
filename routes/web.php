@@ -27,8 +27,8 @@ use App\Http\Controllers\User\UserController;
 Route::controller(AuthController::class)->group(function () {
     Route::get('/registration','registration');
     Route::post('/registration','store');
-    Route::get('/login','login')->name('login');
-    Route::post('/login','authenticate');
+    Route::get('/login','login')->name('login')->middleware('guest');
+    Route::post('/login','authenticate')->middleware('guest');
     Route::post('/logout','logout');
 });
 
@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin'], function () {
 // * LandingPage
 Route::controller(LandingPageController::class)->group(function () {
     Route::get('/', 'home');
+    Route::get('/home', 'home');
     Route::get('/course', 'coursedefault');
     Route::get('/course/{id}', 'course');
     Route::get('/courses', 'courses');
