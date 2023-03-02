@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\LandingPage;
 
 use Illuminate\Http\Request;
+use App\Models\Collaboration;
 use App\Http\Controllers\Controller;
 
 class LandingPageController extends Controller
@@ -11,6 +12,7 @@ class LandingPageController extends Controller
     {
         return view('landing_page.home', [
             'title' => "Home | Baswara",
+            'collaborations' => Collaboration::all()
         ]);
     }
 

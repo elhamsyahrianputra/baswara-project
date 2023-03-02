@@ -392,7 +392,7 @@ main>.underlay:after {
     background: #2b3543
 }
 
-.card {
+.card-benefit {
     position: relative;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
@@ -410,7 +410,7 @@ main>.underlay:after {
     transition: .4s ease-in-out
 }
 
-.card .content {
+.card-benefit .content {
     position: relative;
     z-index: 2;
     display: -webkit-box;
@@ -425,7 +425,7 @@ main>.underlay:after {
     align-items: center
 }
 
-.card:after {
+.card-benefit:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -500,21 +500,21 @@ main>.underlay:after {
     max-width: 285px
 }
 
-.card:hover {
+.card-benefit:hover {
     color: #fff;
     -webkit-box-shadow: 0 2px 14px rgba(112,115,255,.75);
     box-shadow: 0 2px 14px rgba(112,115,255,.75)
 }
 
-.card:hover .card_media:after,.card:hover:after {
+.card-benefit:hover .card_media:after,.card-benefit:hover:after {
     opacity: 1
 }
 
-.card:hover .card_media .icon {
+.card-benefit:hover .card_media .icon {
     color: #fd7e14;
 }
 
-.card:hover .card_main-title {
+.card-benefit:hover .card_main-title {
     color: #fff
 }
 
