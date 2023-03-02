@@ -78,6 +78,12 @@
                         <span>Student Enrollment</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
+                    <a href="/admin/collaborations" class='sidebar-link'>
+                        <i class="far fa-file-alt"></i>
+                        <span>Collaboration</span>
+                    </a>
+                </li>
                 
             </ul>
         </div>
