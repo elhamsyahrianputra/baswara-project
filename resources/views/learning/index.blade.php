@@ -40,7 +40,7 @@
                 </ul>
                 <div class="tab-content mt-3" id="myTabContent">
                     <div class="tab-pane fade show active text-center" id="1-tab-pane" role="tabpanel" aria-labelledby="1-tab" tabindex="0">
-                        Alfabet adalah sebuah sistem tulisan yang berdasarkan lambang fonem vokal dan konsonan. Kata alfabet diambil dari bahasa Yunani, dari dua huruf pertama tulisan mereka yaitu alfa dan beta. Alfabet berbeda dengan abjad, yang biasanya tidak memiliki lambang vokal, dan berbeda dengan abugida dan aksara silabis, yang setiap hurufnya melambangkan fonem namun dalam bentuk suku kata.
+                        {{ $course->description }}
                     </div>
                     <div class="tab-pane fade text-center" id="2-tab-pane" role="tabpanel" aria-labelledby="2-tab" tabindex="0">
                         <h5>Belum ada postingan pengumuman</h5>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 border position-absolute top-0 end-0 overflow-scroll" style="height:100%;">
+        <div class="col-md-3 border position-fixed top-0 end-0 overflow-scroll" style="height:100%;">
             <h4 class="title mt-5 pt-5">{{ $course->name }}</h4>
             <p>4 modul &nbsp; . &nbsp; 5m 24s</p>
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -74,12 +74,12 @@
                             </button>
                         </h2>
                         <div id="chapter{{ $loop->iteration }}" class="accordion-collapse collapse" aria-labelledby="chapter{{ $loop->iteration }}-heading">
-                            <div class="accordion-body">
-                                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="accordion-body  px-0">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                     
                                     @foreach ($chapter->theories as $theory)
                                     <button class="nav-link ps-4 {{ $loop->parent->iteration == 1 && $loop->iteration == 1 ? "active" : "" }}" id="theory-tab-{{ $theory->id }}" data-bs-toggle="pill" data-bs-target="#theory-{{ $theory->id }}" type="button" role="tab" aria-controls="theory-{{ $theory->id }}" aria-selected="false" onclick="Pause()">
-                                        <div class="row">
+                                        <div class="row flex align-items-center">
                                             <div class="col-sm-1">
                                                 <i class="fa-solid fa-circle-play fa-1x"></i>
                                             </div>
@@ -105,8 +105,6 @@
 @endsection
 
 @section('script')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
 <script>
     function Pause() {
         var v = document.querySelectorAll("#video-theory");

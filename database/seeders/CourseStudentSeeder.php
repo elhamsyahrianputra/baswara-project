@@ -32,8 +32,12 @@ class CourseStudentSeeder extends Seeder
                 'student_id' => $students[1]->id,
             ],
             [
-                'course_id' => $courses[1]->id,
-                'student_id' => $students[1]->id,
+                'course_id' => $courses[0]->id,
+                'student_id' => $students[2]->id,
+            ],
+            [
+                'course_id' => $courses[0]->id,
+                'student_id' => $students[3]->id,
             ],
         ];
 
