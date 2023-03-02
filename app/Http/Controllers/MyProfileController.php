@@ -89,9 +89,11 @@ class MyProfileController extends Controller
 
         if ($request -> file('avatar_url')) {
             if($request->old_image){
-                Storage::delete($request->old_image);
+                if ($request->old_image !== "default\avatar_default.jpg") {
+                    Storage::delete($request->old_image);
+                }
             }
-            $validatedData['avatar_url'] = $request->file('avatar_url')->store('user-images');
+            $validatedData['avatar_url'] = $request->file('avatar_url')->store('user/user-avatar');
         }
 
         User::where('id', $id)->update($validatedData);
