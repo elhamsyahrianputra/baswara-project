@@ -1,25 +1,30 @@
 @extends('layouts.main')
 
 @section('style')
+    <link rel="stylesheet" href="/dist/css/owl.carousel.css">
+    <link rel="stylesheet" href="/dist/css/owl.theme.default.css">
     <style>
-        .partners {
+
+        .owl-carousel {
+            /* background-color: green; */
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
         }
 
-        .partner {
-            position: relative;
-            /* margin: 20px; */
+        .owl-carousel .item {
+            padding: 10px;
             display: flex;
-            align-items: center;
+            /* background-color: red; */
+            justify-content: center;
         }
 
-        .partner img {
+        .owl-carousel .item img {
             display: block;
-            max-width: 100%;
-            height: auto;
+            height: 100%;
+            min-height: 100px;
+            max-height: 101px;
+            object-fit: contain;
         }
     </style>
 @endsection
@@ -203,6 +208,40 @@
             </div>
         </section>
         <!-- about section end -->
+
+        {{-- Collaboration section start --}}
+        <section class="popular partners">
+            <div class="container">
+                <div class="popular_header">
+                    <h2 class="popular_header-title" data-aos="fade-up">Kolaborasi</h2>
+                    <p class="popular_header-text" data-aos="fade-down">
+                        Kami bekerja sama dengan beberapa Universitas dan Organisasi Nasional maupun International
+                    </p>
+                </div>
+
+                {{-- <ul class="list_courses d-md-flex flex-wrap"> --}}
+                <div class="owl-carousel">
+
+                    @foreach ($collaborations as $collaboration)
+                        <div class="item">
+                            <a href="https://{{ $collaboration->url_to }}">
+                                <img src="/storage/{{ $collaboration->image_url }}">
+                            </a>
+                        </div>
+                        {{-- <li class="list_courses-card course-card col-lg-4 col-md-6 mb-3">
+                        <div class="partner">
+                            <a href="{{ $collaboration->url_to }}">
+                                <img src="/storage/{{ $collaboration->image_url }}"  class="img-fluid" alt="{{ $collaboration->name }}" style="max-height: 200px">
+                            </a>
+                        </div>
+                    </li> --}}
+                    @endforeach
+                </div>
+                {{-- </ul> --}}
+            </div>
+        </section>
+        {{-- Collaboration section end --}}
+
         <!-- popular courses section start -->
         <section class="popular">
             <div class="container">
@@ -262,29 +301,7 @@
             </div>
         </section>
 
-        <section class="popular partners">
-            <div class="container">
-                <div class="popular_header">
-                    <h2 class="popular_header-title" data-aos="fade-up">Kolaborasi</h2>
-                    <p class="popular_header-text" data-aos="fade-down">
-                        Kami bekerja sama dengan beberapa Universitas dan Organisasi Nasional maupun International
-                    </p>
-                </div>
-
-                <ul class="list_courses d-md-flex flex-wrap">
-                    @foreach ($collaborations as $collaboration)
-                    <li class="list_courses-card course-card col-lg-4 col-md-6 mb-3">
-                        <div class="partner">
-                            <a href="{{ $collaboration->url_to }}">
-                                <img src="/storage/{{ $collaboration->image_url }}"  class="img-fluid" alt="{{ $collaboration->name }}" style="max-height: 200px">
-                            </a>
-                        </div>
-                    </li>
-                    @endforeach
-                    
-                </ul>
-            </div>
-        </section>
+        
         <!-- popular courses section end -->
         <!-- banner section start -->
         {{-- <div class="banner">
@@ -308,4 +325,32 @@
     </div> --}}
         <!-- banner section end -->
     </main>
+
+@section('script')
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="dist/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                autoplay: true,
+                autoplayTimeout:3000,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            })
+        });
+    </script>
+@endsection
 @endsection
