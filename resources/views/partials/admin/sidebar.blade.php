@@ -57,6 +57,12 @@
                         <span>Team</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
+                    <a href="/admin/collaborations" class='sidebar-link'>
+                        <i class="far fa-file-alt"></i>
+                        <span>Collaboration</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-title">Learning</li>
                 
@@ -76,12 +82,6 @@
                     <a href="/admin/students" class='sidebar-link'>
                         <i class="far fa-file-alt"></i>
                         <span>Student Enrollment</span>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
-                    <a href="/admin/collaborations" class='sidebar-link'>
-                        <i class="far fa-file-alt"></i>
-                        <span>Collaboration</span>
                     </a>
                 </li>
                 
