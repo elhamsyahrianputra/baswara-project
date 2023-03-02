@@ -124,5 +124,6 @@ class CollaborationController extends Controller
             Storage::delete($collaboration->image_url);
         }
         Collaboration::destroy($collaboration->id);
+        return redirect('/admin/collaborations')->with('danger', 'Data user has been deleted');
     }
 }
