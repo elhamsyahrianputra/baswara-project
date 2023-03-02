@@ -96,7 +96,7 @@ class MyProfileController extends Controller
 
         User::where('id', $id)->update($validatedData);
 
-        return redirect('/profile')->with('success', 'Data user has been added');
+        return redirect('/myProfile')->with('success', 'Data user has been added');
     }
 
     /**

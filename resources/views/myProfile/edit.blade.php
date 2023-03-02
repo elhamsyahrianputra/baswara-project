@@ -38,7 +38,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="/profile/{{ $user->id }}" method="post" enctype="multipart/form-data">
+                            <form action="/myProfile/{{ $user->id }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
                                 <div class="card-body">

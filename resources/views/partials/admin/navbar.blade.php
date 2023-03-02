@@ -81,7 +81,7 @@
                             </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar avatar-md">
-                                    <img src="{{ asset('storage/'.auth()->user()->avatar_url) }}" />
+                                    <img src="{{ asset('storage/'.auth()->user()->avatar_url) }}" class="img-fluid" style="aspect-ratio:1/1; object-fit:cover;">
                                 </div>
                             </div>
                         </div>
