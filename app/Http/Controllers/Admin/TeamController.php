@@ -99,8 +99,7 @@ class TeamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
-        
+    {  
         $validatedData = $request->validate([
             'name' => 'required',
             'division' => 'required',
@@ -127,9 +126,9 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy($id)
     {
-        Team::destroy($team->id);
+        Team::destroy($id);
 		return redirect('/admin/teams')->with('success', 'Data team has been deleted');
     }
 }

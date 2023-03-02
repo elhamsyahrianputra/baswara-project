@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\LandingPage;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,16 @@ class LandingPageController extends Controller
         ]);
     }
 
-    public function course()
+    public function course($id)
+    {
+        $course = Course::find($id);
+
+        return view('course', [
+            'title' => "Course | Baswara",
+            'course' => $course
+        ]);
+    }
+    public function coursedefault()
     {
         return view('landing_page.course', [
             'title' => "Course | Baswara",

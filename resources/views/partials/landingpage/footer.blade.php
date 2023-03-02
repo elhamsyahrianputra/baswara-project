@@ -5,7 +5,7 @@
 				<div class="logo logo--footer">
 					<a class="d-inline-flex align-items-center" href="/">
 						<span class="logo_picture">
-							<img src="dist/img/logo.png" alt="Baswara" />
+							<img src="{{ asset('dist/img/logo/logo.png') }}" alt="Baswara" />
 						</span>
 						<span class="text">
 							<span class="brand">Baswara</span>

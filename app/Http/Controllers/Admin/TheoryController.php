@@ -39,7 +39,22 @@ class TheoryController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request['chapter_id']);
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'speaker' => 'required',
+            'description' => 'required',
+            'video_url' => 'required|mimetypes:video/avi,video/mpeg,video/quicktime,video/mp4',
+        ]);
+
+        if ($request->file('video_url')) {
+            $validatedData['video_url'] = $request->file('video_url')->store('theory-video');
+        }
+
+        $validatedData['chapter_id'] = $request['chapter_id'];
+
+        Theory::create($validatedData);
+
+        return redirect('/admin/chapters/'.$request['chapter_id'].'/edit#theory')->with('success', 'Data theory has been Added');
     }
 
     /**
@@ -75,9 +90,22 @@ class TheoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Theory $theory)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'speaker' => 'required',
+            'description' => 'required',
+            'video_url' => 'required|mimetypes:video/avi,video/mpeg,video/quicktime'
+        ]);
+
+        if ($request->file('video_url')) {
+            $validatedData['video_url'] = $request->file('video_url')->store('theory-video');
+        }
+
+        Theory::create($validatedData);
+
+        return redirect('/admin/chapters/'.$theory->chapter_id.'/edit#theory')->with('success', 'Data theory has been updated');
     }
 
     /**

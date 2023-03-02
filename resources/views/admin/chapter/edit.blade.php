@@ -102,7 +102,7 @@
                                     </i>
                                     Edit
                                 </a>
-                                <form action="/admin/theories/{{ $theory->id }}" method="post" class="d-inline">
+                                <form action="/admin/theories/{{ $theory->id }}?chapter_id={{ $chapter->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button class="btn btn-danger mt-1 btn-sm delete">

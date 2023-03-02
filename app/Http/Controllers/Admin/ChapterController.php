@@ -30,11 +30,9 @@ class ChapterController extends Controller
      */
     public function create(Request $request)
     {
-        $course_id = $request['course_id'];
-
         return view('admin.chapter.create', [
             'title' => 'Chapter | Dashboard',
-            'course_id' => $course_id
+            'course_id' => $request['course_id'],
         ]);
     }
 
@@ -46,7 +44,16 @@ class ChapterController extends Controller
      */
     public function store(Request $request)
     {
-        return dd($request['course_id']);
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $validatedData['course_id'] = $request['course_id'];
+
+        Chapter::create($validatedData);
+
+        return redirect('/admin/courses/'.$request['course_id'].'/edit#chapters')->with('success', 'Data chapter has been Added');
     }
 
     /**
@@ -66,9 +73,9 @@ class ChapterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Chapter $chapter)
     {
-        $chapter = Chapter::find($id);
+        $chapter = Chapter::find($chapter->id);
         return view('admin.chapter.edit', [
             'title' => 'Chapter | Dashboard',
             'chapter' => $chapter,
@@ -82,9 +89,18 @@ class ChapterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Chapter $chapter)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $validatedData['course_id'] = $chapter->course_id;
+
+        Chapter::find($chapter->id)->update($validatedData);
+
+        return redirect('/admin/courses/'.$chapter->course_id.'/edit#chapters')->with('success', 'Data chapter has been Added');
     }
 
     /**
@@ -93,8 +109,9 @@ class ChapterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Chapter $chapter)
     {
-        //
+        Chapter::destroy($chapter->id);
+		return redirect('/admin/courses/'.$chapter->course_id.'/edit#chapters')->with('success', 'Data chapter has been deleted');
     }
 }

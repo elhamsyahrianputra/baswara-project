@@ -48,7 +48,8 @@ Route::group(['prefix' => 'admin'], function () {
 // * LandingPage
 Route::controller(LandingPageController::class)->group(function () {
     Route::get('/', 'home');
-    Route::get('/course', 'course');
+    Route::get('/course', 'coursedefault');
+    Route::get('/course/{id}', 'course');
     Route::get('/courses', 'courses');
     Route::get('/contacts', 'contacts');
     Route::get('/team', 'team');

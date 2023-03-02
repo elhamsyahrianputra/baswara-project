@@ -37,6 +37,6 @@ class CourseStudentSeeder extends Seeder
             ],
         ];
 
-        DB::table('course_student')->insert($courseStudents);
+        DB::table('course_students')->insert($courseStudents);
     }
 }
