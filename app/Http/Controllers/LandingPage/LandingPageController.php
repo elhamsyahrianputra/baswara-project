@@ -4,6 +4,9 @@ namespace App\Http\Controllers\LandingPage;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Team;
+use App\Models\User;
 use App\Models\Collaboration;
 use App\Http\Controllers\Controller;
 
@@ -56,30 +59,31 @@ class LandingPageController extends Controller
     {
         return view('landing_page.team', [
             'title' => "Team | Baswara",
-            'teams' => \App\Models\Team::all(),
+            'teams' => Team::all(),
         ]);
     }
 
     public function posts()
     {
         $title = '';
-        // if (request('category')) {
-        //     $category = Category::firstWhere('slug', request('category'));
-        //     $title = 'in ' . $category->name;
-        // }
         if (request('author')) {
-            $author = \App\Models\User::firstWhere('id', request('author'));
+            $author = User::firstWhere('id', request('author'));
             $title = $author->name;
         }
         return view('landing_page.posts', [
             "title" =>  $title,
-            "active" => 'all_post',
-            "posts" => \App\Models\Post::latest()->filter(request(['search_post', 'author']))->paginate(7)->withQueryString()
+            "posts" => Post::latest()->filter(request(['search_post', 'author']))->paginate(7)->withQueryString()
         ]);
-        // return view('landing_page.posts', [
-        //     'title' => "Info BIPA | Baswara",
-        //     'teams' => \App\Models\Team::all(),
-        // ]);
+    }
+
+    public function single_post(Post $post)
+    {
+        return view('landing_page.post', [
+            "title" => 'Info BIPA | Baswara',
+            "post"  => $post,
+            "posts" => Post::latest()->where('id', '!=', $post->id)->where('user_id', $post->user_id)->take(3)->get(),
+            "recommends" => Post::latest()->where('id', '!=', $post->id)->get()->random(2)
+        ]);
     }
 
     public function admin()

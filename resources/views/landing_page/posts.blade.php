@@ -37,7 +37,7 @@
                     <div class="event_media">
                         <picture>
                             <img class="lazy"
-                                src="{{ $posts[0]->image_url != null ? $posts[0]->image_url : '/dist/img/placeholder.jpg' }}"
+                                src="{{ $posts[0]->image_url != null ? '/storage/'. $posts[0]->image_url : '/dist/img/placeholder.jpg' }}"
                                 alt="media" />
                         </picture>
                         <span class="event-date">
@@ -54,7 +54,7 @@
                         <p class="event_main-text">
                             {{ $posts[0]->excerpt }}
                         </p>
-                        <a class="event_main-btn btn btn--gradient" href="#">
+                        <a class="event_main-btn btn btn--gradient" href="/posts/{{ $posts[0]->slug }}">
                             <span class="text">Baca Selengkapnya</span>
                         </a>
                     </div>
@@ -71,7 +71,7 @@
                                     <div class="media">
                                         <picture>
                                             <img class="lazy"
-                                                src="{{ $post->image_url != null ? $post->image_url : '/dist/img/placeholder.jpg' }}"
+                                                src="{{ $post->image_url != null ? '/storage/'. $post->image_url : '/dist/img/placeholder.jpg' }}"
                                                 alt="media" />
                                         </picture>
                                         <span class="event-date">
@@ -88,7 +88,7 @@
                                         <p class="main_text">
                                             {{ $post->excerpt }}
                                         </p>
-                                        <a class="event_main-btn btn btn--gradient" href="#">
+                                        <a class="event_main-btn btn btn--gradient" href="/posts/{{ $post->slug }}">
                                             <span class="text">
                                                 Baca Selengkapnya <i class="icon-arrow-right-solid icon"></i>
                                             </span>
