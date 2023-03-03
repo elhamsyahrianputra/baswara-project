@@ -31,8 +31,11 @@ class DatabaseSeeder extends Seeder
             ChapterSeeder::class,
             TheorySeeder::class,
             TeamSeeder::class,
-            CollaborationSeeder::class
+            CollaborationSeeder::class,
+            PostSeeder::class
         ]);
+
+        
 
         // // Team
         // $this->call([

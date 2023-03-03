@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthController;
 
-use App\Http\Controllers\Admin\{AdminController, CategoryController, CourseController, ChapterController, CollaborationController, TheoryController, TeamController};
+use App\Http\Controllers\Admin\{AdminController, CategoryController, CourseController, ChapterController, CollaborationController, PostController, TheoryController, TeamController};
 
 use App\Http\Controllers\Dashboard\DashboardController;
 
@@ -33,6 +33,8 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 // * Admin
+
+
 Route::controller(AdminController::class)->middleware('auth')->group(function () {
     Route::get('/admin', 'index');
 });
@@ -44,7 +46,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('theories', TheoryController::class)->middleware('auth');
     Route::resource('categories', CategoryController::class)->middleware('auth');
     Route::resource('collaborations', CollaborationController::class)->middleware('auth');
-
+    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth');
+    Route::resource('posts', PostController::class)->middleware('auth');
 });
 
 // * LandingPage
