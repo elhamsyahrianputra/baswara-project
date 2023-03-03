@@ -84,6 +84,12 @@
                         <span>Collaboration</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('admin/posts*')?'active':'' }}">
+                    <a href="/admin/posts" class='sidebar-link'>
+                        <i class="far fa-file-alt"></i>
+                        <span>Info Seputar BIPA (Post)</span>
+                    </a>
+                </li>
                 
             </ul>
         </div>
