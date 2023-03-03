@@ -57,6 +57,24 @@
                         <span>Team</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
+                    <a href="/admin/collaborations" class='sidebar-link'>
+                        <i class="far fa-file-alt"></i>
+                        <span>Collaboration</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
+                    <a href="/admin/collaborations" class='sidebar-link'>
+                        <i class="far fa-file-alt"></i>
+                        <span>Collaboration</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ Request::is('admin/posts*')?'active':'' }}">
+                    <a href="/admin/posts" class='sidebar-link'>
+                        <i class="far fa-file-alt"></i>
+                        <span>Info Seputar BIPA (Post)</span>
+                    </a>
+                </li>  
 
                 <li class="sidebar-title">Learning</li>
                 
@@ -78,19 +96,7 @@
                         <span>Student Enrollment</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
-                    <a href="/admin/collaborations" class='sidebar-link'>
-                        <i class="far fa-file-alt"></i>
-                        <span>Collaboration</span>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ Request::is('admin/posts*')?'active':'' }}">
-                    <a href="/admin/posts" class='sidebar-link'>
-                        <i class="far fa-file-alt"></i>
-                        <span>Info Seputar BIPA (Post)</span>
-                    </a>
-                </li>
-                
+
             </ul>
         </div>
     </div>

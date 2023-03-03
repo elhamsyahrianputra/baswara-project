@@ -21,13 +21,6 @@ class CourseSeeder extends Seeder
     {
         $user = User::all(['id']);
         Course::create([
-            'author_id' => $user[0]->id,
-            'name' => 'Dasar Pemrograman Python',
-            'Description' => 'Pembelajaran yang berisi tentang dasar-dasar pemrograman python',
-            'cover_url' => 'course/course-cover/python.jpeg',
-            'price' => 200000,
-        ]);
-        Course::create([
             'author_id' => $user[1]->id,
             'name' => 'Belajar Dasar Bahasa Indonesia',
             'Description' => 'Mempelajari dasar-dasar Bahasa Indonesia',
