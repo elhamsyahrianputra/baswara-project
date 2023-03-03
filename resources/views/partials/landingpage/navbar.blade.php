@@ -56,6 +56,9 @@
                     <a class="nav-item" href="/courses" data-page="home">All Courses</a>
                 </li>
                 <li class="header_nav-list_item">
+                    <a class="nav-item" href="/posts" data-page="home">Info Seputar BIPA</a>
+                </li>
+                <li class="header_nav-list_item">
                     <a class="nav-item" href="/contacts" data-page="contacts">Contact Us</a>
                 </li>
                 <li class="header_nav-list_item">

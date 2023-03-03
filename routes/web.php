@@ -58,6 +58,7 @@ Route::controller(LandingPageController::class)->group(function () {
     Route::get('/courses', 'courses');
     Route::get('/contacts', 'contacts');
     Route::get('/team', 'team');
+    Route::get('/posts', 'posts');
 });
 
 // * Dashboard

@@ -60,6 +60,28 @@ class LandingPageController extends Controller
         ]);
     }
 
+    public function posts()
+    {
+        $title = '';
+        // if (request('category')) {
+        //     $category = Category::firstWhere('slug', request('category'));
+        //     $title = 'in ' . $category->name;
+        // }
+        if (request('author')) {
+            $author = \App\Models\User::firstWhere('id', request('author'));
+            $title = $author->name;
+        }
+        return view('landing_page.posts', [
+            "title" =>  $title,
+            "active" => 'all_post',
+            "posts" => \App\Models\Post::latest()->filter(request(['search_post', 'author']))->paginate(7)->withQueryString()
+        ]);
+        // return view('landing_page.posts', [
+        //     'title' => "Info BIPA | Baswara",
+        //     'teams' => \App\Models\Team::all(),
+        // ]);
+    }
+
     public function admin()
     {
         return view('', [
