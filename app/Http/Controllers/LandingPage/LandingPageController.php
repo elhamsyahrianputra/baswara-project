@@ -16,7 +16,8 @@ class LandingPageController extends Controller
     {
         return view('landing_page.home', [
             'title' => "Home | Baswara",
-            'collaborations' => Collaboration::all()
+            'collaborations' => Collaboration::all(),
+            'courses' => Course::orderBy('id','desc')->take(3)->get(),
         ]);
     }
 

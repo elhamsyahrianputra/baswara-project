@@ -5,9 +5,9 @@
     <section class="contacts_form">
         <div class="container">
             <div class="contacts_form-header">
-                <h2 class="contacts_form-header_title">Kirimkan Pertanyaan Anda</h2>
+                <h1 class="page_main-header">Kontak Kami</h1>
 
-                <p class="contacts_form-header_text text">
+                <p class="page_main-text">
                     Jika anda ingin bertanya atau tidak tau kalian ingin memilih apa, kirimkan pertanyaan anda. Dengan
                     senang hati, kami
                     akan membantu anda.

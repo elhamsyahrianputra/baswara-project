@@ -15,7 +15,7 @@
                 </li>
                 @endforeach
             </ul>
-            <ul class="list_courses d-md-flex flex-wrap">
+            <ul class="list_courses d-md-flex flex-wrap justify-content-center">
                 @foreach ($courses as $course)
                 <li data-groups='[
                     @foreach ($course->categories as $category)
@@ -51,9 +51,14 @@
                                         <i class="icon-star icon"></i>
                                     </li>
                                 </ul>
-                                <span class="top_author">by {{ $course->author->name }}
-                                    <span class="top_details">Rp{{ number_format($course->price, 0, ",", ".") }}</span>
-                                </span>
+                                <div class="row">
+                                    <div class="col top_author">
+                                        by {{ $course->author->name }}
+                                    </div>
+                                    <div class="col-3">
+                                        <span class="top_details">Rp{{ number_format($course->price, 0, ",", ".") }}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="bottom">
@@ -283,6 +288,6 @@
 @endsection
 
 @section('script')
-    <script src="dist/js/courses.min.js"></script>
-    <script src="dist/js/reviews.min.js"></script>
+    <script src="{{ asset('dist/js/courses.min.js') }}"></script>
+    <script src="{{ asset('dist/js/reviews.min.js') }}"></script>
 @endsection
