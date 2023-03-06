@@ -43,7 +43,7 @@
                     <p class="hero_content-text" data-aos="fade-up" data-aos-delay="50">
                         Baswara Learning Academy bekerja sama dengan mentor terpercaya untuk menyediakan media pembelajaran
                         yang dapat
-                        diakses dimanapun dan kapanpun.
+                        diakses di mana pun dan kapan pun.
                     </p>
                     <div class="hero_content-action d-flex flex-wrap">
                         <a class="btn btn--gradient" href="/registration" data-aos="fade-left">
