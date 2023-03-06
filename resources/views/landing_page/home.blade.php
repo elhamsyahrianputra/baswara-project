@@ -46,7 +46,7 @@
                         diakses di mana pun dan kapan pun.
                     </p>
                     <div class="hero_content-action d-flex flex-wrap">
-                        <a class="btn btn--gradient" href="/registration" data-aos="fade-left">
+                        <a class="btn btn--gradient" href="/signup" data-aos="fade-left">
                             <span class="text">Daftar Sekarang!</span>
                         </a>
                     </div>

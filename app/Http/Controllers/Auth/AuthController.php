@@ -22,13 +22,15 @@ class AuthController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|max:255',
-            'email' => ['required', 'unique:users'],
+            'email' => 'required|unique:users',
             'password' => 'required|min:8|max:255',
+            'birthdate' => 'required'
         ]);
 
         $data['name'] = Str::title($data['name']);
         $data['email'] = Str::lower($data['email']);
         $data['password'] = hash::make($data['password']);
+        $data['avatar_url'] = 'default\avatar_default.jpg';
 
         User::create($data);
 
@@ -51,12 +53,12 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/courses');
         }
 
         return back()->withErrors([
-            'error' => 'Incorrect username or password',
-        ])->onlyInput('error');
+            'loginError' => 'Sorry, your email or password is incorrect',
+        ])->withInput();
     }
 
     public function logout(Request $request)

@@ -108,5 +108,5 @@
 @endsection
 
 @section('script')
-    <script src="dist/js/team.min.js"></script>
+    <script src="{{ asset('dist/js/team.min.js') }}"></script>
 @endsection

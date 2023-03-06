@@ -19,7 +19,7 @@
     @include('partials.landingpage.footer')
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="dist/js/common.min.js"></script>
+    <script src="{{ asset('dist/js/common.min.js') }}"></script>
     
 </body>
 
