@@ -13,8 +13,8 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                            <li class="breadcrumb-item"><a href="/admin/teams">Teams</a></li>
+                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/teams">Team</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Add</li>
                         </ol>
                     </nav>
@@ -123,8 +123,8 @@
                             </div>
                             <!-- /.card-body -->
 
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Create</button>
                             </div>
                         </form>
                     </div>

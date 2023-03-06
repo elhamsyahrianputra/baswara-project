@@ -25,11 +25,11 @@ use App\Http\Controllers\User\UserController;
 
 // * Auth
 Route::controller(AuthController::class)->group(function () {
-    Route::get('/registration','registration');
-    Route::post('/registration','store');
+    Route::get('/signup','registration')->middleware('guest');
+    Route::post('/signup','store')->middleware('guest');
     Route::get('/login','login')->name('login')->middleware('guest');
     Route::post('/login','authenticate')->middleware('guest');
-    Route::post('/logout','logout');
+    Route::post('/logout','logout')->middleware('auth');
 });
 
 // * Admin
@@ -53,7 +53,6 @@ Route::group(['prefix' => 'admin'], function () {
 // * LandingPage
 Route::controller(LandingPageController::class)->group(function () {
     Route::get('/', 'home');
-    Route::get('/home', 'home');
     Route::get('/course', 'coursedefault');
     Route::get('/course/{id}', 'course');
     Route::get('/courses', 'courses');
@@ -65,8 +64,8 @@ Route::controller(LandingPageController::class)->group(function () {
 
 // * Dashboard
 Route::controller(DashboardController::class)->group(function () {
-    Route::get('/dashboard', 'index');
-    Route::get('/learning', 'learning');
+    Route::get('/dashboard', 'index')->middleware('auth');
+    Route::get('/learning', 'learning')->middleware('auth');
 });
 
 // * User
@@ -76,7 +75,7 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/kelola', 'kelola');
 });
 
-Route::resource('/myProfile',MyProfileController::class);
+Route::resource('/myProfile',MyProfileController::class)->middleware('auth');
 
 
 

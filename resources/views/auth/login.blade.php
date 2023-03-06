@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Baswara | Login</title>
-    <link rel="stylesheet" href="mazer/css/main/app.css">
-    <link rel="stylesheet" href="mazer/css/pages/auth.css">
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="{{ asset('mazer/css/main/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('mazer/css/pages/auth.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
 
-    <link rel="stylesheet" href="mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="shortcut icon" href="mazer/images/logo/favicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="mazer/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="{{ asset('mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css') }}">
+    <link rel="shortcut icon" href="{{ asset('mazer/images/logo/favicon.svg" type="image/x-icon') }}">
+    <link rel="shortcut icon" href="{{ asset('mazer/images/logo/favicon.png" type="image/png') }}">
 </head>
 
 <body>
@@ -29,13 +29,13 @@
                     <form action="/login" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="email" class="form-control form-control-xl" placeholder="Email" name="email" value="{{ old('email') }}" autocomplete="off">
+                            <input type="email" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" autocomplete="off" autofocus>
                             <div class="form-control-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Password" name="password">
+                            <input type="password" class="form-control form-control-xl @error('password') is-invalid @enderror" placeholder="Password" name="password">
                             <div class="form-control-icon">
                                 <i class="fas fa-key"></i>
                             </div>
@@ -51,10 +51,15 @@
                         </button>
                     </form>
                     <div class="text-center mt-3 text-lg fs-6">
-                        <p class="text-gray-600">Don't have an account? <a href="/registration"
+                        <p class="text-gray-600">Don't have an account? <a href="/signup"
                                 class="font-bold">Sign
                                 up</a>.</p>
-                        <p><a class="font-bold" href="#">Forgot password?</a>.</p>
+                        <p><a class="font-bold" href="#">Forgot password?</a></p>
+                        @error('loginError')
+                        <h6 class="text-center text-danger fw-bold mt-1 text-xl">
+                            {{ $message }}
+                        </h6>
+                            @enderror
                     </div>
                 </div>
             </div>

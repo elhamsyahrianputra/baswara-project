@@ -18,8 +18,8 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">DataTable</li>
+                            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Team</li>
                         </ol>
                     </nav>
                 </div>
@@ -27,8 +27,9 @@
         </div>
         <section class="section">
             <div class="card">
-                <div class="card-header">
-                    Simple Datatable
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Team</span>
+                    <a href="/admin/teams/create" class="btn btn-success"><i class="fas fa-plus me-1"></i>Add Course</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped"  id="table1">

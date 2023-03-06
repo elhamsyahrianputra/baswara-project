@@ -59,13 +59,7 @@
                 </li>
                 <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
                     <a href="/admin/collaborations" class='sidebar-link'>
-                        <i class="far fa-file-alt"></i>
-                        <span>Collaboration</span>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
-                    <a href="/admin/collaborations" class='sidebar-link'>
-                        <i class="far fa-file-alt"></i>
+                        <i class="fas fa-handshake"></i>
                         <span>Collaboration</span>
                     </a>
                 </li>

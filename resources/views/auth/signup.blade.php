@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Baswara | Registration</title>
-    <link rel="stylesheet" href="mazer/css/main/app.css">
-    <link rel="stylesheet" href="mazer/css/pages/auth.css">
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="{{ asset('mazer/css/main/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('mazer/css/pages/auth.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
 
-    <link rel="stylesheet" href="mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="shortcut icon" href="mazer/images/logo/favicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="mazer/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="{{ asset('mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css') }}">
+    <link rel="shortcut icon" href="{{ asset('mazer/images/logo/favicon.svg" type="image/x-icon') }}">
+    <link rel="shortcut icon" href="{{ asset('mazer/images/logo/favicon.png" type="image/png') }}">
 </head>
 
 <body>
@@ -29,27 +29,27 @@
                     <form action="/registration" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Email">
-                            <div class="form-control-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                        </div>
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Username">
+                            <input type="text" name="name" class="form-control form-control-xl @error('name') is-invalid @enderror" placeholder="Name" autofocus>
                             <div class="form-control-icon">
                                 <i class="fas fa-user"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Password">
+                            <input type="text" name="email" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Email">
+                            <div class="form-control-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="form-group position-relative has-icon-left mb-4 @error('password') is-invalid @enderror">
+                            <input type="password" name="password" class="form-control form-control-xl" placeholder="Password">
                             <div class="form-control-icon">
                                 <i class="fas fa-key"></i>
                             </div>
                         </div>
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Confirm Password">
+                        <div class="form-group position-relative has-icon-left mb-4 @error('birthdate') is-invalid @enderror">
+                            <input type="date" name="birthdate" class="form-control form-control-xl">
                             <div class="form-control-icon">
-                                <i class="fas fa-key"></i>
+                                <i class="fas fa-birthday-cake"></i>
                             </div>
                         </div>
                         <button class="btn btn--gradient btn-block btn-lg shadow-lg mt-3">

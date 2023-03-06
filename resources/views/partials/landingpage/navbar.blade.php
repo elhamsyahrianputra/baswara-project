@@ -21,7 +21,7 @@
         <div class="promobar_main d-flex align-items-center">
             <p class="promobar_main-text">Mari Belajar Bersama Kami! <span class="hide">Daftarkan Dirimu Sekarang
                     Juga!</span></p>
-            <a class="btn btn--yellow" href="/registration">
+            <a class="btn btn--yellow" href="/signup">
                 <span>Registration</span>
             </a>
         </div>
