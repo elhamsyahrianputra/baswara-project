@@ -38,7 +38,7 @@
                 <div class="hero_content">
                     <h1 class="hero_content-header" data-aos="fade-up">Baswara Learning Academy</h1>
                     <div class="hero_content-rating d-flex flex-column flex-sm-row align-items-center">
-                        <p class="text" data-aos="fade-left">Belajar bersama kami dimanapun dan kapanpun!</p>
+                        <p class="text" data-aos="fade-left">Belajar bersama kami di mana pun dan kapan pun!</p>
                     </div>
                     <p class="hero_content-text" data-aos="fade-up" data-aos-delay="50">
                         Baswara Learning Academy bekerja sama dengan mentor terpercaya untuk menyediakan media pembelajaran
@@ -210,99 +210,94 @@
         <!-- about section end -->
 
         {{-- Collaboration section start --}}
-        <section class="popular partners">
+        <section class="recently partners">
             <div class="container">
-                <div class="popular_header">
-                    <h2 class="popular_header-title" data-aos="fade-up">Kolaborasi</h2>
-                    <p class="popular_header-text" data-aos="fade-down">
+                <div class="recently_header">
+                    <h2 class="recently_header-title" data-aos="fade-up">Kolaborasi</h2>
+                    <p class="recently_header-text" data-aos="fade-down">
                         Kami bekerja sama dengan beberapa Universitas dan Organisasi Nasional maupun International
                     </p>
                 </div>
 
-                {{-- <ul class="list_courses d-md-flex flex-wrap"> --}}
                 <div class="owl-carousel">
 
                     @foreach ($collaborations as $collaboration)
                         <div class="item">
                             <a href="https://{{ $collaboration->url_to }}">
-                                <img src="/storage/{{ $collaboration->image_url }}">
+                                <img src="{{ asset('storage/'.$collaboration->image_url) }}">
                             </a>
                         </div>
-                        {{-- <li class="list_courses-card course-card col-lg-4 col-md-6 mb-3">
-                        <div class="partner">
-                            <a href="{{ $collaboration->url_to }}">
-                                <img src="/storage/{{ $collaboration->image_url }}"  class="img-fluid" alt="{{ $collaboration->name }}" style="max-height: 200px">
-                            </a>
-                        </div>
-                    </li> --}}
                     @endforeach
                 </div>
-                {{-- </ul> --}}
             </div>
         </section>
         {{-- Collaboration section end --}}
 
-        <!-- popular courses section start -->
-        <section class="popular">
+        <!-- recently courses section start -->
+        <section class="recently">
             <div class="container">
-                <div class="popular_header">
-                    <h2 class="popular_header-title" data-aos="fade-up">Kursus Populer</h2>
-                    <p class="popular_header-text" data-aos="fade-down">
-                        Beberapa kursus di Baswara Learning Academy yang memiliki peminat terbanyak diantaranya yaitu:
+                <div class="recently_header">
+                    <h2 class="recently_header-title" data-aos="fade-up">Kursus Terbaru</h2>
+                    <p class="recently_header-text" data-aos="fade-down">
+                        Beberapa kursus terbaru di Baswara Learning Academy
                     </p>
                 </div>
 
-                <ul class="list_courses d-md-flex flex-wrap">
-                    @for ($i = 0; $i < 3; $i++)
-                        <li data-groups='["gamedev", "programming"]'
-                            class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                            <div class="course-card_wrapper">
-                                <div class="image"
-                                    style="background-image: url(https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=240&ixid=MnwxfDB8MXxyYW5kb218MHx8cHl0aG9ufHx8fHx8MTY3MjY1MzY2Mw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400);">
-                                </div>
-                                <div class="top d-flex align-items-start">
-                                    <div class="wrapper d-flex flex-column">
-                                        <h6 class="top_title">Belajar Fundamental React</h6>
-                                        <ul class="rating d-flex align-items-center">
-                                            <span class="rating_value">4.7</span>
-                                            <li class="rating_star">
-                                                <i class="icon-star icon"></i>
-                                            </li>
-                                            <li class="rating_star">
-                                                <i class="icon-star icon"></i>
-                                            </li>
-                                            <li class="rating_star">
-                                                <i class="icon-star icon"></i>
-                                            </li>
-                                            <li class="rating_star">
-                                                <i class="icon-star icon"></i>
-                                            </li>
-                                            <li class="rating_star">
-                                                <i class="icon-star icon"></i>
-                                            </li>
-                                        </ul>
-                                        <span class="top_author">by Adrian Dawson school <span
-                                                class="top_details">Rp200.000</span></span>
+                <ul class="list_courses d-md-flex flex-wrap justify-content-center">
+                    @foreach ($courses as $course)
+                    <li class="list_courses-card course-card col-12 col-md-6 col-xl-4">
+                        <div class="course-card_wrapper">
+                            <div class="image"
+                                style="background-image: url({{ asset('storage/'.$course->cover_url) }});">
+                            </div>
+                            <div class="top d-flex align-items-start">
+                                <div class="wrapper d-flex flex-column">
+                                    <h6 class="top_title">{{ $course->name }}</h6>
+                                    <ul class="rating d-flex align-items-center">
+                                        <span class="rating_value me-2">4.7</span>
+                                        <li class="rating_star">
+                                            <i class="icon-star icon"></i>
+                                        </li>
+                                        <li class="rating_star">
+                                            <i class="icon-star icon"></i>
+                                        </li>
+                                        <li class="rating_star">
+                                            <i class="icon-star icon"></i>
+                                        </li>
+                                        <li class="rating_star">
+                                            <i class="icon-star icon"></i>
+                                        </li>
+                                        <li class="rating_star">
+                                            <i class="icon-star icon"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col top_author">
+                                            by {{ $course->author->name }}
+                                        </div>
+                                        <div class="col-3">
+                                            <span class="top_details">Rp{{ number_format($course->price, 0, ",", ".") }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="bottom">
-                                    <a class="bottom_btn btn btn--bordered btn--arrow" href="/course">
-                                        Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
-                                    </a>
-                                </div>
                             </div>
-                        </li>
-                    @endfor
-
+                            <div class="bottom">
+                                <a class="bottom_btn btn btn--bordered btn--arrow" href="/course/{{ $course->id }}">
+                                    Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    @endforeach
                 </ul>
-                <a class="popular_btn btn btn--gradient" href="/courses">
+                <a class="recently_btn btn btn--gradient" href="/courses">
                     <span class="text">Learn more</span>
                 </a>
             </div>
         </section>
 
         
-        <!-- popular courses section end -->
+        <!-- recently courses section end -->
         <!-- banner section start -->
         {{-- <div class="banner">
         <div class="underlay"></div>
@@ -327,9 +322,11 @@
     </main>
 
 @section('script')
+<script src="{{ asset('dist/js/courses.min.js') }}"></script>
+<script src="{{ asset('dist/js/reviews.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="dist/js/owl.carousel.js"></script>
+    <script src="{{ asset('dist/js/owl.carousel.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('.owl-carousel').owlCarousel({

@@ -63,7 +63,7 @@
 
             <section class="list">
                 <div class="container">
-                    <ul class="list_events d-md-flex flex-wrap">
+                    <ul class="list_events d-md-flex flex-wrap justify-content-center">
                         @foreach ($posts->skip(1) as $post)
                             <li class="list_events-card col-md-6 col-lg-4" data-aos="fade-up"
                                 data-order="{{ $loop->iteration }}">

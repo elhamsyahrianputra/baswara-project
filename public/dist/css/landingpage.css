@@ -612,6 +612,7 @@ main>.underlay:after {
 }
 
 .course-card_wrapper .top_details {
+    margin: 5px 0 8px;
     font-weight: 900;
     color: #3d53eb;
     float: right;
@@ -2208,76 +2209,76 @@ main>.underlay {
     }
 }
 
-.popular {
+.recently {
     padding-bottom: 80px
 }
 
-.popular_header {
+.recently_header {
     text-align: center;
     margin-bottom: 10px
 }
 
-.popular_header-title {
+.recently_header-title {
     margin-bottom: 15px
 }
 
-.popular_header-text {
+.recently_header-text {
     max-width: 725px;
     margin: 0 auto
 }
 
-.popular_list-card,.popular_tags {
+.recently_list-card,.recently_tags {
     margin-bottom: 30px
 }
 
-.popular_list-card:last-of-type {
+.recently_list-card:last-of-type {
     margin-bottom: 0
 }
 
-.popular_list-card .course-card_wrapper {
+.recently_list-card .course-card_wrapper {
     -webkit-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
     transition: .3s ease-in-out
 }
 
-.popular_list-card .course-card_wrapper .top {
+.recently_list-card .course-card_wrapper .top {
     padding-right: 30px
 }
 
-.popular_list-card .course-card_wrapper .bottom_list {
+.recently_list-card .course-card_wrapper .bottom_list {
     margin-bottom: 20px
 }
 
-.popular_list-card .course-card_wrapper .bottom_list-item {
+.recently_list-card .course-card_wrapper .bottom_list-item {
     margin-bottom: 5px
 }
 
-.popular_list-card .course-card_wrapper .bottom_list-item:last-of-type {
+.recently_list-card .course-card_wrapper .bottom_list-item:last-of-type {
     margin-bottom: 0
 }
 
-.popular_list-card .course-card_wrapper .bottom_list-item_marker {
+.recently_list-card .course-card_wrapper .bottom_list-item_marker {
     font-size: 6px;
     margin: 6px 6px 0 0;
     color: #485870
 }
 
-.popular_list-card .course-card_wrapper .bottom_list-item_text {
+.recently_list-card .course-card_wrapper .bottom_list-item_text {
     width: calc(100% - 12px)
 }
 
-.popular_list-card .course-card_wrapper:hover {
+.recently_list-card .course-card_wrapper:hover {
     -webkit-box-shadow: 0 2px 14px rgba(137,139,255,.5);
     box-shadow: 0 2px 14px rgba(137,139,255,.5)
 }
 
-.popular_btn {
+.recently_btn {
     margin: 50px auto 0;
     width: 100%
 }
 
 @media screen and (min-width:575.98px) {
-    .popular_btn {
+    .recently_btn {
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content;
@@ -2289,44 +2290,44 @@ main>.underlay {
 }
 
 @media screen and (min-width:767.98px) {
-    .popular {
+    .recently {
         padding-bottom: 100px
     }
 
-    .popular_tags {
+    .recently_tags {
         margin-bottom: 40px
     }
 
-    .popular_list {
+    .recently_list {
         margin: 0 -15px
     }
 
-    .popular_list-card {
+    .recently_list-card {
         padding: 0 15px;
         margin-bottom: 0
     }
 
-    .popular_list-card:last-of-type {
+    .recently_list-card:last-of-type {
         display: none
     }
 }
 
 @media screen and (min-width:991.98px) {
-    .popular {
+    .recently {
         padding-bottom: 120px
     }
 
-    .popular_header {
+    .recently_header {
         margin-bottom: 25px
     }
 
-    .popular_list-card:last-of-type {
+    .recently_list-card:last-of-type {
         display: block
     }
 }
 
 @media screen and (min-width:1199.98px) {
-    .popular_list-card {
+    .recently_list-card {
         margin-bottom: 0
     }
 }
@@ -2500,7 +2501,7 @@ main>.underlay {
 }
 
 .page_main-header {
-    color: #fd7e14;
+    color: #3D53EB;
     margin-bottom: 20px
 }
 
@@ -2689,7 +2690,7 @@ main>.underlay {
 }
 
 .list_courses-card:last-of-type {
-    margin-bottom: auto;
+    margin-bottom: 35px;
 }
 
 @media screen and (min-width:767.98px) {
@@ -3754,7 +3755,7 @@ main>.underlay {
 }
 
 .page_main-header {
-    color: #fd7e14;
+    color: #3d53eb;
     margin-bottom: 20px
 }
 
@@ -4099,7 +4100,7 @@ main>.underlay {
 }
 
 .page_main-header {
-    color: #fd7e14;
+    color: #3d53eb;
     margin-bottom: 20px
 }
 

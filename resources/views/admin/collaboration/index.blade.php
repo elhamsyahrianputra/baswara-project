@@ -36,11 +36,11 @@
                     <table class="table table-striped"  id="table1">
                         <thead>
                             <tr>
-                                <th class="text-center">#</th>
-                                <th class="text-center">Name</th>
-                                <th class="text-center">Link To</th>
-                                <th class="text-center">Image</th>
-                                <th class="text-center">Action</th>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Link To</th>
+                                <th>Image</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,24 +70,6 @@
                                         </button>
                                     </form>
                                 </td>
-
-                                {{-- <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm" href="/admin/categories/{{ $collaboration->id }}/edit">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
-                                    </a>
-                                    <form action="/admin/categories/{{ $collaboration->id }}" method="post" class="d-inline">
-                                        @method('delete')
-                                        @csrf
-                                        <button class="btn btn-danger btn-sm delete">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Delete
-                                        </button>
-                                    </form>
-        
-                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -105,9 +87,6 @@
     <!-- DataTables -->
     <script src="{{ asset('/mazer/extensions/simple-datatables/umd/simple-datatables.js') }}"></script>
     <script src="{{ asset('/mazer/js/pages/simple-datatables.js') }}"></script>
-
-    <!-- SweetALert2 -->
-    <script src="{{ asset('/AdminLTE/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 
     <!-- Init SweetAlert Confirm Dialogue -->
     <script>

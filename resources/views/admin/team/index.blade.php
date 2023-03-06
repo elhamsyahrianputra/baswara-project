@@ -82,9 +82,6 @@
     <script src="{{ asset('/mazer/extensions/simple-datatables/umd/simple-datatables.js') }}"></script>
     <script src="{{ asset('/mazer/js/pages/simple-datatables.js') }}"></script>
 
-    <!-- SweetALert2 -->
-    <script src="{{ asset('/AdminLTE/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-
     <!-- Init SweetAlert Confirm Dialogue -->
     <script>
         $('.delete').click(function() {
