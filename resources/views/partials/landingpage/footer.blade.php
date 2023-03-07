@@ -74,16 +74,11 @@
 				</ul>
 			</div>
 			<div class="footer_block col-sm-6 col-lg-auto" data-order="4">
-				<h5 class="footer_block-header">Social Media:</h5>
-				<ul class="footer_block-instagram d-grid">
-					<li class="footer_block-instagram_item">
-						<a class="link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-							<picture>
-								<source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-								<img class="lazy" data-src="dist/img/placeholder.jpg" src="img/placeholder.jpg"
-									alt="media" />
-							</picture>
-						</a>
+				<h5 class="footer_block-header">Post Terbaru</h5>
+				<ul class="footer_block-list">
+					<li class="footer_block-list_item d-flex align-items-baseline">
+						<span class="marker"></span>
+						<a class="link" href="/course">Data Science Fundamentals CS with Python and SQL</a>
 					</li>
 				</ul>
 			</div>
