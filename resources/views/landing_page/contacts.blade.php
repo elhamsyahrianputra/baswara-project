@@ -5,7 +5,7 @@
     <section class="contacts_form">
         <div class="container">
             <div class="contacts_form-header">
-                <h1 class="page_main-header">Kontak Kami</h1>
+                <h1 class="page_main-header">Narahubung</h1>
 
                 <p class="page_main-text">
                     Jika anda ingin bertanya atau tidak tau kalian ingin memilih apa, kirimkan pertanyaan anda. Dengan

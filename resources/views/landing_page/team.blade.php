@@ -34,7 +34,7 @@
                     <div class="main">
                         <h5 class="name">{{ $team->name }}</h5>
                         <span class="division">{{ $team->division }}</span>
-                        <p class="description d-none">{{ $team->about_me }}</p>
+                        <p class="description d-none">{{ $team->biography }}</p>
 
                         {{-- Social Media --}}
                         <span class="instagram d-none">{{ $team->instagram_url }}</span>
