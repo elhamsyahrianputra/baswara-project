@@ -218,30 +218,28 @@
                     </p>
                 </div>
                 <ul class="program_list">
+
+                    @foreach ($course->chapters as $chapter) 
                     <li class="program_list-item d-lg-flex align-items-start">
                         <div class="module d-flex col-lg-5 col-xl-4">
                             <i class="icon-circle icon"></i>
                             <div class="module_main">
-                                <h4 class="module_main-header">1st Unit</h4>
+                                <h4 class="module_main-header">Chapter {{ $loop->iteration }}</h4>
                                 <span class="module_main-text text text--sm">80 hours</span>
                             </div>
                         </div>
                         <div class="main">
                             <div class="item">
-                                <h4 class="main_header">Course: Getting Started with Simple Styling</h4>
+                                <h4 class="main_header">{{ $chapter->name }}</h4>
                                 <p class="main_text">
-                                    Nulla sed suscipit lectus. Phasellus rhoncus vulputate odio et placerat. Aenean ut
-                                    aliquam erat.
-                                    Integer rutrum eleifend ante, a bibendum leo tristique id. Phasellus euismod sapien non
-                                    ornare
-                                    sagittis. Donec molestie eros dolor. Curabitur laoreet neque at magna pulvinar cursus
+                                    {{ $chapter->description }}
                                 </p>
                                 <div class="main_about">
                                     <div class="main_about-item d-flex align-items-start">
                                         <span class="icon">
                                             <img src="{{ asset('dist/icon/svg/clock.svg') }}" alt="">
                                         </span>
-                                        <p class="text">13 Video Lectures, 6 Training Methodics, 4 Tasks</p>
+                                        <p class="text">{{ $chapter->theories->count() }} Video Lectures, 6 Training Methodics, 4 Tasks</p>
                                     </div>
                                     <div class="main_about-item d-flex align-items-start">
                                         <span class="icon">
@@ -253,159 +251,8 @@
                             </div>
                         </div>
                     </li>
-                    <li class="program_list-item d-lg-flex align-items-start">
-                        <div class="module d-flex col-lg-5 col-xl-4">
-                            <i class="icon-circle icon"></i>
-                            <div class="module_main">
-                                <h4 class="module_main-header">2nd Unit</h4>
-                                <span class="module_main-text text text--sm">110 hours</span>
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div class="item">
-                                <h4 class="main_header">
-                                    Course: Week Three: Pseudo-classes, Pseudo-elements, Transitions, and Positioning
-                                </h4>
-                                <p class="main_text">
-                                    Nulla sed suscipit lectus. Phasellus rhoncus vulputate odio et placerat. Aenean ut
-                                    aliquam erat.
-                                    Integer rutrum eleifend ante, a bibendum leo tristique id. Phasellus euismod sapien non
-                                    ornare
-                                    sagittis. Donec molestie eros dolor. Curabitur laoreet neque at magna pulvinar cursus
-                                </p>
-                                <div class="main_about">
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
+                    @endforeach
 
-                                        </span>
-                                        <p class="text">13 Video Lectures, 6 Training Methodics, 4 Tasks</p>
-                                    </div>
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
-
-                                        </span>
-                                        <p class="text">Skills You Get: Advanced CSS</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h4 class="main_header">Course: Web Design Principles, Grids and Composition</h4>
-                                <p class="main_text">
-                                    Nulla sed suscipit lectus. Phasellus rhoncus vulputate odio et placerat. Aenean ut
-                                    aliquam erat.
-                                    Integer rutrum eleifend ante, a bibendum leo tristique id. Phasellus euismod sapien non
-                                    ornare
-                                    sagittis. Donec molestie eros dolor. Curabitur laoreet neque at magna pulvinar cursus
-                                </p>
-                                <div class="main_about">
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
-
-                                        </span>
-                                        <p class="text">8 Video Lectures, 6 Training Methodics, 4 Tasks</p>
-                                    </div>
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
-
-                                        </span>
-                                        <p class="text">Skills You Get: Design</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="program_list-item d-lg-flex align-items-start">
-                        <div class="module d-flex col-lg-5 col-xl-4">
-                            <i class="icon-circle icon"></i>
-                            <div class="module_main">
-                                <h4 class="module_main-header">3rd Unit</h4>
-                                <span class="module_main-text text text--sm">130 hours</span>
-                            </div>
-                        </div>
-                        <div class="main">
-                            <div class="item">
-                                <h4 class="main_header">Course: What is HTML5. Adaptive layout</h4>
-                                <p class="main_text">
-                                    Nulla sed suscipit lectus. Phasellus rhoncus vulputate odio et placerat. Aenean ut
-                                    aliquam erat.
-                                    Integer rutrum eleifend ante, a bibendum leo tristique id. Phasellus euismod sapien non
-                                    ornare
-                                    sagittis. Donec molestie eros dolor. Curabitur laoreet neque at magna pulvinar cursus
-                                </p>
-                                <div class="main_about">
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
-
-                                        </span>
-                                        <p class="text">24 Video Lectures, 6 Training Methodics, 4 Tasks</p>
-                                    </div>
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
-
-                                        </span>
-                                        <p class="text">Skills You Get: Advanced HTML5</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h4 class="main_header">Course: Website Development and Final Task - Real Site Landing</h4>
-                                <p class="main_text">
-                                    Nulla sed suscipit lectus. Phasellus rhoncus vulputate odio et placerat. Aenean ut
-                                    aliquam erat.
-                                    Integer rutrum eleifend ante, a bibendum leo tristique id. Phasellus euismod sapien non
-                                    ornare
-                                    sagittis. Donec molestie eros dolor. Curabitur laoreet neque at magna pulvinar cursus
-                                </p>
-                                <div class="main_about">
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
-
-                                        </span>
-                                        <p class="text">13 Video Lectures, 6 Training Methodics, 4 Tasks</p>
-                                    </div>
-                                    <div class="main_about-item d-flex align-items-start">
-                                        <span class="icon">
-
-                                        </span>
-                                        <p class="text">
-                                            Skills You Get: Website Development, Web Accessibility, WordPress, WooCommerce
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="program_list-item d-lg-flex align-items-start">
-                        <div class="module d-flex col-lg-5 col-xl-4">
-                            <h3 class="module_header">You'll get:</h3>
-                        </div>
-                        <div class="main">
-                            <h4 class="main_header">After the final task and according to the results</h4>
-                            <p class="main_text">
-                                Advanced Development Skills, University Certified Certificate, Ready website, Job offers
-                                from our
-                                partners
-                            </p>
-                            <div class="main_media d-md-flex justify-content-between">
-                                <div class="main_media-item">
-                                    <picture>
-                                        <source data-srcset="/dist/img/placeholder.jpg"
-                                            srcset="/dist/img/placeholder.jpg" />
-                                        <img class="lazy" data-src="/dist/img/placeholder.jpg"
-                                            src="/dist/img/placeholder.jpg" alt="media" />
-                                    </picture>
-                                </div>
-                                <div class="main_media-item">
-                                    <picture>
-                                        <source data-srcset="/dist/img/placeholder.jpg"
-                                            srcset="/dist/img/placeholder.jpg" />
-                                        <img class="lazy" data-src="/dist/img/placeholder.jpg"
-                                            src="/dist/img/placeholder.jpg" alt="media" />
-                                    </picture>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </section>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Baswara | Registration</title>
+    <title>Daftar | Baswara</title>
     <link rel="stylesheet" href="{{ asset('mazer/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('mazer/css/pages/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
@@ -23,25 +23,25 @@
                     <div class="auth-logo">
                         <a href="/"><img src="{{ asset('dist/img/logo/full_logo.png') }}" alt="Baswara Logo" style="height: 100px"></a>
                     </div>
-                    <h1 class="auth-title">Sign Up</h1>
-                    <p class="auth-subtitle mb-3">Input your data to register to our website.</p>
+                    <h1 class="auth-title">Daftar</h1>
+                    <p class="auth-subtitle mb-3">Dapatkan pembelajara BIPA terbaik bersama kami.</p>
 
-                    <form action="/registration" method="post">
+                    <form action="/signup" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" name="name" class="form-control form-control-xl @error('name') is-invalid @enderror" placeholder="Name" autofocus>
+                            <input type="text" name="name" class="form-control form-control-xl @error('name') is-invalid @enderror" placeholder="Nama" autofocus>
                             <div class="form-control-icon">
                                 <i class="fas fa-user"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" name="email" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Email">
+                            <input type="text" name="email" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Surel">
                             <div class="form-control-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4 @error('password') is-invalid @enderror">
-                            <input type="password" name="password" class="form-control form-control-xl" placeholder="Password">
+                            <input type="password" name="password" class="form-control form-control-xl" placeholder="Kata Sandi">
                             <div class="form-control-icon">
                                 <i class="fas fa-key"></i>
                             </div>
@@ -53,13 +53,15 @@
                             </div>
                         </div>
                         <button class="btn btn--gradient btn-block btn-lg shadow-lg mt-3">
-                            <span class="text">Sign Up</span>
+                            <span class="text">Daftar</span>
                         </button>
                     </form>
                     <div class="text-center mt-3 text-lg fs-6">
-                        <p class='text-gray-600'>Already have an account? <a href="/login"
-                                class="font-bold">Log
-                                in</a>.</p>
+                        <p class='text-gray-600'>
+                            Sudah memiliki akun?
+                            <a href="/login"
+                                class="font-bold">Masuk.</a>
+                            </p>
                     </div>
                 </div>
             </div>

@@ -36,14 +36,12 @@
         <section class="hero">
             <div class="container d-lg-flex align-items-center">
                 <div class="hero_content">
-                    <h1 class="hero_content-header" data-aos="fade-up">Baswara Learning Academy</h1>
+                    <h1 class="hero_content-header" data-aos="fade-up">Baswara Rumah Pembelajara BIPA</h1>
                     <div class="hero_content-rating d-flex flex-column flex-sm-row align-items-center">
                         <p class="text" data-aos="fade-left">Belajar bersama kami di mana pun dan kapan pun!</p>
                     </div>
                     <p class="hero_content-text" data-aos="fade-up" data-aos-delay="50">
-                        Baswara Learning Academy bekerja sama dengan mentor terpercaya untuk menyediakan media pembelajaran
-                        yang dapat
-                        diakses di mana pun dan kapan pun.
+                        Baswara sebagai pusat pembelajaran BIPA bekerja sama dengan pengajar BIPA terpercaya untuk menyediakan media pembeajaran yang dapat diakses di mana pun dan kapan pun. Ayo bergabung bersama kami!
                     </p>
                     <div class="hero_content-action d-flex flex-wrap">
                         <a class="btn btn--gradient" href="/signup" data-aos="fade-left">
@@ -86,7 +84,7 @@
                                 <div class="card_main">
                                     <h5 class="card_main-title">Tidak Terikat Waktu</h5>
                                     <p class="card_main-text">
-                                        Kamu dapat melaksanakan kursusmu kapanpun! Kerjakan saat kamu senggang.
+                                        Kamu dapat melaksanakan kursusmu kapan pun! Kerjakan saat kamu senggang.
                                     </p>
                                 </div>
                             </div>
@@ -99,9 +97,9 @@
                                     <i class="icon-headset-solid icon"></i>
                                 </div>
                                 <div class="card_main">
-                                    <h5 class="card_main-title">Full Daring</h5>
+                                    <h5 class="card_main-title">Pembelajaran Daring</h5>
                                     <p class="card_main-text">
-                                        Belajar dimanapun kamu mau! Sambil ngafe atau ngopi? Tidak masalah!
+                                        Belajar di mana pun kamu mau? Bisa sambil santai? Tidak masalah! Baswara solusinya.
                                     </p>
                                 </div>
                             </div>
@@ -119,9 +117,9 @@
                         style="width: 120%; height: 100%" loop autoplay></lottie-player>
                 </div>
                 <div class="promo_content">
-                    <h2 class="promo_content-header" data-aos="fade-left">Upgrade Terus Kemampuanmu!</h2>
+                    <h2 class="promo_content-header" data-aos="fade-left">Tingkatkan Terus Kemampuanmu!</h2>
                     <p class="promo_content-text" data-aos="fade-up" data-aos-delay="50">
-                        Jangan cepat puas dengan kemampuanmu! Terus upgrade keahlianmu. Bergabung bersama kami untuk
+                        Jangan cepat puas dengan kemampuanmu! Terus tingkatkan keahlianmu. Bergabung bersama kami untuk
                         meningkatkan pemahamanmu. Bergabung bersama kami sekarang juga!
                     </p>
                 </div>
@@ -137,7 +135,7 @@
                 </div>
                 <div class="about_main">
                     <div class="content">
-                        <h2 class="about_main-header" data-aos="fade-in">Bagaimana Baswara Learning Academy Membantumu?</h2>
+                        <h2 class="about_main-header" data-aos="fade-in">Bagaimana Baswara Rumah Pembelajaran BIPA Membantumu?</h2>
                         <ul class="about_main-list">
                             <li class="about_main-list_item" data-aos="fade-up">
                                 <i class="icon-check icon"></i>
@@ -198,7 +196,7 @@
                                 </li>
                             </ul>
                             <q class="main_review quote">
-                                “Dengan mendaftar Baswara Learning Academy, saya menguasai keahlian baru. Bimbingan dari
+                                “Dengan mendaftar Baswara Rumah Pembelajaran BIPA, saya menguasai keahlian baru. Bimbingan dari
                                 mentor sangat membantu
                                 saya dalam memahami materi.”
                             </q>
@@ -239,7 +237,7 @@
                 <div class="recently_header">
                     <h2 class="recently_header-title" data-aos="fade-up">Kursus Terbaru</h2>
                     <p class="recently_header-text" data-aos="fade-down">
-                        Beberapa kursus terbaru di Baswara Learning Academy
+                        Beberapa kursus terbaru di Baswara Rumah Pembelajaran BIPA
                     </p>
                 </div>
 
@@ -291,7 +289,7 @@
                     @endforeach
                 </ul>
                 <a class="recently_btn btn btn--gradient" href="/courses">
-                    <span class="text">Learn more</span>
+                    <span class="text">Lihat Semua Pembelajaran</span>
                 </a>
             </div>
         </section>

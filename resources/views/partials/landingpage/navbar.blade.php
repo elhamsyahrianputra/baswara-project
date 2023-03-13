@@ -22,7 +22,7 @@
             <p class="promobar_main-text">Mari Belajar Bersama Kami! <span class="hide">Daftarkan Dirimu Sekarang
                     Juga!</span></p>
             <a class="btn btn--yellow" href="/signup">
-                <span>Registration</span>
+                <span>Daftar</span>
             </a>
         </div>
     </div>
@@ -31,14 +31,13 @@
 <header class="header" data-page="">
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
         <div class="logo header_logo">
-            <a class="d-inline-flex align-items-center" href="/">
-                <span class="logo_picture">
-                    <img src="{{ asset('dist/img/logo/logo.png') }}" alt="Baswara" />
-                </span>
-                <span class="text">
-                    <span class="brand">Baswara</span>
-                    <span class="text_secondary">Learning Academy</span>
-                </span>
+            <a class="d-flex flex-column justify-content-center" href="/">
+                <div class="logo_picture">
+                    <img src="{{ asset('dist/img/logo/full_transparent.png') }}" alt="Baswara" />
+                </div>
+                <div class="text">
+                    <span class="brand">Rumah Pembelajaran BIPA</span>
+                </div>
             </a>
         </div>
         <button class="header_trigger" type="button" data-bs-toggle="collapse" data-bs-target="#headerMenu"
@@ -50,24 +49,24 @@
         <nav class="header_nav collapse" id="headerMenu">
             <ul class="header_nav-list">
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="/" data-page="home">Home</a>
+                    <a class="nav-item" href="/">Beranda</a>
                 </li>
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="/courses" data-page="home">All Courses</a>
+                    <a class="nav-item" href="/courses">Rumah Pembelajaran</a>
                 </li>
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="/posts" data-page="home">Info Seputar BIPA</a>
+                    <a class="nav-item" href="/posts">Info Seputar BIPA</a>
                 </li>
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="/contacts" data-page="contacts">Contact Us</a>
+                    <a class="nav-item" href="/contacts">Narahubung</a>
                 </li>
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="/team" data-page="contacts">Our Team</a>
+                    <a class="nav-item" href="/team">Pengelola</a>
                 </li>
                 @auth
                 <div class="header_nav-list ms-5">
                     <li class="header_nav-list_item">
-                        <a class="nav-item" href="/dashboard" data-page="contacts">Dashboard</a>
+                        <a class="nav-item" href="/dashboard">Dashboard</a>
                     </li>
                     <li class="header_nav-list_item dropdown_navbar">
                         <a class="nav-item dropdown_navbar-toggle d-inline-flex align-items-center"
