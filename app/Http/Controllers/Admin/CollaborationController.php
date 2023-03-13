@@ -117,9 +117,8 @@ class CollaborationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Collaboration $collaboration)
     {
-        $collaboration = Collaboration::where('id', $id)->first();
         if($collaboration->image_url){
             Storage::delete($collaboration->image_url);
         }
