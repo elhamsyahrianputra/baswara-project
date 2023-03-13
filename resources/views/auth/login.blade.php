@@ -23,19 +23,19 @@
                     <div class="auth-logo">
                         <a href="/"><img src="{{ asset('dist/img/logo/full_logo.png') }}" alt="Baswara Logo" style="height: 100px"></a>
                     </div>
-                    <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-3">Log in with your data that you entered during registration.</p>
+                    <h1 class="auth-title">Masuk.</h1>
+                    <p class="auth-subtitle mb-3">Masuk dengan data Anda yang Anda Masukkan saat pendfataran.</p>
 
                     <form action="/login" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="email" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" autocomplete="off" autofocus>
+                            <input type="email" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Surel" name="email" value="{{ old('email') }}" autocomplete="off" autofocus>
                             <div class="form-control-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl @error('password') is-invalid @enderror" placeholder="Password" name="password">
+                            <input type="password" class="form-control form-control-xl @error('password') is-invalid @enderror" placeholder="Kata Sandi" name="password">
                             <div class="form-control-icon">
                                 <i class="fas fa-key"></i>
                             </div>
@@ -43,18 +43,18 @@
                         <div class="form-check form-check-lg d-flex align-items-end">
                             <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label text-gray-600" for="flexCheckDefault">
-                                Keep me logged in
+                                Biarkan saya tetap masuk
                             </label>
                         </div>
                         <button class="btn btn--gradient btn-block btn-lg shadow-lg mt-5">
-                            <span class="text">Log in</span>
+                            <span class="text">Masuk</span>
                         </button>
                     </form>
                     <div class="text-center mt-3 text-lg fs-6">
-                        <p class="text-gray-600">Don't have an account? <a href="/signup"
-                                class="font-bold">Sign
-                                up</a>.</p>
-                        <p><a class="font-bold" href="#">Forgot password?</a></p>
+                        <p class="text-gray-600">Belum memiliki akun? 
+                            <a href="/signup" class="font-bold">Daftar.</a>
+                        </p>
+                        <p><a class="font-bold" href="#">Lupa kata sandi?</a></p>
                         @error('loginError')
                         <h6 class="text-center text-danger fw-bold mt-1 text-xl">
                             {{ $message }}
