@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Theory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class TheoryController extends Controller
 {
@@ -114,8 +115,10 @@ class TheoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Theory $theory)
     {
-        //
+        Theory::destroy($theory->id);
+        Storage::delete($theory->video_url);
+		return redirect('/admin/categories')->with('success', 'Data theory has been deleted');
     }
 }
