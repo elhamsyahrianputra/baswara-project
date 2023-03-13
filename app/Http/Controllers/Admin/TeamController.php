@@ -126,9 +126,10 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Team $team)
     {
-        Team::destroy($id);
+        Team::destroy($team->id);
+        Storage::delete($team->image_url);
 		return redirect('/admin/teams')->with('success', 'Data team has been deleted');
     }
 }

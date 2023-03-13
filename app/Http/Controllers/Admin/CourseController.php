@@ -153,9 +153,10 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Course $course)
     {
-        Course::destroy($id);
+        Course::destroy($course->id);
+        Storage::delete($course->cover_url);
 		return redirect('/admin/courses')->with('success', 'Data course has been deleted');
     }
 }

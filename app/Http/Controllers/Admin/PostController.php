@@ -148,6 +148,7 @@ class PostController extends Controller
 
         return redirect('/admin/posts')->with('danger', 'Post has been deleted!');
     }
+    
     public function checkSlug(Request $request)
     {
         $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
