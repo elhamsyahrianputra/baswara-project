@@ -38,7 +38,7 @@
 						<i class="icon-envelope icon"></i>
 						baswaraacademy@gmail.com
 					</a>
-					<a class="link link--contacts text text--sm d-inline-flex align-items-center" href="tel:+123456789">
+					<a class="link link--contacts text text--sm d-inline-flex align-items-center" href="tel:+6281615715770">
 						<i class="icon-phone-solid icon"></i>
 						+62-816-1571-5770
 					</a>
