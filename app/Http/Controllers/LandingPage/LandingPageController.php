@@ -69,10 +69,10 @@ class LandingPageController extends Controller
         $title = '';
         if (request('author')) {
             $author = User::firstWhere('id', request('author'));
+            $title = $author->name;
         }
-
         return view('landing_page.posts', [
-            "title" =>  $author->name,
+            "title" =>  $title,
             "posts" => Post::latest()->filter(request(['search_post', 'author']))->paginate(7)->withQueryString()
         ]);
     }
