@@ -13,7 +13,7 @@ class DashboardController extends Controller
         $courses = CourseStudent::where('student_id', auth()->user()->id)->get('course_id');
     
         return view('dashboard.index', [
-            'title' => 'Dashboard',
+            'title' => 'Dashboard | Baswara',
             'courses' => $courses
         ]);
     }

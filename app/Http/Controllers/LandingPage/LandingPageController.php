@@ -15,7 +15,7 @@ class LandingPageController extends Controller
     public function home()
     {
         return view('landing_page.home', [
-            'title' => "Home | Baswara",
+            'title' => "Beranda | Baswara",
             'collaborations' => Collaboration::all(),
             'courses' => Course::orderBy('id','desc')->take(3)->get(),
         ]);
@@ -26,14 +26,14 @@ class LandingPageController extends Controller
         $course = Course::find($id);
 
         return view('course', [
-            'title' => "Course | Baswara",
+            'title' => $course->name." | Baswara",
             'course' => $course
         ]);
     }
     public function coursedefault()
     {
         return view('landing_page.course', [
-            'title' => "Course | Baswara",
+            'title' => " | Baswara",
         ]);
     }
 
@@ -43,7 +43,7 @@ class LandingPageController extends Controller
         $categories = \App\Models\Category::all();
 
         return view('landing_page.courses', [
-            'title' => "Courses | Baswara",
+            'title' => "Semua Pembelajaran di Baswara | Baswara",
             'courses' => $courses,
             'categories' => $categories,
         ]);
@@ -52,14 +52,14 @@ class LandingPageController extends Controller
     public function contacts()
     {
         return view('landing_page.contacts', [
-            'title' => "Home | Baswara",
+            'title' => "Narahubung | Baswara",
         ]);
     }
 
     public function team()
     {
         return view('landing_page.team', [
-            'title' => "Team | Baswara",
+            'title' => "Pengelola | Baswara",
             'teams' => Team::all(),
         ]);
     }
@@ -69,10 +69,10 @@ class LandingPageController extends Controller
         $title = '';
         if (request('author')) {
             $author = User::firstWhere('id', request('author'));
-            $title = $author->name;
         }
+
         return view('landing_page.posts', [
-            "title" =>  $title,
+            "title" =>  $author->name,
             "posts" => Post::latest()->filter(request(['search_post', 'author']))->paginate(7)->withQueryString()
         ]);
     }
@@ -84,13 +84,6 @@ class LandingPageController extends Controller
             "post"  => $post,
             "posts" => Post::latest()->where('id', '!=', $post->id)->where('user_id', $post->user_id)->take(3)->get(),
             "recommends" => Post::latest()->where('id', '!=', $post->id)->get()->random(2)
-        ]);
-    }
-
-    public function admin()
-    {
-        return view('', [
-            'title' => "Admin Dashboard",
         ]);
     }
 }
