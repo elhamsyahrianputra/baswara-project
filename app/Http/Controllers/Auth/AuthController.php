@@ -14,7 +14,7 @@ class AuthController extends Controller
     public function registration()
     {
         return view('auth.signup', [
-            'title' => 'Registraion',
+            'title' => 'Daftar | Baswara',
         ]);
     }
 
@@ -40,7 +40,7 @@ class AuthController extends Controller
     public function login()
     {
         return view('auth.login', [
-            'title' => 'Login',
+            'title' => 'Masuk | Baswara',
         ]);
     }
 

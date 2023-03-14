@@ -36,7 +36,7 @@
         <section class="hero">
             <div class="container d-lg-flex align-items-center">
                 <div class="hero_content">
-                    <h1 class="hero_content-header" data-aos="fade-up">Baswara Rumah Pembelajara BIPA</h1>
+                    <h1 class="hero_content-header" data-aos="fade-up">Baswara Rumah Pembelajaran BIPA</h1>
                     <div class="hero_content-rating d-flex flex-column flex-sm-row align-items-center">
                         <p class="text" data-aos="fade-left">Belajar bersama kami di mana pun dan kapan pun!</p>
                     </div>
