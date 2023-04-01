@@ -17,6 +17,6 @@ class Category extends Model
     ];
 
     public function courses() {
-        return $this->belongsToMany(Course::class, 'course_category', 'category_id', 'course_id');
+        return $this->belongsToMany(Course::class, 'course_categories', 'category_id', 'course_id');
     }
 }
