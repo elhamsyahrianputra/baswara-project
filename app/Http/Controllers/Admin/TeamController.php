@@ -53,14 +53,12 @@ class TeamController extends Controller
             'biography' => 'required',
             'instagram_url' => 'required',
             'linkedin_url' => 'required',
-            'email_url' => 'required|email:dns',
+            'email_url' => 'email:dns|required',
             'image_url' => 'image|file|max:2048|required'
         ]);
         
         $validatedData['instagram_url'] = Str::replace('https://', '', $request['instagram_url']);
         $validatedData['linkedin_url'] = Str::replace('https://', '', $request['linkedin_url']);
-        
-        dd($validatedData);
 
         if ($request->file('image_url')) {
             $validatedData['image_url'] = $request->file('image_url')->store('team-image');
