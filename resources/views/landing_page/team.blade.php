@@ -38,8 +38,8 @@
 
                         {{-- Social Media --}}
                         <span class="instagram d-none">{{ $team->instagram_url }}</span>
-                        <span class="facebook d-none">{{ $team->facebook_url }}</span>
                         <span class="linkedin d-none">{{ $team->linkedin_url }}</span>
+                        <span class="email d-none">{{ $team->email_url }}</span>
                     </div>
                 </li>
                 @endforeach

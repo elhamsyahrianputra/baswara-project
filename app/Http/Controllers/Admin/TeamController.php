@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Team;
-use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -45,15 +46,21 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'name' => 'required',
             'division' => 'required',
             'biography' => 'required',
             'instagram_url' => 'required',
-            'facebook_url' => 'required',
             'linkedin_url' => 'required',
+            'email_url' => 'required|email:dns',
             'image_url' => 'image|file|max:2048|required'
         ]);
+        
+        $validatedData['instagram_url'] = Str::replace('https://', '', $request['instagram_url']);
+        $validatedData['linkedin_url'] = Str::replace('https://', '', $request['linkedin_url']);
+        
+        dd($validatedData);
 
         if ($request->file('image_url')) {
             $validatedData['image_url'] = $request->file('image_url')->store('team-image');
@@ -105,7 +112,7 @@ class TeamController extends Controller
             'division' => 'required',
             'biography' => 'required',
             'instagram_url' => 'required',
-            'facebook_url' => 'required',
+            'email_url' => 'required',
             'linkedin_url' => 'required',
             'image_url' => 'image|file|max:2048|'
         ]);

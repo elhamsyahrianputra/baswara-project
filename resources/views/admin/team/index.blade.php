@@ -29,7 +29,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span>Team</span>
-                    <a href="/admin/teams/create" class="btn btn-success"><i class="fas fa-plus me-1"></i>Add Course</a>
+                    <a href="/admin/teams/create" class="btn btn-success"><i class="fas fa-plus me-1"></i>Tambah Pengelola</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped"  id="table1">
