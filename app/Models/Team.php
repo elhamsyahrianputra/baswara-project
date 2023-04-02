@@ -17,8 +17,8 @@ class Team extends Model
         'division',
         'biography',
         'instagram_url',
-        'facebook_url',
         'linkedin_url',
+        'email_url',
         'image_url',
     ];
 }

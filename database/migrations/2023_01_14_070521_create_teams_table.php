@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('division');
             $table->text('biography');
             $table->string('instagram_url');
-            $table->string('facebook_url');
             $table->string('linkedin_url');
+            $table->string('email_url');
             $table->string('image_url');
         });
     }
