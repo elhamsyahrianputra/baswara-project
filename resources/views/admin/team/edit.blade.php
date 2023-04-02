@@ -65,23 +65,23 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="form-group">
-                                            <label for="inputFacebookURL">Facebook</label>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </span>
-                                                <input type="text" id="inputFacebookURL" class="form-control @error('facebook_url') is-invalid @enderror" placeholder="www.facebook.com/example" name="facebook_url" value="{{ old('facebook_url', $team) }}" autocomplete="off"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="form-group">
                                             <label for="inputLinkedInURL">LinkedIn</label>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">
                                                     <i class="fab fa-linkedin-in"></i>
                                                 </span>
                                                 <input type="text" id="inputLinkedInURL" class="form-control @error('linkedin_url') is-invalid @enderror" placeholder="www.linkedin.com/in/example" name="linkedin_url" value="{{ old('linkedin_url', $team) }}" autocomplete="off"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="inputEmailURL">Email</label>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                                <input type="text" id="inputEmailURL" class="form-control @error('email_url') is-invalid @enderror" placeholder="example@gmail.com" name="email_url" value="{{ old('email_url', $team) }}" autocomplete="off"/>
                                             </div>
                                         </div>
                                     </div>
