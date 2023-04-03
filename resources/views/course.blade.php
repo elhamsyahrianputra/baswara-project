@@ -54,19 +54,19 @@
                 </a>
                 <ul class="hero_nav d-flex flex-wrap justify-content-center">
                     <li class="hero_nav-item">
-                        <a class="link text" href="#skills">Skills You Get</a>
+                        <a class="link text" href="#skills">Keterampilan yang Didapatkan</a>
                     </li>
                     <li class="hero_nav-item">
-                        <a class="link text" href="#program">Course Program</a>
+                        <a class="link text" href="#program">Program Kursus</a>
                     </li>
                     {{-- <li class="hero_nav-item">
                     <a class="link text" href="#reviews">Testimonials</a>
                 </li> --}}
                     <li class="hero_nav-item">
-                        <a class="link text" href="#teachers">Teachers</a>
+                        <a class="link text" href="#teachers">Guru</a>
                     </li>
                     <li class="hero_nav-item">
-                        <a class="link text" href="#price">Price</a>
+                        <a class="link text" href="#price">Harga</a>
                     </li>
                 </ul>
             </div>
@@ -200,8 +200,8 @@
             <div class="container">
                 <div class="program_header d-lg-flex align-items-start">
                     <div class="block col-lg-5 col-xl-4">
-                        <h3 class="program_header-title">Course program:</h3>
-                        <span class="program_header-text text text--sm">All course - 3 Units ( 320 hours)</span>
+                        <h3 class="program_header-title">Program Kursus:</h3>
+                        <span class="program_header-text text text--sm">Seluruh kursus - 3 Unit ( 320 Jam)</span>
                     </div>
                     <p class="program_header-description">
                         Duis maximus nisl gravida elit molestie tincidunt. Duis ac tristique justo. Nulla porttitor mattis
@@ -224,8 +224,8 @@
                         <div class="module d-flex col-lg-5 col-xl-4">
                             <i class="icon-circle icon"></i>
                             <div class="module_main">
-                                <h4 class="module_main-header">Chapter {{ $loop->iteration }}</h4>
-                                <span class="module_main-text text text--sm">80 hours</span>
+                                <h4 class="module_main-header">Bab {{ $loop->iteration }}</h4>
+                                <span class="module_main-text text text--sm">1 Jam</span>
                             </div>
                         </div>
                         <div class="main">
@@ -239,13 +239,13 @@
                                         <span class="icon">
                                             <img src="{{ asset('dist/icon/svg/clock.svg') }}" alt="">
                                         </span>
-                                        <p class="text">{{ $chapter->theories->count() }} Video Lectures, 6 Training Methodics, 4 Tasks</p>
+                                        <p class="text">{{ $chapter->theories->count() }} Video Pembelajaran, 6 Metode Pelatihan, 4 Tugas</p>
                                     </div>
                                     <div class="main_about-item d-flex align-items-start">
                                         <span class="icon">
                                             <img src="{{ asset('dist/icon/svg/chart.svg') }}" alt="">
                                         </span>
-                                        <p class="text">Skills You Get: CSS</p>
+                                        <p class="text ">Keahlian yang Kamu Dapatkan: CSS</p>
                                     </div>
                                 </div>
                             </div>
@@ -469,7 +469,7 @@
         <!-- reviews section end -->
         <section class="team" id="teachers">
             <div class="container">
-                <h2 class="team_header">Learn With Expert</h2>
+                <h2 class="team_header">Belajar dengan Ahli</h2>
                 <ul class="team_list d-flex flex-wrap">
                     <li class="team_list-item col-sm-6 col-lg-4 col-xl-3" data-aos="fade-up" data-order="1"
                         data-media="/dist/img/placeholder">
@@ -565,7 +565,7 @@
                                     </div>
                                     <div class="col-10 d-flex align-items-center">
                                         <p class="text-justify lead fs-6">
-                                            Gratis update materi
+                                            Gratis pembaruan materi
                                         </p>
                                     </div>
                                 </div>
@@ -575,7 +575,7 @@
                                     </div>
                                     <div class="col-10 d-flex align-items-center">
                                         <p class="text-justify lead fs-6">
-                                            Tools pendukung belajar
+                                            Alat pendukung belajar
                                         </p>
                                     </div>
                                 </div>

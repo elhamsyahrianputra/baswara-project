@@ -3,8 +3,8 @@
 
 <div class="container-fluid bg-light my-4">
     <div class="container col-xl-4 col-lg-6 col-md-8 col-10 mb-3 text-center">
-        <h4 class="text-capitalize pb-2">checkout kelas</h4>
-        <p class="fs-5 lead">Dengan Baswara Learning Academy, belajar Bahasa Indonesia menjadi lebih mudah dan
+        <h4 class="text-capitalize pb-2">pembayaran kelas</h4>
+        <p class="fs-5 lead">Dengan Baswara Rumah Pembelajaran BIPA, belajar Bahasa Indonesia menjadi lebih mudah dan
             menyenangkan!</p>
     </div>
     <div class="container col-xl-6 col-lg-8 col-md-10 col-12 mb-3 mb-3">

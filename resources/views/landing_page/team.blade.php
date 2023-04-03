@@ -55,15 +55,15 @@
             <div class="counter_content d-md-flex">
                 <div class="counter_content-item d-flex flex-column col-md-4">
                     <span class="countNum number" data-value="5000" data-separator=",">0</span>
-                    <span class="label h5">Specializations</span>
+                    <span class="label h5">Pengajar Ahli</span>
                 </div>
                 <div class="counter_content-item d-flex flex-column col-md-4">
-                    <span class="countNum number" data-prefix="+" data-value="17" data-suffix="millions">0</span>
-                    <span class="label h5">Students Worldwide</span>
+                    <span class="countNum number" data-prefix="+" data-value="17" data-suffix="juta">0</span>
+                    <span class="label h5">Siswa di Seluruh Dunia</span>
                 </div>
                 <div class="counter_content-item d-flex flex-column col-md-4">
                     <span class="countNum number" data-prefix="+" data-value="845">0</span>
-                    <span class="label h5">Courses and Webinars</span>
+                    <span class="label h5">Kursus dan Webinar</span>
                 </div>
             </div>
         </div>

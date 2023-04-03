@@ -8,7 +8,9 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
     public function payment() {
-        return view('user.payment');
+        return view('user.payment', [
+            "title" => 'Pembayaran | Baswara'
+        ]);
     }
 
     public function pay_confirm() {
