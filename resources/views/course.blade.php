@@ -46,7 +46,7 @@
                         Super</span>
                 </div>
             </div> --}}
-                <a class="hero_btn btn btn--gradient" href="@guest /signup @endguest @auth /payment @endauth">
+                <a class="hero_btn btn btn--gradient" href="@guest /signup @endguest @auth /checkout/{{ $course->id }} @endauth">
                     <span class="text">
                         @guest Daftar Sekarang @endguest
                         @auth Beli kursus ini @endauth

@@ -4,7 +4,17 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthController;
 
-use App\Http\Controllers\Admin\{AdminController, CategoryController, CourseController, ChapterController, CollaborationController, PostController, TheoryController, TeamController};
+use App\Http\Controllers\Admin\{
+    AdminController, 
+    CategoryController, 
+    CourseController, 
+    ChapterController, 
+    CollaborationController,
+    PostController,
+    TheoryController,
+    TeamController,
+    EnrollmentController
+};
 
 use App\Http\Controllers\Dashboard\DashboardController;
 
@@ -46,8 +56,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('theories', TheoryController::class)->middleware('auth');
     Route::resource('categories', CategoryController::class)->middleware('auth');
     Route::resource('collaborations', CollaborationController::class)->middleware('auth');
-    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth');
+
+    Route::resource('enrollment', EnrollmentController::class)->middleware('auth');
+    Route::POST('enrollment/confirm', [EnrollmentController::class, 'confirm'])->middleware('auth');
+
     Route::resource('posts', PostController::class)->middleware('auth');
+    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth');
 });
 
 // * LandingPage
@@ -70,7 +84,8 @@ Route::controller(DashboardController::class)->group(function () {
 
 // * User
 Route::controller(UserController::class)->group(function () {
-    Route::get('/payment', 'payment');
+    Route::get('/checkout/{course:id}', 'payment');
+    Route::get('/checkout/{course:id}/confirm', 'checkout');
     Route::get('/pay_confirm', 'pay_confirm');
     Route::post('/kelola', 'kelola');
 });

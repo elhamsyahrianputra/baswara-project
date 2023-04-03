@@ -11,5 +11,9 @@ class Collaboration extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'name',
+        'url_to',
+        'img_url'
+    ];
 }
