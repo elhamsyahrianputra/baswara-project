@@ -52,16 +52,16 @@
             </a>
             <ul class="hero_nav d-flex flex-wrap justify-content-center">
                 <li class="hero_nav-item">
-                    <a class="link text" href="#skills">Skills You Get</a>
+                    <a class="link text" href="#skills">Keterampilan yang Didapatkan</a>
                 </li>
                 <li class="hero_nav-item">
-                    <a class="link text" href="#program">Course Program</a>
+                    <a class="link text" href="#program">Program Kursus</a>
                 </li>
                 <li class="hero_nav-item">
-                    <a class="link text" href="#reviews">Testimonials</a>
+                    <a class="link text" href="#reviews">Testimonial</a>
                 </li>
                 <li class="hero_nav-item">
-                    <a class="link text" href="#teachers">Teachers</a>
+                    <a class="link text" href="#teachers">Guru</a>
                 </li>
                 <li class="hero_nav-item">
                     <a class="link text" href="#price">Price</a>

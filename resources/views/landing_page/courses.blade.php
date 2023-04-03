@@ -7,7 +7,7 @@
         <div class="container">
             <ul class="list_tags courses-tags d-flex flex-wrap align-items-center justify-content-center">
                 <li class="list-item" data-aos="fade-left">
-                    <a data-target="all" class="list_tags-tag tag current" href="#">all</a>
+                    <a data-target="all" class="list_tags-tag tag current" href="#">Semua</a>
                 </li>
                 @foreach ($categories as $category)
                 <li class="list-item" data-aos="fade-left" data-aos-delay="50">
