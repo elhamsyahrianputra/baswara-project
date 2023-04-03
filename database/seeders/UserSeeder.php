@@ -29,15 +29,6 @@ class UserSeeder extends Seeder
         ]);
     
         User::create([
-            'name' => 'Elham Syahrian Putra',
-            'email' => 'elham@gmail.com',
-            'password' => hash::make('qwertyui'),
-            'avatar_url' => 'default\avatar_default.jpg',
-            'gender' => 1,
-            'birthdate' => Carbon::parse('2002-04-22'),
-            'about_me' => 'Hello My name is Elham Syahrian Putra',
-        ]);
-        User::create([
             'name' => 'Muhammad Aditya Wisnu Wardana',
             'email' => 'adit@gmail.com',
             'password' => hash::make('qwertyui'),
@@ -45,6 +36,15 @@ class UserSeeder extends Seeder
             'gender' => 1,
             'birthdate' => Carbon::parse('2002-02-22'),
             'about_me' => 'Hello My name is Muhammad Aditya Wisnu Wardana',
+        ]);
+        User::create([
+            'name' => 'Elham Syahrian Putra',
+            'email' => 'elham@gmail.com',
+            'password' => hash::make('qwertyui'),
+            'avatar_url' => 'default\avatar_default.jpg',
+            'gender' => 1,
+            'birthdate' => Carbon::parse('2002-04-22'),
+            'about_me' => 'Hello My name is Elham Syahrian Putra',
         ]);
         User::create([
             'name' => 'Muhammad Hardiansyah',
