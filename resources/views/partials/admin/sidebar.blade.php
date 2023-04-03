@@ -49,18 +49,18 @@
                     </a>
                 </li>
 
-                <li class="sidebar-title">Landing Page</li>
+                <li class="sidebar-title">Beranda</li>
 
                 <li class="sidebar-item {{ Request::is('admin/teams*')?'active':'' }}">
                     <a href="/admin/teams" class='sidebar-link'>
                         <i class="fas fa-users"></i>
-                        <span>Team</span>
+                        <span>Pengelola</span>
                     </a>
                 </li>
                 <li class="sidebar-item {{ Request::is('admin/collaborations*')?'active':'' }}">
                     <a href="/admin/collaborations" class='sidebar-link'>
                         <i class="fas fa-handshake"></i>
-                        <span>Collaboration</span>
+                        <span>Kolaborasi</span>
                     </a>
                 </li>
                 <li class="sidebar-item {{ Request::is('admin/posts*')?'active':'' }}">
@@ -70,24 +70,24 @@
                     </a>
                 </li>  
 
-                <li class="sidebar-title">Learning</li>
+                <li class="sidebar-title">Pembelajaran</li>
                 
                 <li class="sidebar-item {{ Request::is('admin/courses*')?'active':'' }}">
                     <a href="/admin/courses" class='sidebar-link'>
                         <i class="fas fa-chalkboard-teacher"></i>
-                        <span>Course</span>
+                        <span>Kursus</span>
                     </a>
                 </li>
                 <li class="sidebar-item {{ Request::is('admin/categories*')?'active':'' }}">
                     <a href="/admin/categories" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
-                        <span>Category</span>
+                        <span>Kategori</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ Request::is('admin/students*')?'active':'' }}">
-                    <a href="/admin/students" class='sidebar-link'>
+                <li class="sidebar-item {{ Request::is('admin/enrollment*')?'active':'' }}">
+                    <a href="/admin/enrollment" class='sidebar-link'>
                         <i class="far fa-file-alt"></i>
-                        <span>Student Enrollment</span>
+                        <span>Pendaftar</span>
                     </a>
                 </li>
 

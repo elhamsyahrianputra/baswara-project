@@ -32,7 +32,8 @@ class DatabaseSeeder extends Seeder
             TheorySeeder::class,
             TeamSeeder::class,
             CollaborationSeeder::class,
-            PostSeeder::class
+            PostSeeder::class,
+            InvoiceSeeder::class,
         ]);
 
         
