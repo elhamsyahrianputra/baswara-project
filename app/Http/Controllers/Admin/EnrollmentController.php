@@ -92,14 +92,21 @@ class EnrollmentController extends Controller
 
     public function confirm(Request $request)
     {
+        // dd($request);
         $invoice = Invoice::find($request['invoice_id']);
         $user = User::find($invoice->user_id);
 
         $user->courses()->attach($invoice->course_id);
 
-        Invoice::find($invoice->id)->update([
-            'status' => 'paid'
+        $validatedData = $request->validate([
+            'payment_proof' => 'image|file|max:2048|required',
         ]);
+
+        if ($request->file('payment_proof')) {
+            $validatedData['payment_proof'] = $request->file('payment_proof')->store('invoice-image');
+        }
+        $validatedData['status'] = 'paid';
+        Invoice::find($invoice->id)->update($validatedData);
 
         return redirect('/admin/enrollment')->with('success', 'Pembayaran sudah terkonfirmasi');
 

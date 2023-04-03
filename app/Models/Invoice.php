@@ -18,7 +18,8 @@ class Invoice extends Model
         'course_id',
         'total_amount',
         'status',
-        'payment_proof'
+        'payment_proof',
+        'image_url'
     ];
 
     protected static function boot()
