@@ -43,25 +43,20 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 // * Admin
-
-
-Route::controller(AdminController::class)->middleware('auth')->group(function () {
-    Route::get('/admin', 'index');
-});
-
 Route::group(['prefix' => 'admin'], function () {
-    Route::resource('teams', TeamController::class)->middleware('auth');
-    Route::resource('courses', CourseController::class)->middleware('auth');
-    Route::resource('chapters', ChapterController::class)->middleware('auth');
-    Route::resource('theories', TheoryController::class)->middleware('auth');
-    Route::resource('categories', CategoryController::class)->middleware('auth');
-    Route::resource('collaborations', CollaborationController::class)->middleware('auth');
+    Route::get('/', [AdminController::class, 'index'])->middleware('admin');
+    Route::resource('teams', TeamController::class)->middleware('admin');
+    Route::resource('courses', CourseController::class)->middleware('admin');
+    Route::resource('chapters', ChapterController::class)->middleware('admin');
+    Route::resource('theories', TheoryController::class)->middleware('admin');
+    Route::resource('categories', CategoryController::class)->middleware('admin');
+    Route::resource('collaborations', CollaborationController::class)->middleware('admin');
 
-    Route::resource('enrollment', EnrollmentController::class)->middleware('auth');
-    Route::POST('enrollment/confirm', [EnrollmentController::class, 'confirm'])->middleware('auth');
+    Route::resource('enrollment', EnrollmentController::class)->middleware('admin');
+    Route::post('enrollment/confirm', [EnrollmentController::class, 'confirm'])->middleware('admin');
 
-    Route::resource('posts', PostController::class)->middleware('auth');
-    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth');
+    Route::resource('posts', PostController::class)->middleware('admin');
+    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('admin');
 });
 
 // * LandingPage
@@ -79,7 +74,7 @@ Route::controller(LandingPageController::class)->group(function () {
 // * Dashboard
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/dashboard', 'index')->middleware('auth');
-    Route::get('/learning', 'learning')->middleware('auth');
+    Route::get('/course/{course:id}/learn', 'learnCourse')->middleware('auth', 'student');
 });
 
 // * User

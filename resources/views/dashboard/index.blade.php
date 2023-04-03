@@ -39,7 +39,7 @@
                 <p class="lead-2 my-auto">Aktivitas Belajar</p>
             </div>
 
-            @foreach ( auth()->user()->courses  as $course)
+            @foreach ( $courses  as $course)
             <div class="row justify-content-center">
                 <div class="col-md-12 my-2">
                     <div class="card-body rounded" style="border: solid 1px lightgrey;">
@@ -50,7 +50,7 @@
                                 <p class="card-text lead-2">By <strong>{{ $course->author->name }}</strong></p>
                             </div>
                             <div class="col-md-1 ms-auto d-grid gap-2">
-                                <a href="/learning" class="btn btn-success"><i class="fa-solid fa-arrow-right fa-2x"></i></a>
+                                <a href="/course/{{ $course->id }}/learn" class="btn btn-success"><i class="fa-solid fa-arrow-right fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
