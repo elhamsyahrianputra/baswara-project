@@ -44,19 +44,19 @@ Route::controller(AuthController::class)->group(function () {
 
 // * Admin
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', [AdminController::class, 'index'])->middleware('admin');
-    Route::resource('teams', TeamController::class)->middleware('admin');
-    Route::resource('courses', CourseController::class)->middleware('admin');
-    Route::resource('chapters', ChapterController::class)->middleware('admin');
-    Route::resource('theories', TheoryController::class)->middleware('admin');
-    Route::resource('categories', CategoryController::class)->middleware('admin');
-    Route::resource('collaborations', CollaborationController::class)->middleware('admin');
+    Route::get('/', [AdminController::class, 'index'])->middleware('auth', 'admin');
+    Route::resource('teams', TeamController::class)->middleware('auth', 'admin');
+    Route::resource('courses', CourseController::class)->middleware('auth', 'admin');
+    Route::resource('chapters', ChapterController::class)->middleware('auth', 'admin');
+    Route::resource('theories', TheoryController::class)->middleware('auth', 'admin');
+    Route::resource('categories', CategoryController::class)->middleware('auth', 'admin');
+    Route::resource('collaborations', CollaborationController::class)->middleware('auth', 'admin');
 
-    Route::resource('enrollment', EnrollmentController::class)->middleware('admin');
-    Route::post('enrollment/confirm', [EnrollmentController::class, 'confirm'])->middleware('admin');
+    Route::resource('enrollment', EnrollmentController::class)->middleware('auth', 'admin');
+    Route::post('enrollment/confirm', [EnrollmentController::class, 'confirm'])->middleware('auth', 'admin');
 
-    Route::resource('posts', PostController::class)->middleware('admin');
-    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('admin');
+    Route::resource('posts', PostController::class)->middleware('auth', 'admin');
+    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth', 'admin');
 });
 
 // * LandingPage
