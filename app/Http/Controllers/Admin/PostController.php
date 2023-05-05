@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
@@ -151,7 +151,8 @@ class PostController extends Controller
     
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
-        return response()->json(['slug' => $slug]);
+        return print("hello");
+        // $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        // return response()->json(['slug' => $slug]);
     }
 }

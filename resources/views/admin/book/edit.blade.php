@@ -3,7 +3,7 @@
 @section('style')
     <link rel="stylesheet" href="{{ asset('mazer/extensions/choices.js/public/assets/styles/choices.css') }}">
     {{-- summernote css --}}
-    <link rel="stylesheet" href="{{ asset('mazer/css/pages/summernote.css') }}">
+    <link rel="stylesheet" href="{{ asset('mazer/pages/summernote.css') }}">
     <link rel="stylesheet" href="{{ asset('mazer/extensions/summernote/summernote-lite.css') }}">
 
     {{-- Need: Jquery --}}
@@ -18,7 +18,7 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Add Post</h3>
+                        <h3>Edit Post</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -45,14 +45,15 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="/admin/posts" method="post" enctype="multipart/form-data">
+                            <form action="/admin/posts/{{ $post->slug }}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('put')
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="inputTitle">Judul</label>
                                         <input type="text" class="form-control @error('title') is-invalid @enderror"
                                             id="title" placeholder="Enter title ...." name="title"
-                                            value="{{ old('title') }}" required >
+                                            value="{{ old('title', $post->title) }}" required>
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -64,7 +65,7 @@
                                         <label for="inputSlug">Slug</label>
                                         <input type="text" class="form-control @error('slug') is-invalid @enderror"
                                             id="slug" placeholder="what-a-title" name="slug"
-                                            value="{{ old('slug') }}" required readonly >
+                                            value="{{ old('slug', $post->slug) }}" required readonly>
                                         @error('slug')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -74,12 +75,14 @@
 
                                     <div class="form-group">
                                         <label for="inputAuthorID">Author</label>
-                                        <select class="choices form-select @error('user_id') is-invalid @enderror" name="user_id">
+                                        <select class="choices form-select @error('user_id') is-invalid @enderror"
+                                            name="user_id">
                                             <option value="">Choose a author ....</option>
                                             @foreach ($authors as $author)
-                                            <option value="{{ $author->id }}" {{ old('user_id') == $author->id ? 'selected' : '' }}>
-                                                {{ $author->name }} | {{ $author->email }}
-                                            </option>
+                                                <option value="{{ $author->id }}"
+                                                    {{ old('user_id', $post->user_id) == $author->id ? 'selected' : '' }}>
+                                                    {{ $author->name }} | {{ $author->email }}
+                                                </option>
                                             @endforeach
                                         </select>
                                         @error('user_id')
@@ -89,9 +92,15 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-group mb-3">
+                                    <div class="form-group">
                                         <label for="image" class="form-label">Input Image</label>
+                                        @if ($post->image_url)
+                                            <img class="img-preview img-fluid mb-3 col-sm-5"
+                                                src="{{ asset('storage/' . $post->image_url) }}" style="max-height: 300px">
+                                        @else
                                         <img class="img-preview img-fluid mb-3 col-sm-5">
+                                        @endif
+                                        
                                         <input class="form-control @error('image_url') is-invalid @enderror" type="file"
                                             id="image" name="image_url" onchange="previewImage()">
                                         @error('image_url')
@@ -100,12 +109,11 @@
                                             </div>
                                         @enderror
                                     </div>
+                                    <input type="hidden" value="{{ $post->image_url }}" name="old_image">
 
                                     <div class="form-group">
                                         <label for="inputBody">Isi atau konten</label>
-                                        <textarea class="form-control @error('body') is-invalid @enderror" name="body" id="summernote" style="height: 200px">
-                                        {{ old('body') }}
-                                        </textarea>
+                                        <textarea class="form-control @error('body') is-invalid @enderror" name="body" id="summernote" style="height: 200px">{{ old('body', $post->body) }}</textarea>
                                         @error('body')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -113,12 +121,13 @@
                                         @enderror
                                     </div>
 
+
                                 </div>
+
                                 <!-- /.card-body -->
 
-
                                 <div class="card-footer d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </form>
                         </div>

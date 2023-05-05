@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 
 use App\Http\Controllers\Admin\{
     AdminController, 
+    BookController,
     CategoryController, 
     CourseController, 
     ChapterController, 
@@ -13,7 +14,7 @@ use App\Http\Controllers\Admin\{
     PostController,
     TheoryController,
     TeamController,
-    EnrollmentController
+    EnrollmentController,
 };
 
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -56,7 +57,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('enrollment/confirm', [EnrollmentController::class, 'confirm'])->middleware('auth', 'admin');
 
     Route::resource('posts', PostController::class)->middleware('auth', 'admin');
-    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth', 'admin');
+    Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth');
+
+    Route::resource('books', BookController::class)->middleware('auth', 'admin');
+    Route::get('books/checkSlug', [BookController::class, 'checkSlug'])->middleware('auth');
 });
 
 // * LandingPage
