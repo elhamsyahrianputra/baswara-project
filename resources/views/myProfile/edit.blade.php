@@ -136,10 +136,10 @@
                                     <div class="form-group">
                                         <label for="inputImageURL">File input</label>
                                         @if ($user->avatar_url != 'default-avatar.jpg')
-                                            <img class="img-preview mb-4 img-bordered d-block"
+                                            <img class="img-preview mb-4 border d-block"
                                                 src="/storage/{{ $user->avatar_url }}" style="max-height: 300px">
                                         @else
-                                            <img class="img-preview mb-4 img-bordered d-block"
+                                            <img class="img-preview mb-4 border d-block"
                                                 src="/dist/img/avatar_default.jpg" style="max-height: 300px">
                                         @endif
 

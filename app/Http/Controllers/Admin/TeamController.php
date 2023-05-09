@@ -110,8 +110,8 @@ class TeamController extends Controller
             'division' => 'required',
             'biography' => 'required',
             'instagram_url' => 'required',
-            'email_url' => 'required',
             'linkedin_url' => 'required',
+            'email_url' => 'email:dns|required',
             'image_url' => 'image|file|max:2048|'
         ]);
 

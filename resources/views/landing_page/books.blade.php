@@ -5,12 +5,12 @@
     <!-- courses list section start -->
     <section class="list">
         <div class="container">
-            <ul class="list_courses d-md-flex flex-wrap justify-content-center">
+            <ul class="list_courses d-md-flex flex-wrap justify-content-center my-4">
                 @foreach ($books as $book)
                 <li data-groups='[]' class="list_courses-card course-card col-12 col-md-4 col-xl-3">
                     <a href="/book/{{ $book->slug }}">
                         <div class="book-card_wrapper">
-                            <img class="book-cover" src="{{ asset('storage/'.$book->cover_url) }}" alt="">
+                            <img class="book-cover book--shadow" src="{{ asset('storage/'.$book->cover_url) }}" alt="">
                             <div class="top d-flex align-items-start">
                                 <div class="wrapper d-flex flex-column">
                                     <h6 class="top_title">{{ $book->title }}</h6>

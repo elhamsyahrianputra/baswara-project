@@ -48,7 +48,7 @@ class BookController extends Controller
             'title' => 'required',
             'publisher' => 'required',
             'author' => 'required',
-            'cover_url' => 'required',
+            'cover_url' => 'image|file|max:2048|required',
             'isbn' => 'required',
             'edition' => 'required',
             'published_at' => 'required',
@@ -63,7 +63,7 @@ class BookController extends Controller
         }
 
         if ($request->file('pdf_url')) {
-            $validatedData['pdf_url'] = $request->file('pdf_url')->storeAs('books/book-pdf', $validatedData['slug'].'.pdf');
+            $validatedData['pdf_url'] = $request->file('pdf_url')->storeAs('books/book-file', $validatedData['slug'].'.pdf');
         }
 
         Book::create($validatedData);
@@ -90,7 +90,11 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('admin.book.edit', [
+            'title' => 'Book | Dashboard',
+            'book' => $book,
+
+        ]);
     }
 
     /**
@@ -102,7 +106,30 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'publisher' => 'required',
+            'author' => 'required',
+            'cover_url' => 'image|file|max:2048',
+            'isbn' => 'required',
+            'edition' => 'required',
+            'published_at' => 'required',
+            'pdf_url' => 'mimes:pdf'
+        ]);
+
+        if ($request->file('cover_url')) {
+            Storage::delete($request->old_image);
+            $validatedData['cover_url'] = $request->file('cover_url')->store('books/book-cover');
+        }
+
+        if ($request->file('pdf_url')) {
+            Storage::delete($request->old_file);
+            $validatedData['pdf_url'] = $request->file('pdf_url')->store('books/book-file');
+        }
+
+        Book::find($book->id)->update($validatedData);
+
+        return redirect('/admin/books')->with('success', 'Data team has been update');
     }
 
     /**
@@ -113,7 +140,9 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        Book::destroy($book->id);
+        Storage::delete($book->pdf_url);
+		return redirect('/admin/books')->with('success', 'Data theory has been deleted');
     }
     public function checkSlug(Request $request)
     {

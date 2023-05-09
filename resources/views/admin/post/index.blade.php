@@ -46,7 +46,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->author->name }}</td>
-                                <td class="project-actions text-right">
+                                <td class="project-actions text-center">
                                     <a class="btn btn-outline-info" href="/admin/posts/{{ $post->slug }}">
                                         <i class="bi bi-eye-fill"></i>
                                     </a>

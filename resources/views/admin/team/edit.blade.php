@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputImageURL">File Image</label>
-                                    <img class="img-preview mb-4 img-bordered d-block" src="{{ asset('storage/' . $team->image_url) }}" style="max-height: 300px">
+                                    <img class="img-preview mb-4 border d-block" src="{{ asset('storage/' . $team->image_url) }}" style="max-height: 300px">
                                     <div class="input-group">
                                         <input type="file" onchange="imagePreview()"
                                             class="form-control @error('image_url') is-invalid @enderror"
