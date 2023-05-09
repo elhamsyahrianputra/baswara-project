@@ -63,7 +63,7 @@ class BookController extends Controller
         }
 
         if ($request->file('pdf_url')) {
-            $validatedData['pdf_url'] = $request->file('pdf_url')->storeAs('books/book-pdf', $validatedData['slug']);
+            $validatedData['pdf_url'] = $request->file('pdf_url')->storeAs('books/book-pdf', $validatedData['slug'].'.pdf');
         }
 
         Book::create($validatedData);
