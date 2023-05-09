@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Course;
 use App\Models\Category;
-
+use App\Models\CourseCategory;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -22,13 +22,9 @@ class CourseCategorySeeder extends Seeder
         $courses = Course::all(['id']);
         $categories = Category::all(['id']);
 
-        $courseCategory = [
-            [
-                'course_id' => $courses[0]->id,
-                'category_id' => $categories[1]->id,
-            ]
-        ];
-
-        DB::table('course_categories')->insert($courseCategory);
+        CourseCategory::create([
+            'course_id' => $courses[0]->id,
+            'category_id' => $categories[1]->id,
+        ]);
     }
 }

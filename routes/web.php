@@ -66,6 +66,8 @@ Route::group(['prefix' => 'admin'], function () {
 // * LandingPage
 Route::controller(LandingPageController::class)->group(function () {
     Route::get('/', 'home');
+    Route::get('/book/{book:slug}', 'book');
+    Route::get('/books', 'books');
     Route::get('/course', 'coursedefault');
     Route::get('/course/{id}', 'course');
     Route::get('/courses', 'courses');

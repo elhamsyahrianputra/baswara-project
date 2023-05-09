@@ -51,8 +51,27 @@
                 <li class="header_nav-list_item">
                     <a class="nav-item" href="/">Beranda</a>
                 </li>
-                <li class="header_nav-list_item">
-                    <a class="nav-item" href="/courses">Rumah Pembelajaran</a>
+                <li class="header_nav-list_item dropdown_navbar">
+                    <a class="nav-item dropdown_navbar-toggle d-inline-flex align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#coursesMenu" data-trigger="dropdown_navbar"
+                        aria-expanded="false" aria-controls="coursesMenu" data-page="courses">
+                        Pembelajaran BIPA
+                        <i class="icon-angle-down icon"></i>
+                    </a>
+                    <div class="dropdown_navbar-menu collapse" id="coursesMenu">
+                        <ul class="dropdown_navbar-list">
+                            <li class="list-item">
+                                <a class="dropdown_navbar-item nav-item" data-page="courses" href="/courses">
+                                    <span class="profile-dropdown_navbar-item">Rumah Pembelajaran</span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a class="dropdown_navbar-item nav-item" data-page="books" href="/books">
+                                    <span class="profile-dropdown_navbar-item">Buku Pembelarajan</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="header_nav-list_item">
                     <a class="nav-item" href="/posts">Info Seputar BIPA</a>

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Book;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use \Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class BookController extends Controller
 {
@@ -43,7 +44,31 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'publisher' => 'required',
+            'author' => 'required',
+            'cover_url' => 'required',
+            'isbn' => 'required',
+            'edition' => 'required',
+            'published_at' => 'required',
+            'pdf_url' => 'mimes:pdf|required'
+        ]);
+        
+        
+        $validatedData['slug'] = Str::slug($request['title']);
+
+        if ($request->file('cover_url')) {
+            $validatedData['cover_url'] = $request->file('cover_url')->store('books/book-cover');
+        }
+
+        if ($request->file('pdf_url')) {
+            $validatedData['pdf_url'] = $request->file('pdf_url')->storeAs('books/book-pdf', $validatedData['slug']);
+        }
+
+        Book::create($validatedData);
+
+        return redirect('/admin/books')->with('success', 'Data team has been update');
     }
 
     /**

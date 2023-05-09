@@ -1,11 +1,6 @@
 @extends('layouts.admin')
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('mazer/extensions/choices.js/public/assets/styles/choices.css') }}">
-    {{-- summernote css --}}
-    <link rel="stylesheet" href="{{ asset('mazer/css/pages/summernote.css') }}">
-    <link rel="stylesheet" href="{{ asset('mazer/extensions/summernote/summernote-lite.css') }}">
-
     {{-- Need: Jquery --}}
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
@@ -45,14 +40,14 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="/admin/posts" method="post" enctype="multipart/form-data">
+                            <form action="/admin/books" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="inputTitle">Judul</label>
+                                        <label for="title">Judul Buku</label>
                                         <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                            id="title" placeholder="Enter title ...." name="title"
-                                            value="{{ old('title') }}" required >
+                                            id="title" placeholder="Judul Buku" name="title"
+                                            value="{{ old('title') }}">
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -61,57 +56,85 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputSlug">Slug</label>
-                                        <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                            id="slug" placeholder="what-a-title" name="slug"
-                                            value="{{ old('slug') }}" required readonly >
-                                        @error('slug')
+                                        <label for="publisher">Penerbit</label>
+                                        <input type="text" class="form-control @error('publisher') is-invalid @enderror" id="publisher" placeholder="Penerbit" name="publisher" value="{{ old('publisher') }}">
+                                        @error('publisher')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
 
-                                    {{-- <div class="form-group">
-                                        <label for="inputAuthorID">Author</label>
-                                        <select class="choices form-select @error('user_id') is-invalid @enderror" name="user_id">
-                                            <option value="">Choose a author ....</option>
-                                            @foreach ($authors as $author)
-                                            <option value="{{ $author->id }}" {{ old('user_id') == $author->id ? 'selected' : '' }}>
-                                                {{ $author->name }} | {{ $author->email }}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                        @error('user_id')
+                                    <div class="form-group">
+                                        <label for="author">Penulis</label>
+                                        <input type="text" class="form-control @error('author') is-invalid @enderror"
+                                            id="author" placeholder="Penulis" name="author"
+                                            value="{{ old('author') }}">
+                                        @error('author')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                    </div> --}}
+                                    </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="file" class="form-label">Input File</label>
-                                        {{-- <img class="img-preview img-fluid mb-3 col-sm-5"> --}}
+                                        <label for="cover_url" class="form-label">Input File</label>
+                                        <img class="img-preview mb-3">
+                                        <input class="form-control @error('cover_url') is-invalid @enderror" type="file"
+                                            id="cover_url" name="cover_url" onchange="previewImage()">
+                                        @error('cover_url')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="isbn">ISBN</label>
+                                        <input type="text" class="form-control @error('isbn') is-invalid @enderror"
+                                            id="isbn" placeholder="ISBN" name="isbn"
+                                            value="{{ old('isbn') }}">
+                                        @error('isbn')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="edition">Edisi</label>
+                                        <input type="text" class="form-control @error('edition') is-invalid @enderror"
+                                            id="edition" placeholder="Edisi" name="edition"
+                                            value="{{ old('edition') }}">
+                                        @error('edition')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="published_at">Tanggal Terbit</label>
+                                        <input type="date" class="form-control @error('published_at') is-invalid @enderror"
+                                            id="published_at"  name="published_at"
+                                            value="{{ old('published_at') }}">
+                                        @error('published_at')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="pdf_url" class="form-label">Input File</label>
                                         <input class="form-control @error('pdf_url') is-invalid @enderror" type="file"
-                                            id="image" name="pdf_url" onchange="previewImage()">
+                                            id="pdf_url" name="pdf_url" accept = "application/pdf">
                                         @error('pdf_url')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
-
-                                    {{-- <div class="form-group">
-                                        <label for="inputBody">Isi atau konten</label>
-                                        <textarea class="form-control @error('body') is-invalid @enderror" name="body" id="summernote" style="height: 200px">
-                                        {{ old('body') }}
-                                        </textarea>
-                                        @error('body')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div> --}}
 
                                 </div>
                                 <!-- /.card-body -->
@@ -136,54 +159,22 @@
 
 @section('script')
     <script>
-        // Cek slug
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
+        // preview image
+        function previewImage() {
+            const image = document.querySelector('#cover_url');
+            const imgPreview = document.querySelector('.img-preview');
 
-        title.addEventListener('change', function() {
-            fetch('/admin/books/checkSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-    </script>
-    <!-- bs-custom-file-input -->
-    {{-- Choices --}}
-    {{-- <script src="{{ asset('mazer/extensions/choices.js/public/assets/scripts/choices.js') }}"></script> --}}
-    {{-- <script src="{{ asset('mazer/js/pages/form-element-select.js') }}"></script> --}}
+            imgPreview.style.display = 'block';
+            imgPreview.style.maxHeight = '300px';
+            imgPreview.classList.add('img-bordered');
 
-    {{-- Summernote --}}
-    {{-- <script src="{{ asset('mazer/extensions/summernote/summernote.js') }}"></script> --}}
-    {{-- <script src="{{ asset('mazer/extensions/summernote/summernote-lite.js') }}"></script> --}}
-    <script>
-        // // preview image
-        // function previewImage() {
-        //     const image = document.querySelector('#image');
-        //     const imgPreview = document.querySelector('.img-preview');
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
 
-        //     imgPreview.style.display = 'block';
-
-        //     const oFReader = new FileReader();
-        //     oFReader.readAsDataURL(image.files[0]);
-
-        //     oFReader.onload = function(oFREvent) {
-        //         imgPreview.src = oFREvent.target.result;
-        //     }
-        // }
-
-        // // summernote
-        // $(document).ready(function() {
-        //     $('#summernote').summernote({
-        //         toolbar: [
-        //             // [groupName, [list of button]]
-        //             ['style', ['bold', 'italic', 'underline', 'clear']],
-        //             ['font', ['strikethrough', 'superscript', 'subscript']],
-        //             ['fontsize', ['fontsize']],
-        //             ['color', ['color']],
-        //             ['para', ['ul', 'ol', 'paragraph']],
-        //             ['height', ['height']]
-        //         ]
-        //     });
-        // });
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
 
         $(function() {
             bsCustomFileInput.init();

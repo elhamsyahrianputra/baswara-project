@@ -5,68 +5,19 @@
     <!-- courses list section start -->
     <section class="list">
         <div class="container">
-            <ul class="list_tags courses-tags d-flex flex-wrap align-items-center justify-content-center">
-                <li class="list-item" data-aos="fade-left">
-                    <a data-target="all" class="list_tags-tag tag current" href="#">Semua</a>
-                </li>
-                @foreach ($categories as $category)
-                <li class="list-item" data-aos="fade-left" data-aos-delay="50">
-                    <a data-target="{{ $category->name }}" class="list_tags-tag tag" href="#">{{ $category->name }}</a>
-                </li>
-                @endforeach
-            </ul>
             <ul class="list_courses d-md-flex flex-wrap justify-content-center">
-                @foreach ($courses as $course)
-                <li data-groups='[
-                    @foreach ($course->categories as $category)
-                        @if ($loop->last)
-                            "{{ $category->name }}"
-                        @else
-                            "{{ $category->name }}",
-                        @endif
-                    @endforeach  
-                    ]' class="list_courses-card course-card col-12 col-md-6 col-xl-4">
-                    <div class="course-card_wrapper">
-                        <div class="image"
-                            style="background-image: url({{ asset('storage/'.$course->cover_url) }});">
-                        </div>
-                        <div class="top d-flex align-items-start">
-                            <div class="wrapper d-flex flex-column">
-                                <h6 class="top_title">{{ $course->name }}</h6>
-                                <ul class="rating d-flex align-items-center">
-                                    <span class="rating_value me-2">4.7</span>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                    <li class="rating_star">
-                                        <i class="icon-star icon"></i>
-                                    </li>
-                                </ul>
-                                <div class="row">
-                                    <div class="col top_author">
-                                        by {{ $course->author->name }}
-                                    </div>
-                                    <div class="col-3">
-                                        <span class="top_details">Rp{{ number_format($course->price, 0, ",", ".") }}</span>
-                                    </div>
+                @foreach ($books as $book)
+                <li data-groups='[]' class="list_courses-card course-card col-12 col-md-4 col-xl-3">
+                    <a href="/book/{{ $book->slug }}">
+                        <div class="book-card_wrapper">
+                            <img class="book-cover" src="{{ asset('storage/'.$book->cover_url) }}" alt="">
+                            <div class="top d-flex align-items-start">
+                                <div class="wrapper d-flex flex-column">
+                                    <h6 class="top_title">{{ $book->title }}</h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="bottom">
-                            <a class="bottom_btn btn btn--bordered btn--arrow" href="/course/{{ $course->id }}">
-                                Ikuti Kursus Ini <i class="icon-arrow-right-solid icon"></i>
-                            </a>
-                        </div>
-                    </div>
+                    </a>
                 </li>
                 @endforeach
             </ul>

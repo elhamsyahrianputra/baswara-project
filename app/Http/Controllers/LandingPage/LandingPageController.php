@@ -9,6 +9,7 @@ use App\Models\Team;
 use App\Models\User;
 use App\Models\Collaboration;
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 
 class LandingPageController extends Controller
 {
@@ -18,6 +19,25 @@ class LandingPageController extends Controller
             'title' => "Beranda | Baswara",
             'collaborations' => Collaboration::all(),
             'courses' => Course::orderBy('id','desc')->take(3)->get(),
+        ]);
+    }
+
+    public function book(Book $book)
+    {
+        // $book = Book::find($id);
+
+        return view('landing_page.book', [
+            'title' => "Buku Pembelajaran | Baswara",
+            'book' => $book
+        ]);
+    }
+
+    public function books() {
+        $books = Book::all();
+
+        return view('landing_page.books', [
+            'title' => 'Buku Pembelajaran | Baswara',
+            'books' => $books,
         ]);
     }
 

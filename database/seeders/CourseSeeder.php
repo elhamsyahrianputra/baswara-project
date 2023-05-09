@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-
 use App\Models\Course;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
@@ -19,13 +18,6 @@ class CourseSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::all(['id']);
-        Course::create([
-            'author_id' => $user[1]->id,
-            'name' => 'Belajar Dasar Bahasa Indonesia',
-            'Description' => 'Mempelajari dasar-dasar Bahasa Indonesia',
-            'cover_url' => 'course/course-cover/indonesia.jpeg',
-            'price' => 500000,
-        ]);
+        Course::factory(20)->create();
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Course;
+use App\Models\CourseStudent;
 use App\Models\User;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -22,13 +23,9 @@ class CourseStudentSeeder extends Seeder
         $courses = Course::all(['id']);
         $students = User::all(['id']);
 
-        $courseStudents = [
-            [
-                'course_id' => $courses[0]->id,
-                'student_id' => $students[2]->id,
-            ],
-        ];
-
-        DB::table('course_students')->insert($courseStudents);
+        CourseStudent::create([
+            'course_id' => $courses[0]->id,
+            'student_id' => $students[2]->id,
+        ]);
     }
 }

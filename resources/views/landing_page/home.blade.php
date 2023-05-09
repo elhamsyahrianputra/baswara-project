@@ -3,30 +3,6 @@
 @section('style')
     <link rel="stylesheet" href="/dist/css/owl.carousel.css">
     <link rel="stylesheet" href="/dist/css/owl.theme.default.css">
-    <style>
-
-        .owl-carousel {
-            /* background-color: green; */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .owl-carousel .item {
-            padding: 10px;
-            display: flex;
-            /* background-color: red; */
-            justify-content: center;
-        }
-
-        .owl-carousel .item img {
-            display: block;
-            height: 100%;
-            min-height: 100px;
-            max-height: 101px;
-            object-fit: contain;
-        }
-    </style>
 @endsection
 
 @section('content')
@@ -56,6 +32,7 @@
             </div>
         </section>
         <!-- hero section end -->
+
         <!-- features section start -->
         <div class="features">
             <div class="container">
@@ -109,6 +86,7 @@
             </div>
         </div>
         <!-- features section end -->
+
         <!-- promo section start -->
         <section class="promo">
             <div class="container d-flex flex-column-reverse flex-lg-row justify-content-lg-end">
@@ -126,6 +104,7 @@
             </div>
         </section>
         <!-- promo section end -->
+
         <!-- about section start -->
         <section class="about">
             <div class="container">
@@ -207,7 +186,7 @@
         </section>
         <!-- about section end -->
 
-        {{-- Collaboration section start --}}
+        <!-- Collaboration section start -->
         <section class="recently partners">
             <div class="container">
                 <div class="recently_header">
@@ -229,7 +208,7 @@
                 </div>
             </div>
         </section>
-        {{-- Collaboration section end --}}
+        <!-- Collaboration section end -->
 
         <!-- recently courses section start -->
         <section class="recently">
@@ -293,44 +272,47 @@
                 </a>
             </div>
         </section>
-
-        
         <!-- recently courses section end -->
+
         <!-- banner section start -->
-        {{-- <div class="banner">
-        <div class="underlay"></div>
-        <div class="container d-lg-flex align-items-center">
-            <div class="banner_content">
-                <h4 class="banner_content-title" data-aos="fade-up">
-                    Dapatkan akses tanpa batas dengan <b>subscribe</b>!
-                </h4>
-                <div class="wrapper" data-aos="fade-up" data-aos-delay="50">
-                    <a class="banner_content-btn btn btn--yellow" href="pricing.php">Pricing plans</a>
+        <div class="banner">
+            <div class="underlay"></div>
+            <div class="container d-lg-flex align-items-center">
+                <div class="banner_content">
+                    <h4 class="banner_content-title" data-aos="fade-up">
+                        Daftarkan dirimu sekarang!
+                    </h4>
+                    <div class="wrapper" data-aos="fade-up" data-aos-delay="50">
+                        <a class="btn btn--gradient" href="/signup">
+                            <span class="text">Daftar</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="banner_media">
+                    <picture>
+                        <source data-srcset="dist/img/placeholder.jpg" srcset="dist/img/placeholder.jpg" />
+                        <img class="lazy" data-src="dist/img/placeholder.jpg" src="dist/img/placeholder.jpg" alt="media" />
+                    </picture>
                 </div>
             </div>
-            <div class="banner_media">
-                <picture>
-                    <source data-srcset="img/full_logo2.png" srcset="img/full_logo2.png" />
-                    <img class="lazy" data-src="img/full_logo2.png" src="img/full_logo2.png" alt="media" />
-                </picture>
-            </div>
         </div>
-    </div> --}}
         <!-- banner section end -->
     </main>
+@endsection
 
 @section('script')
-<script src="{{ asset('dist/js/courses.min.js') }}"></script>
-<script src="{{ asset('dist/js/reviews.min.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="{{ asset('dist/js/courses.min.js') }}"></script>
+    <script src="{{ asset('dist/js/reviews.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    
+    <!-- Owl Carousel Script -->
     <script src="{{ asset('dist/js/owl.carousel.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: true,
+                nav: false,
                 autoplay: true,
                 autoplayTimeout:3000,
                 responsive: {
@@ -347,5 +329,4 @@
             })
         });
     </script>
-@endsection
 @endsection
