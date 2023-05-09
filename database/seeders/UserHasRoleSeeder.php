@@ -21,29 +21,25 @@ class UserHasRoleSeeder extends Seeder
         $users = User::all();
         $roles = Role::all();
 
-        $courseStudents = [
-            [
-                'user_id' => $users[0]->id,
-                'role_id' => $roles[0]->id,
-                'created_at' => now(),
-            ],
-            [
-                'user_id' => $users[1]->id,
-                'role_id' => $roles[1]->id,
-                'created_at' => now(),
-            ],
-            [
-                'user_id' => $users[2]->id,
-                'role_id' => $roles[2]->id,
-                'created_at' => now(),
-            ],
-            [
-                'user_id' => $users[3]->id,
-                'role_id' => $roles[2]->id,
-                'created_at' => now(),
-            ],
-        ];
-
-        DB::table('user_has_roles')->insert($courseStudents);
+        UserHasRole::create([
+            'user_id' => $users[0]->id,
+            'role_id' => $roles[0]->id,
+            'created_at' => now(),
+        ]);
+        UserHasRole::create([
+            'user_id' => $users[1]->id,
+            'role_id' => $roles[1]->id,
+            'created_at' => now(),
+        ]);
+        UserHasRole::create([
+            'user_id' => $users[2]->id,
+            'role_id' => $roles[2]->id,
+            'created_at' => now(),
+        ]);
+        UserHasRole::create([
+            'user_id' => $users[3]->id,
+            'role_id' => $roles[2]->id,
+            'created_at' => now(),
+        ]);
     }
 }

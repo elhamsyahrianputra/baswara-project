@@ -65,8 +65,14 @@
                 </li>
                 <li class="sidebar-item {{ Request::is('admin/posts*')?'active':'' }}">
                     <a href="/admin/posts" class='sidebar-link'>
-                        <i class="far fa-file-alt"></i>
+                        <i class="fas fa-file-alt"></i>
                         <span>Info Seputar BIPA (Post)</span>
+                    </a>
+                </li>  
+                <li class="sidebar-item {{ Request::is('admin/books*')?'active':'' }}">
+                    <a href="/admin/books" class='sidebar-link'>
+                        <i class="fas fa-book"></i>
+                        <span>Buku Pembelajaran</span>
                     </a>
                 </li>  
 
@@ -86,7 +92,7 @@
                 </li>
                 <li class="sidebar-item {{ Request::is('admin/enrollment*')?'active':'' }}">
                     <a href="/admin/enrollment" class='sidebar-link'>
-                        <i class="far fa-file-alt"></i>
+                        <i class="fas fa-file-alt"></i>
                         <span>Pendaftar</span>
                     </a>
                 </li>

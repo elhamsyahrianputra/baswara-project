@@ -17,15 +17,20 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('pdf_url')->nullable();
-            $table->timestamp('published_at')->nullable();
+            $table->string('cover_url');
+            $table->string('pdf_url');
+            $table->string('publisher');
+            $table->string('author');
+            $table->string('isbn');
+            $table->string('edition');
+            $table->date('published_at');
             $table->timestamps();
             $table->softDeletes();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations.mig
      *
      * @return void
      */

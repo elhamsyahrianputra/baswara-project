@@ -17,7 +17,7 @@ class ChapterSeeder extends Seeder
      */
     public function run()
     {
-        $course = Course::where('name', 'Belajar Dasar Bahasa Indonesia')->first();
+        $course = Course::first();
 
         Chapter::create([
             'course_id' => $course->id,
