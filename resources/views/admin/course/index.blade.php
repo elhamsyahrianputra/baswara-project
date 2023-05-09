@@ -51,7 +51,7 @@
                                 <td>{{ $course->author->name}}</td>
                                 <td>{{ $course->description }}</td>
                                 <td>Rp{{ number_format($course->price, 0, ",", ".") }}</td>
-                                <td class="project-actions text-right">
+                                <td class="project-actions text-center">
                                     <a class="btn btn-info btn-sm mt-1" href="/admin/courses/{{ $course->id }}/edit">
                                         <i class="fas fa-pencil-alt">
                                         </i>

@@ -1,11 +1,6 @@
 @extends('layouts.admin')
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('mazer/extensions/choices.js/public/assets/styles/choices.css') }}">
-    {{-- summernote css --}}
-    <link rel="stylesheet" href="{{ asset('mazer/pages/summernote.css') }}">
-    <link rel="stylesheet" href="{{ asset('mazer/extensions/summernote/summernote-lite.css') }}">
-
     {{-- Need: Jquery --}}
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
@@ -18,13 +13,13 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Edit Post</h3>
+                        <h3>Add Book</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="/admin/posts">Post</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/books">Book</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Add</li>
                             </ol>
                         </nav>
@@ -41,19 +36,17 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Postingan Seputar BIPA</h3>
+                                <h3 class="card-title">Buku BIPA</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="/admin/posts/{{ $post->slug }}" method="post" enctype="multipart/form-data">
+                            <form action="/admin/books/{{ $book->slug }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="inputTitle">Judul</label>
-                                        <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                            id="title" placeholder="Enter title ...." name="title"
-                                            value="{{ old('title', $post->title) }}" required>
+                                        <label for="title">Judul Buku</label>
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Judul Buku" name="title" value="{{ old('title', $book->title) }}">
                                         @error('title')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -62,11 +55,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputSlug">Slug</label>
-                                        <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                            id="slug" placeholder="what-a-title" name="slug"
-                                            value="{{ old('slug', $post->slug) }}" required readonly>
-                                        @error('slug')
+                                        <label for="publisher">Penerbit</label>
+                                        <input type="text" class="form-control @error('publisher') is-invalid @enderror" id="publisher" placeholder="Penerbit" name="publisher" value="{{ old('publisher', $book->publisher) }}">
+                                        @error('publisher')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -74,18 +65,32 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputAuthorID">Author</label>
-                                        <select class="choices form-select @error('user_id') is-invalid @enderror"
-                                            name="user_id">
-                                            <option value="">Choose a author ....</option>
-                                            @foreach ($authors as $author)
-                                                <option value="{{ $author->id }}"
-                                                    {{ old('user_id', $post->user_id) == $author->id ? 'selected' : '' }}>
-                                                    {{ $author->name }} | {{ $author->email }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        @error('user_id')
+                                        <label for="author">Penulis</label>
+                                        <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" placeholder="Penulis" name="author" value="{{ old('author', $book->author) }}">
+                                        @error('author')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="cover_url" class="form-label">Input File</label>
+                                        <img class="img-preview mb-3 d-block border" src="{{ asset('storage/' . $book->cover_url) }}" style="max-height: 300px">
+                                        <input class="form-control @error('cover_url') is-invalid @enderror" type="file"
+                                            id="cover_url" name="cover_url" onchange="previewImage()">
+                                        @error('cover_url')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        <input type="hidden" value="{{ $book->cover_url }}" name="old_image">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="isbn">ISBN</label>
+                                        <input type="text" class="form-control @error('isbn') is-invalid @enderror" id="isbn" placeholder="ISBN" name="isbn" value="{{ old('isbn', $book->isbn) }}">
+                                        @error('isbn')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -93,41 +98,42 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="image" class="form-label">Input Image</label>
-                                        @if ($post->image_url)
-                                            <img class="img-preview img-fluid mb-3 col-sm-5"
-                                                src="{{ asset('storage/' . $post->image_url) }}" style="max-height: 300px">
-                                        @else
-                                        <img class="img-preview img-fluid mb-3 col-sm-5">
-                                        @endif
-                                        
-                                        <input class="form-control @error('image_url') is-invalid @enderror" type="file"
-                                            id="image" name="image_url" onchange="previewImage()">
-                                        @error('image_url')
+                                        <label for="edition">Edisi</label>
+                                        <input type="text" class="form-control @error('edition') is-invalid @enderror" id="edition" placeholder="Edisi" name="edition" value="{{ old('edition', $book->edition) }}">
+                                        @error('edition')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
-                                    <input type="hidden" value="{{ $post->image_url }}" name="old_image">
 
                                     <div class="form-group">
-                                        <label for="inputBody">Isi atau konten</label>
-                                        <textarea class="form-control @error('body') is-invalid @enderror" name="body" id="summernote" style="height: 200px">{{ old('body', $post->body) }}</textarea>
-                                        @error('body')
+                                        <label for="published_at">Tanggal Terbit</label>
+                                        <input type="date" class="form-control @error('published_at') is-invalid @enderror" id="published_at"  name="published_at" value="{{ old('published_at', $book->published_at) }}">
+                                        @error('published_at')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
 
+                                    <div class="form-group mb-3">
+                                        <label for="pdf_url" class="form-label">Input File</label>
+                                        <input class="form-control @error('pdf_url') is-invalid @enderror" type="file" id="pdf_url" name="pdf_url" accept = "application/pdf">
+                                        @error('pdf_url')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        <input type="hidden" value="{{ $book->pdf_url }}" name="old_file">
+                                    </div>
 
                                 </div>
-
                                 <!-- /.card-body -->
 
+
                                 <div class="card-footer d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Edit</button>
                                 </div>
                             </form>
                         </div>
@@ -145,31 +151,14 @@
 
 @section('script')
     <script>
-        // Cek slug
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
-
-        title.addEventListener('change', function() {
-            fetch('/admin/posts/checkSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-    </script>
-    <!-- bs-custom-file-input -->
-    {{-- Choices --}}
-    <script src="{{ asset('mazer/extensions/choices.js/public/assets/scripts/choices.js') }}"></script>
-    <script src="{{ asset('mazer/js/pages/form-element-select.js') }}"></script>
-
-    {{-- Summernote --}}
-    <script src="{{ asset('mazer/extensions/summernote/summernote.js') }}"></script>
-    <script src="{{ asset('mazer/extensions/summernote/summernote-lite.js') }}"></script>
-    <script>
         // preview image
         function previewImage() {
-            const image = document.querySelector('#image');
+            const image = document.querySelector('#cover_url');
             const imgPreview = document.querySelector('.img-preview');
 
             imgPreview.style.display = 'block';
+            imgPreview.style.maxHeight = '300px';
+            imgPreview.classList.add('border');
 
             const oFReader = new FileReader();
             oFReader.readAsDataURL(image.files[0]);
@@ -178,21 +167,6 @@
                 imgPreview.src = oFREvent.target.result;
             }
         }
-
-        // summernote
-        $(document).ready(function() {
-            $('#summernote').summernote({
-                toolbar: [
-                    // [groupName, [list of button]]
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough', 'superscript', 'subscript']],
-                    ['fontsize', ['fontsize']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['height', ['height']]
-                ]
-            });
-        });
 
         $(function() {
             bsCustomFileInput.init();

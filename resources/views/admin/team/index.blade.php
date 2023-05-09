@@ -38,7 +38,7 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Division</th>
-                                <th>Action</th>
+                                <th width="20%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,19 +47,15 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $team->name }}</td>
                                 <td>{{ $team->division }}</td>
-                                <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm" href="/admin/teams/{{ $team->id }}/edit">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
+                                <td class="project-actions text-center">
+                                    <a class="btn btn-info" href="/admin/teams/{{ $team->id }}/edit">
+                                        <i class="fas fa-pencil-alt"></i>
                                     </a>
                                     <form action="/admin/teams/{{ $team->id }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger btn-sm delete">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Delete
+                                        <button class="btn btn-danger delete">
+                                            <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
         

@@ -98,7 +98,7 @@
 
                                 <div class="form-group">
                                     <label for="inputCoverURL">Course Cover</label>
-                                    <img class="img-preview mb-4 img-bordered d-block" src="{{ asset('storage/' . $course->cover_url) }}" style="max-height: 300px">
+                                    <img class="img-preview mb-4 border d-block" src="{{ asset('storage/' . $course->cover_url) }}" style="max-height: 300px">
                                     <div class="input-group">
                                         <input type="file" onchange="imagePreview()"
                                             class="form-control @error('cover_url') is-invalid @enderror"
@@ -153,7 +153,7 @@
                             <td>Chapter {{ $loop->iteration }}</td>
                             <td>{{ $chapter->name}}</td>
                             <td>{{ $chapter->description }}</td>
-                            <td class="project-actions text-right">
+                            <td class="project-actions text-center">
                                 <a class="btn btn-info btn-sm mt-1" href="/admin/chapters/{{ $chapter->id }}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
@@ -194,7 +194,7 @@
 
         imgPreview.style.display = 'block';
         imgPreview.style.maxHeight = '300px';
-        imgPreview.classList.add('img-bordered');
+        imgPreview.classList.add('border');
 
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);

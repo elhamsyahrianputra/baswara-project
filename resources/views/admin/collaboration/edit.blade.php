@@ -71,7 +71,7 @@
 
                                     <div class="form-group">
                                         <label for="inputImageURL">File Image</label>
-                                        <img class="img-preview mb-4 img-bordered d-block img-thumbnail" src="{{ asset('storage/' . $collaboration->image_url) }}" style="max-height: 300px">
+                                        <img class="img-preview mb-4 border d-block img-thumbnail" src="{{ asset('storage/' . $collaboration->image_url) }}" style="max-height: 300px">
                                         <div class="input-group">
                                             <input type="file" onchange="imagePreview()"
                                                 class="form-control @error('image_url') is-invalid @enderror"
@@ -120,7 +120,7 @@
 
             imgPreview.style.display = 'block';
             imgPreview.style.maxHeight = '300px';
-            imgPreview.classList.add('img-bordered');
+            imgPreview.classList.add('border');
 
             const oFReader = new FileReader();
             oFReader.readAsDataURL(image.files[0]);

@@ -47,7 +47,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->description }}</td>
-                                <td class="project-actions text-right">
+                                <td class="project-actions text-center">
                                     <a class="btn btn-info btn-sm" href="/admin/categories/{{ $category->id }}/edit">
                                         <i class="fas fa-pencil-alt">
                                         </i>

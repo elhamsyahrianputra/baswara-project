@@ -96,7 +96,7 @@
                             <td>Theory {{ $loop->iteration }}</td>
                             <td>{{ $theory->name}}</td>
                             <td>{{ $theory->description }}</td>
-                            <td class="project-actions text-right">
+                            <td class="project-actions text-center">
                                 <a class="btn btn-info btn-sm mt-1" href="/admin/theories/{{ $theory->id }}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
@@ -137,7 +137,7 @@
 
         imgPreview.style.display = 'block';
         imgPreview.style.maxHeight = '300px';
-        imgPreview.classList.add('img-bordered');
+        imgPreview.classList.add('border');
 
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);

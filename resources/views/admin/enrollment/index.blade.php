@@ -148,7 +148,7 @@ i    @extends('layouts.admin')
                                                             <div class="col mb-3">
                                                                 <div class="form-group">
                                                                     <label for="inputImageURL"><h5>Masukkan Bukti Pembayaran</h5></label>
-                                                                    <img class="img-preview mb-1 img-bordered d-block" style="max-height: 100px;">
+                                                                    <img class="img-preview mb-1 border d-block" style="max-height: 100px;">
                                                                     <div class="input-group">
                                                                         <input type="file" onchange="imagePreview()"
                                                                             class="form-control @error('payment_proof') is-invalid @enderror"
@@ -229,7 +229,7 @@ i    @extends('layouts.admin')
 
                 imgPreview.style.display = 'block';
                 imgPreview.style.maxHeight = '300px';
-                imgPreview.classList.add('img-bordered');
+                imgPreview.classList.add('border');
 
                 const oFReader = new FileReader();
                 oFReader.readAsDataURL(image.files[0]);

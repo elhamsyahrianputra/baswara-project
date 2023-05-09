@@ -109,7 +109,7 @@
 
         //     imgPreview.style.display = 'block';
         //     imgPreview.style.maxHeight = '300px';
-        //     imgPreview.classList.add('img-bordered');
+        //     imgPreview.classList.add('border');
 
         //     const oFReader = new FileReader();
         //     oFReader.readAsDataURL(image.files[0]);

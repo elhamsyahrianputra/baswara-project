@@ -59,8 +59,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('posts', PostController::class)->middleware('auth', 'admin');
     Route::get('posts/checkSlug', [PostController::class, 'checkSlug'])->middleware('auth');
 
-    Route::resource('books', BookController::class)->middleware('auth', 'admin');
-    Route::get('books/checkSlug', [BookController::class, 'checkSlug'])->middleware('auth');
+    Route::resource('books', BookController::class)->middleware('auth', 'admin')->except('show');
 });
 
 // * LandingPage
