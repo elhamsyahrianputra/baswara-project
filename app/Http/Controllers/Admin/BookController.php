@@ -90,7 +90,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('<admin class="book"></admin>edit', [
+        return view('admin.book.edit', [
             'title' => 'Book | Dashboard',
             'book' => $book,
 
